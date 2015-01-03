@@ -25,3 +25,4 @@ _patternlab/source/js/jquery-2.0.0b2.js
 _patternlab/source/js/modernizr.js
 node_modules/
 listeners/
+.sass-cache/

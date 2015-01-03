@@ -1,5 +1,5 @@
 /* 
- * patternlab-node - v0.1.6 - 2014 
+ * patternlab-node - v0.1.6 - 2015 
  * 
  * [object Object], and the web community.
  * Licensed under the MIT license. 
