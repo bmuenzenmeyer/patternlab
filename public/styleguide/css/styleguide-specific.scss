@@ -6,8 +6,11 @@
  * This is helpful for displaying demo styles for grids, animations, color swatches, etc
  * It's also helpful for overriding context-specific styles like fixed or absolutely positioned elements
  * These styles will not be your production CSS.
- */
- 
+ */ 
+
+/* will load this with webfont loader in production */
+ @import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+
 
 /* Style Guide Interface Colors */ 
 $sg-primary : #222;
@@ -138,4 +141,8 @@ $animate-quick: 0.2s;
 
 .sg-label {
 	line-height: 1;
+}
+
+.font-base{
+	font-family: Arial, Tahoma, sans-serif !important;
 }

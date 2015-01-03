@@ -126,7 +126,7 @@ header, footer, nav, section, article, hgroup, figure {
 
 body {
   background: #fff;
-  font: 100%/1.5 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font: 100%/1.5 "Lato", Arial, Tahoma, sans-serif;
   -webkit-text-size-adjust: 100%;
   color: #333;
 }
