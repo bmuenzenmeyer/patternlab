@@ -1,6 +1,17 @@
-body {
-	background: $white;
-	font: 100%/1.5 $font;
-	-webkit-text-size-adjust: 100%;
-	color: $gray-dark;
+* { box-sizing: border-box; }
+
+html{
+  font-size: 100%;
+}
+
+body{
+  background: $white;
+  font: 16px/150% $font;
+  -webkit-text-size-adjust: 100%;
+  color: $gray-dark;
+
+  @media all and (min-width: $bp-small){
+    width: 800px;
+    margin: 0 auto;
+  }
 }
