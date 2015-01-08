@@ -8,7 +8,7 @@
  * These styles will not be your production CSS.
  */
 /* will load this with webfont loader in production */
-@import url(http://fonts.googleapis.com/css?family=Dosis:300,500);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
 /* Style Guide Interface Colors */
 /* Typography */
 /* Defaults */
@@ -103,5 +103,3 @@
 .font-base {
   font-family: Arial, Tahoma, sans-serif !important;
 }
-
-/*# sourceMappingURL=styleguide-specific.css.map */

@@ -80,6 +80,7 @@ module.exports = function(grunt) {
 				options: {
 					style: 'expanded',
 					precision: 8,
+      		sourcemap: 'none'
 				},
 				files: {
 					'./source/css/style.css': './source/css/style.scss',

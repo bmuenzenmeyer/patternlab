@@ -1,4 +1,9 @@
 p {
+    line-height: 1.5em;
+}
+
+p + p{
+    margin-top: .5rem;
 }
 
 blockquote {
