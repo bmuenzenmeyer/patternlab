@@ -21,13 +21,15 @@
 		"short" : "Lorem ipsum dolor sit (37 characters)",
 		"medium" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. (72 characters)"
 	},
-	"excerpt" : {
-		"short" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"medium" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-		"long" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+	"about": "I spend my working days in ux/ui design and my waking nights in even more front end design and development. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. The best way to reach me is on Twitter @bmuenzenmeyer. I moonlight at crunchyowl.com, a dawning of individual design. I help people solve problems and send on-target messages. Interested in the mosaic of web development, design, content strategy, and performance. I have flexible rates if you have flexible hours. When not on the web, I am digging up the yard, wearing an afghan, trying on something grey, or day-dreaming about the ultimate home office.",
+	"site-redesign": "This version of brianmuenzenmeyer.com is an ongoing, open redesign — showcasing design challenges and decisions along the way I hope it's instructive and participatory. Read more about the open redesign here. Find me elsewhere online too, as noted below.",
+	"crunchyowl": {
+		"dev": "I deliver quality code with an eye towards standards compliance and industry best practices. Responsive design principles extend from time-honored standards compliance and progressive enhancement. Sign me up for some of that! In a world of cut and paste snippets, WYSIWYG editors, and tight timelines, some of us still write code by hand, testing diligently and with little regard for sunrise.",
+		"design": "Communicate effective messages to your audience. Crafting a functional product often starts with a deep dive into your needs and the needs of your users. From this input, Crunchy Owl can dial in and iterate quickly on a solution. Let's not forget to make it strikingly beautiful too.",
+		"perf": "Speed matters, but performance is more than that. Performance is content meets execution, and I can help you push your codebase further, directly equating to more engagement. Understanding delivery options is key to an inclusive experience. Push the limits of deployment and send what matters most.",
+		"content": "With a proper content strategy, your message has a broader voice in the community, has more impact, and builds your brand. Creating reusable content to leverage social media is a must in today's environment. I fit right-sized solutions to the right requirements, offering full-stack solutions when necessary, or a handcrafted microsite when the need arises."
 	},
-	"description" : "So, setting about it as methodically as men might smoke out a wasps' nest, the Martians spread this strange stifling vapour over the Londonward country. The horns of the crescent slowly moved apart, until at last they formed a line from Hanwell to Coombe and Malden. All night through their destructive tubes advanced.",
-	"url" : "http://www.fillerati.com",
+	"url" : "http://www.brianmuenzenmeyer.com",
 	"name" : {
 		"first": "Lacy",
 		"firsti": "L",

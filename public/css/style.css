@@ -107,7 +107,7 @@ html {
 
 body {
   background: #fff;
-  font: 16px/150% "Lato", Arial, Tahoma, sans-serif;
+  font: 16px/150% "Dosis", Arial, Tahoma, sans-serif;
   -webkit-text-size-adjust: 100%;
   color: #4c4c4c;
 }
@@ -136,12 +136,6 @@ h2, .beta {
 
 h3, .gamma {
   line-height: 1.2;
-}
-
-/* Subheadings */
-.subheading {
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-weight: normal;
 }
 
 ol, ul {
