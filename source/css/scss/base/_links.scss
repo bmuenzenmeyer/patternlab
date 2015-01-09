@@ -1,7 +1,8 @@
 /* Links */ 
 a {
-	
+	color: $gray-dark;
 	&:hover, &:focus {
+    color: $black;
 	}
 }
 nav a{
