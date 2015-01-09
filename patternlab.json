@@ -1,0 +1,1537 @@
+{
+   "package": {
+      "name": "patternlab-node",
+      "description": "Pattern Lab is a collection of tools to help you create atomic design systems. This is the node command line interface (CLI).",
+      "version": "0.1.6",
+      "devDependencies": {
+         "grunt": "~0.4.0",
+         "grunt-contrib-watch": "~0.6.1",
+         "grunt-contrib-sass": "~0.8.1",
+         "grunt-contrib-copy": "~0.4.0",
+         "grunt-contrib-jshint": "~0.4.0",
+         "grunt-contrib-clean": "~0.5.0",
+         "grunt-contrib-concat": "~0.3.0",
+         "grunt-contrib-nodeunit": "~0.3.0",
+         "grunt-contrib-connect": "^0.8.0",
+         "mustache": "~0.8.1",
+         "matchdep": "~0.3.0",
+         "fs-extra": "^0.10.0",
+         "diveSync": "^0.2.1"
+      },
+      "keywords": [
+         "Pattern Lab",
+         "Atomic Web Design",
+         "Node",
+         "Grunt",
+         "Javascript"
+      ],
+      "repository": {
+         "type": "git",
+         "url": "git://github.com/pattern-lab/patternlab-node.git"
+      },
+      "author": {
+         "name": "Brian Muenzenmeyer"
+      },
+      "license": "MIT",
+      "scripts": {
+         "test": "grunt travis --verbose"
+      },
+      "engines": {
+         "node": ">=0.1"
+      },
+      "readme": "[![Build Status](https://travis-ci.org/pattern-lab/patternlab-node.png?branch=master)](https://travis-ci.org/pattern-lab/patternlab-node) \r\n\r\n## About the Node Version of Pattern Lab\r\n\r\nThe Node version of Pattern Lab is, at its core, a static site generator. It combines platform-agnostic assets, like the [Mustache](http://mustache.github.io/)-based patterns and the JavaScript-based viewer, with a Node-based \"builder\" that transforms and dynamically builds the Pattern Lab site. By making it a static site generator, the Node version of Pattern Lab strongly separates patterns, data, and presentation from build logic. The Node version is a work in progress, the [PHP version](https://github.com/pattern-lab/patternlab-php) should be seen as a reference for other developers to improve upon as they build their own Pattern Lab Builders in their language of choice.\r\n\r\n### Getting Started\r\n\r\nTo run patternlab-node, just do the following from the command line at the root of patternlab-node: \r\n\r\n1. `npm install`\r\n2. `npm install -g grunt-cli`\r\n3. `grunt`  \r\n\r\nThis creates all patterns, the styleguide, and the pattern lab site.\r\n\r\n### Command Line Interface\r\n\r\nThe following are grunt task arguments you may execute:\r\n\r\n##### `patternlab`\r\nWith no arguments, patternlab runs the full builder, compiling patterns, and constructing the front-end site.\r\n\r\n##### `patternlab:only_patterns`\r\nCompile the patterns only, outputting to ./public/patterns\r\n\r\n##### `patternlab:v`\r\nRetrieve the version of patternlab-node you have installed\r\n\r\n##### `patternlab:help`\r\nGet more information about patternlab-node, pattern lab in general, and where to report issues.\r\n\r\n### Config Options\r\n\r\n##### Watching Changes\r\nTo have patternlab-node watch for changes to either a mustache template, data, or stylesheets, run `grunt watch`. The `Gruntfile` governs what is watched. It should be easy to add scss or whatever preprocessor you fancy.\r\n\r\n##### Nav Bar Controls\r\nIf you don't have a need for some of the nav-bar tools in the patternlab frontend, you can turn them off in `config.json`.\r\n\r\nThe current selection is as follows. It reflects support versus patternlab-php.\r\n\r\n```\r\n\"ishControlsVisible\": {\r\n\t\"s\": true,\r\n\t\"m\": true,\r\n\t\"l\": true,\r\n\t\"full\": true,\r\n\t\"ranndom\": true,\r\n\t\"disco\": true,\r\n\t\"hay\": true,\r\n\t\"mqs\": false,\r\n\t\"find\": false,\r\n\t\"views-all\": true,\r\n\t\"views-annotations\": true,\r\n\t\"views-code\": true,\r\n\t\"views-new\": true,\r\n\t\"tools-all\": true,\r\n\t\"tools-follow\": false,\r\n\t\"tools-reload\": false,\r\n\t\"tools-shortcuts\": false,\r\n\t\"tools-docs\": true\r\n}\r\n```\r\n\r\n##### Verbose Mode\r\n`patternlab.json` is a file created for debugging purposes. Set `debug` to true in `.config.json` to see all the secrets.\r\n\r\n##### Pattern States\r\nYou can set the state of a pattern by including it in `config.json` too. The out of the box styles are in progress (orange), in review (yellow), and complete (green).\r\nPattern states should be lowercase and use hyphens where spaces are present.\r\n```\r\n\"patternStates\": {\r\n\t\"colors\" : \"inprogress\",\r\n\t\"fonts\" : \"inreview\",\r\n\t\"three-up\" : \"complete\"\r\n}\r\n```\r\n\r\n##### Server\r\nRunning `grunt serve` will compile the patternlab front end and host it on <a href=\"http://localhost:9001\">http://localhost:9001</a> by default. Page will reload on any saved source code change.\r\n\r\n===\r\n\r\nThe Node version of Pattern Lab is maintained by [@bmuenzenmeyer](https://twitter.com/bmuenzenmeyer) and contributors. Pull requests welcome, but please take a moment to read the [guidelines](https://github.com/pattern-lab/patternlab-node/blob/master/CONTRIBUTING.md).\r\n\r\n### Forward, To the Specification!\r\n\r\nDave Olsen has published the [specification](https://github.com/pattern-lab/the-spec/blob/draft/SPEC.md) for Pattern Lab ports. Development will be oriented toward compliance with this as the spec and the port mature together. \r\n\r\n### Is Pattern Lab a Platform or a Build Tool?\r\n\r\nA lot of good conversation has revolved around whether Pattern Lab is a platform or a tool in the toolbox, part of a larger solution. It's my goal to #1) adhere to the specification and #2) meet the needs of both use cases.\r\n\r\nIf you want to only build the patterns, alter your `Gruntfile.js` patternlab task to the following:\r\n\r\n```\r\ngrunt.registerTask('default', ['clean', 'concat', 'patternlab:only_patterns', /*'sass',*/ 'copy']);\r\n```\r\n\r\nThis will output compiled patterns to ./public/patterns/\r\n\r\n### Where is the Gulp Version?\r\n\r\nThe core patternlab engine is free of any dependencies to grunt, allowing users to integrate with gulp if desired. Future efforts here will orient towards [this gulp implementation](https://github.com/oscar-g/patternlab-node/tree/dev-gulp) by [oscar-g](https://github.com/oscar-g).\r\n\r\n===\r\n\r\n## Working with Patterns\r\n\r\n(The following documentation is built for the PHP version of Pattern Lab, but most applies to the node version too. If you find omissions or mistakes please open an issue.)\r\n\r\nPatterns are the core element of Pattern Lab. Understanding how they work is the key to getting the most out of the system. Patterns use [Mustache](http://mustache.github.io/) so please read [Mustache's docs](http://mustache.github.io/mustache.5.html) as well.\r\n\r\n* [How Patterns Are Organized](http://patternlab.io/docs/pattern-organization.html)\r\n* [Adding New Patterns](http://patternlab.io/docs/pattern-add-new.html)\r\n* [Reorganizing Patterns](http://patternlab.io/docs/pattern-reorganizing.html)\r\n* [Including One Pattern Within Another via Partials](http://patternlab.io/docs/pattern-including.html)\r\n* [Managing Assets for a Pattern: JavaScript, images, CSS, etc.](http://patternlab.io/docs/pattern-managing-assets.html)\r\n* [Modifying the Pattern Header and Footer](http://patternlab.io/docs/pattern-header-footer.html)\r\n* [Using Pattern Parameters](http://patternlab.io/docs/pattern-parameters.html)\r\n* [Using Pattern State](http://patternlab.io/docs/pattern-states.html)\r\n* [\"Hiding\" Patterns in the Navigation](http://patternlab.io/docs/pattern-hiding.html)\r\n* [Adding Annotations](http://patternlab.io/docs/pattern-adding-annotations.html)\r\n* [Viewing Patterns on a Mobile Device](http://patternlab.io/docs/pattern-mobile-view.html)\r\n\r\n## Creating & Working With Dynamic Data for a Pattern\r\n\r\nThe Node version of Pattern Lab utilizes Mustache as the template language for patterns. In addition to allowing for the [inclusion of one pattern within another](http://patternlab.io/docs/pattern-including.html) it also gives pattern developers the ability to include variables. This means that attributes like image sources can be centralized in one file for easy modification across one or more patterns. The Node version of Pattern Lab uses a JSON file, `source/_data/data.json`, to centralize many of these attributes.\r\n\r\n* [Introduction to JSON & Mustache Variables](http://patternlab.io/docs/data-json-mustache.html)\r\n* [Overriding the Central `data.json` Values with Pattern-specific Values](http://patternlab.io/docs/data-pattern-specific.html)\r\n* [Linking to Patterns with Pattern Lab's Default `link` Variable](http://patternlab.io/docs/data-link-variable.html)\r\n* [Creating Lists with Pattern Lab's Default `listItems` Variable](http://patternlab.io/docs/data-listitems.html)\r\n\r\n## Using Pattern Lab's Advanced Features\r\n\r\nBy default, the Pattern Lab assets can be manually generated and the Pattern Lab site manually refreshed but who wants to waste time doing that? Here are some ways that Pattern Lab can make your development workflow a little smoother:\r\n\r\n* [Watching for Changes and Auto-Regenerating Patterns](http://patternlab.io/docs/advanced-auto-regenerate.html) - Node version coming soon\r\n* [Auto-Reloading the Browser Window When Changes Are Made](http://patternlab.io/docs/advanced-reload-browser.html) - Node version coming soon\r\n* [Multi-browser & Multi-device Testing with Page Follow](http://patternlab.io/docs/advanced-page-follow.html)\r\n* [Keyboard Shortcuts](http://patternlab.io/docs/advanced-keyboard-shortcuts.html) \r\n* [Special Pattern Lab-specific Query String Variables ](http://patternlab.io/docs/pattern-linking.html)\r\n* [Preventing the Cleaning of public/](http://patternlab.io/docs/advanced-clean-public.html) - Node version coming soon\r\n* [Modifying the Pattern Lab Nav](http://patternlab.io/docs/advanced-pattern-lab-nav.html) - Node version coming soon\r\n* [Editing the config.ini Options](http://patternlab.io/docs/advanced-config-options.html) - Node version coming soon\r\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+         "url": "https://github.com/pattern-lab/patternlab-node/issues"
+      },
+      "homepage": "https://github.com/pattern-lab/patternlab-node",
+      "_id": "patternlab-node@0.1.6",
+      "_from": "patternlab-node@"
+   },
+   "config": {
+      "patterns": {
+         "source": "./source/_patterns/",
+         "public": "./public/patterns/"
+      },
+      "ignored-extensions": [
+         "scss",
+         "DS_Store",
+         "less"
+      ],
+      "ignored-directories": [
+         "scss"
+      ],
+      "contentSyncPort": 8002,
+      "navSyncPort": 8003,
+      "debug": true,
+      "ishControlsVisible": {
+         "s": true,
+         "m": true,
+         "l": true,
+         "full": true,
+         "ranndom": true,
+         "disco": true,
+         "hay": true,
+         "mqs": true,
+         "find": false,
+         "views-all": true,
+         "views-annotations": true,
+         "views-code": true,
+         "views-new": true,
+         "tools-all": true,
+         "tools-follow": false,
+         "tools-reload": false,
+         "tools-shortcuts": false,
+         "tools-docs": true
+      },
+      "patternStates": {},
+      "patternExportKeys": [
+         "organisms-header"
+      ],
+      "patternExportDirectory": "./../_includes/",
+      "mqs": [
+         "45em"
+      ]
+   },
+   "data": {
+      "img": {
+         "landscape-4x3": {
+            "src": "../../images/fpo_4x3.png",
+            "alt": "4x3 Image"
+         },
+         "landscape-16x9": {
+            "src": "../../images/fpo_16x9.png",
+            "alt": "16x9 Image"
+         },
+         "square": {
+            "src": "../../images/fpo_square.png",
+            "alt": "Square Thumbnail"
+         },
+         "avatar": {
+            "src": "../../images/fpo_avatar.png",
+            "alt": "Person Name"
+         }
+      },
+      "headline": {
+         "short": "Lorem ipsum dolor sit (37 characters)",
+         "medium": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. (72 characters)"
+      },
+      "about": "I spend my working days in ux/ui design and my waking nights in even more front end design and development. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. The best way to reach me is on Twitter @bmuenzenmeyer. I moonlight at crunchyowl.com, a dawning of individual design. I help people solve problems and send on-target messages. Interested in the mosaic of web development, design, content strategy, and performance. I have flexible rates if you have flexible hours. When not on the web, I am digging up the yard, wearing an afghan, trying on something grey, or day-dreaming about the ultimate home office.",
+      "site-redesign": "This version of brianmuenzenmeyer.com is an ongoing, open redesign — showcasing design challenges and decisions along the way I hope it's instructive and participatory. Read more about the open redesign here. Find me elsewhere online too, as noted below.",
+      "crunchyowl": {
+         "dev": "I deliver quality code with an eye towards standards compliance and industry best practices. Responsive design principles extend from time-honored standards compliance and progressive enhancement. Sign me up for some of that! In a world of cut and paste snippets, WYSIWYG editors, and tight timelines, some of us still write code by hand, testing diligently and with little regard for sunrise.",
+         "design": "Communicate effective messages to your audience. Crafting a functional product often starts with a deep dive into your needs and the needs of your users. From this input, Crunchy Owl can dial in and iterate quickly on a solution. Let's not forget to make it strikingly beautiful too.",
+         "perf": "Speed matters, but performance is more than that. Performance is content meets execution, and I can help you push your codebase further, directly equating to more engagement. Understanding delivery options is key to an inclusive experience. Push the limits of deployment and send what matters most.",
+         "content": "With a proper content strategy, your message has a broader voice in the community, has more impact, and builds your brand. Creating reusable content to leverage social media is a must in today's environment. I fit right-sized solutions to the right requirements, offering full-stack solutions when necessary, or a handcrafted microsite when the need arises."
+      },
+      "url": "http://www.brianmuenzenmeyer.com",
+      "name": {
+         "first": "Lacy",
+         "firsti": "L",
+         "middle": "Tommie",
+         "middlei": "T",
+         "last": "Way",
+         "lasti": "W"
+      },
+      "year": {
+         "long": "2013",
+         "short": "13"
+      },
+      "month": {
+         "long": "February",
+         "short": "Feb",
+         "digit": "02"
+      },
+      "dayofweek": {
+         "long": "Monday",
+         "short": "Mon"
+      },
+      "day": {
+         "long": "10",
+         "short": "10",
+         "ordinal": "th"
+      },
+      "hour": {
+         "long": "01",
+         "short": "1",
+         "military": "13",
+         "ampm": "pm"
+      },
+      "minute": {
+         "long": "20",
+         "short": "20"
+      },
+      "seconds": "31",
+      "author": {
+         "first-name": "Author",
+         "last-name": "Name"
+      }
+   },
+   "listitems": {
+      "1": {
+         "title": "Nullizzle shizznit velizzle, hizzle, suscipit own yo', gravida vizzle, arcu.",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/people",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/nature",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/tech",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "Lorizzle pimpin' dolizzle sit amet I",
+            "medium": "Rizzle adipiscing elizzle. Nullam sapien velizzle, shit volutpizzle, my"
+         },
+         "excerpt": {
+            "short": "Shizz fo shizzle mah nizzle fo rizzle, mah home g-dizzle, gravida vizzle, arcu. Pellentesque crunk tortizzle. Sed erizzle. Black izzle sheezy telliv.",
+            "medium": "Izzle crazy tempizzle sizzle. We gonna chung gangsta get down get down fo shizzle turpizzle. Away break it down black. Pellentesque bling bling rhoncus fo shizzle. In hac the bizzle platea dictumst. Black dapibizzle. Crackalackin.",
+            "long": "Curabitizzle fo shizzle diam quizzle nisi nizzle mollizzle. Suspendisse boofron. Morbi odio. Sure pizzle. Crazy orci. Shut the shizzle up maurizzle get down get down, check out this a, go to hizzle sit amizzle, malesuada izzle, pede. Pellentesque gravida. Vestibulizzle check it out mi, volutpat izzle, shiz sed, shiznit sempizzle, da bomb. Funky fresh in ipsum. Da bomb volutpat felis vizzle daahng dawg. Crizzle quis dope izzle fo shizzle my ni."
+         },
+         "description": "Fizzle crazy tortor. Sed rizzle. Ass pimpin' dolor dapibizzle turpis tempizzle fo shizzle my nizzle. Maurizzle pellentesque its fo rizzle izzle turpis. Get down get down we gonna chung nizzle. Shizzlin dizzle eleifend rhoncizzle break it down. In yo ghetto platea dictumst. Bling bling dapibizzle. Curabitur break yo neck, yall fo, pretizzle eu, go to hizzle dope, own yo' vitae, nunc. Bizzle suscipizzle. Ass semper velit sizzle fo.",
+         "url": "http://lorizzle.nl/",
+         "name": {
+            "first": "Junius",
+            "firsti": "J",
+            "middle": "Marius",
+            "middlei": "M",
+            "last": "Koolen",
+            "lasti": "K"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "January",
+            "short": "Jan",
+            "digit": "01"
+         },
+         "dayofweek": {
+            "long": "Sunday",
+            "short": "Sun"
+         },
+         "day": {
+            "long": "01",
+            "short": "1",
+            "ordinal": "st"
+         },
+         "hour": {
+            "long": "06",
+            "short": "6",
+            "military": "06",
+            "ampm": "am"
+         },
+         "minute": {
+            "long": "20",
+            "short": "20"
+         },
+         "seconds": "31"
+      },
+      "2": {
+         "title": "Veggies sunt bona vobis, proinde vos postulo",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/nature",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/tech",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/people",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "Veggies sunt bona vobis, proinde vos",
+            "medium": "Postulo esse magis azuki bean burdock brussels sprout quandong komatsun"
+         },
+         "excerpt": {
+            "short": "A fava bean collard greens endive tomatillo lotus root okra winter purslane zucchini parsley spinach artichoke. Brussels sprout pea turnip catsear.",
+            "medium": "Bush tomato gumbo potato garbanzo ricebean burdock daikon coriander kale quandong. Bok choy celery leek avocado shallot horseradish aubergine parsley. Bok choy bell pepper kale celery desert raisin kakadu plum bok choy bunya nuts.",
+            "long": "Spinach tigernut. Corn cucumber grape black-eyed pea asparagus spinach avocado dulse bunya nuts epazote celery desert raisin celtuce burdock plantain yarrow napa cabbage. Plantain okra seakale endive tigernut pea sprouts asparagus corn chard peanut beet greens groundnut radicchio carrot coriander gumbo gram celtuce. Jícama nori bamboo shoot collard greens okra radicchio tomato. Catsear mustard corn tigernut celery kale water spinach bok choy."
+         },
+         "description": "Mung bean squash sorrel taro coriander collard greens gumbo bitterleaf tomato. Taro water chestnut celtuce turnip yarrow celery endive scallion black-eyed pea onion. Aubergine dulse turnip greens mustard salsify garlic soybean parsley bitterleaf desert raisin courgette.",
+         "url": "http://veggieipsum.com",
+         "name": {
+            "first": "Siguror",
+            "firsti": "S",
+            "middle": "Aron",
+            "middlei": "A",
+            "last": "Hanigan",
+            "lasti": "H"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "February",
+            "short": "Feb",
+            "digit": "02"
+         },
+         "dayofweek": {
+            "long": "Monday",
+            "short": "Mon"
+         },
+         "day": {
+            "long": "10",
+            "short": "10",
+            "ordinal": "th"
+         },
+         "hour": {
+            "long": "01",
+            "short": "1",
+            "military": "13",
+            "ampm": "pm"
+         },
+         "minute": {
+            "long": "20",
+            "short": "20"
+         },
+         "seconds": "31"
+      },
+      "3": {
+         "title": "Bacon ipsum dolor sit amet turducken strip steak beef ribs shank",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/tech",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/people",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/nature",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "Bacon ipsum dolor sit amet spare rib",
+            "medium": "Tongue pancetta short ribs bacon. Kielbasa ball tip cow bresaola, capic"
+         },
+         "excerpt": {
+            "short": "Tail jerky rump shoulder t-bone meatball meatloaf salami. Filet mignon shank t-bone venison, ham hock ribeye drumstick bresaola kielbasa. Frankfurter.",
+            "medium": "Doner biltong turducken leberkas. Rump swine pork loin ribeye ball tip meatloaf, pork chop ground round pig pancetta cow biltong brisket. Beef corned beef beef ribs, bacon pork belly sausage meatball boudin doner ham hock. Swine gro.",
+            "long": "Und round meatball, bacon pig leberkas corned beef tongue shoulder. Drumstick pork loin prosciutto ball tip shank pancetta spare ribs jowl pastrami. Frankfurter boudin filet mignon ribeye. Pig hamburger strip steak ham turducken prosciutto bresaola ground round pancetta frankfurter jowl. Frankfurter tongue brisket tenderloin, beef ribs pastrami biltong tail bresaola flank. Biltong pork chop beef boudin hamburger bacon. Capicola bresaola sausage."
+         },
+         "description": "Boudin sausage jerky pastrami ground round salami biltong. Sausage fatback strip steak doner pork loin, pork belly drumstick ham short loin hamburger shankle. Short ribs sirloin rump tri-tip beef biltong. Meatball pig salami, jowl pork loin fatback short loin drumstick andouille.",
+         "url": "http://baconipsum.com/",
+         "name": {
+            "first": "Teun",
+            "firsti": "T",
+            "middle": "Jodocus",
+            "middlei": "J",
+            "last": "Richard",
+            "lasti": "R"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "March",
+            "short": "Mar",
+            "digit": "03"
+         },
+         "dayofweek": {
+            "long": "Tuesday",
+            "short": "Tue"
+         },
+         "day": {
+            "long": "22",
+            "short": "22",
+            "ordinal": "nd"
+         },
+         "hour": {
+            "long": "04",
+            "short": "4",
+            "military": "16",
+            "ampm": "pm"
+         },
+         "minute": {
+            "long": "45",
+            "short": "45"
+         },
+         "seconds": "11"
+      },
+      "4": {
+         "title": "Whatever swag accusamus occupy, gentrify butcher tote bag",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/animals",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/arch",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/people/grayscale",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "Nesciunt sunt cillum keytar Pitchfork",
+            "medium": "Tote bag mixtape PBR Helvetica scenester forage four loko. Irure Tonx"
+         },
+         "excerpt": {
+            "short": "Golf quis +1, Wes Anderson church-key lo-fi keffiyeh selvage culpa authentic Brooklyn fap chambray. Id synth yr, 3 wolf moon locavore +1 mixtape do.",
+            "medium": "Sed single-origin coffee anim eu. Bicycle rights Neutra Truffaut pop-up. Paleo hella irure meh Banksy, Wes Anderson typewriter VHS jean shorts yr. Eiusmod officia banjo Thundercats, odio laborum magna deep v cornhole nostrud kitsch.",
+            "long": "Tattooed Williamsburg. Jean shorts proident kogi laboris. Non tote bag pariatur elit slow-carb, Vice irure eu Echo Park ea aliqua chillwave. Cornhole Etsy quinoa Pinterest cardigan. Excepteur quis forage, Blue Bottle keffiyeh velit hoodie direct trade typewriter Etsy. Fingerstache squid non, sriracha drinking vinegar Shoreditch pork belly. Paleo sartorial mollit 3 wolf moon chambray whatever, sed tote bag small batch freegan. Master cleanse."
+         },
+         "description": "Fanny pack ullamco et veniam semiotics. Shoreditch PBR reprehenderit cliche, magna Tonx aesthetic. Narwhal photo booth DIY aute post-ironic anim. Vice cliche brunch est before they sold out fap, street art Odd Future fashion axe messenger bag nihil Tonx tattooed. Nihil hashtag incididunt, do eu art party Banksy jean shorts four loko typewriter.",
+         "url": "http://hipsteripsum.me/",
+         "name": {
+            "first": "Duane",
+            "firsti": "D",
+            "middle": "Edvin",
+            "middlei": "E",
+            "last": "Wilms",
+            "lasti": "W"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "April",
+            "short": "Apr",
+            "digit": "04"
+         },
+         "dayofweek": {
+            "long": "Wednesday",
+            "short": "Wed"
+         },
+         "day": {
+            "long": "13",
+            "short": "13",
+            "ordinal": "th"
+         },
+         "hour": {
+            "long": "10",
+            "short": "10",
+            "military": "10",
+            "ampm": "am"
+         },
+         "minute": {
+            "long": "14",
+            "short": "14"
+         },
+         "seconds": "52"
+      },
+      "5": {
+         "title": "Marshall McLuhan Colbert bump backpack journalist vast wasteland Romenesko CPM",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/people/grayscale",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/animals",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/arch",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "Blog meme masthead DocumentCloud Fou",
+            "medium": "Square tabloid Andy Carvin stupid commenters, Nick Denton mathewi semip"
+         },
+         "excerpt": {
+            "short": "I love the Weather & Opera section Groupon copyright in the slot, Journal Register open newsroom analytics future totally blowing up on Twitter AOL.",
+            "medium": "CTR mthomps Flipboard do what you do best and link to the rest Buttry media bias Journal Register RT, newspaper strike do what you do best and link to the rest semipermeable learnings cognitive surplus mathewi, Encyclo Google News.",
+            "long": "Pulse mathewi Project Thunderdome digital first. HuffPo social media optimization try PR dying the notion of the public monetization data visualization audience atomization overcome community, libel lawyer twitterati should isn't a business model fair use innovation Facebook AOL, Walter Cronkite died for your sins horse-race coverage crowdfunding Patch but what's the business model rubber cement horse-race coverage. Lucius Nieman content farm."
+         },
+         "description": "Like button audience atomization overcome Colbert bump Free Darko inverted pyramid we will make them pay, digital circulation strategy Like button totally blowing up on Twitter church of the savvy. Pictures of Goats section open source discuss Frontline analog thinking filters paidContent.",
+         "url": "http://www.niemanlab.org/journo-ipsum/",
+         "name": {
+            "first": "Frans",
+            "firsti": "F",
+            "middle": "Fabius",
+            "middlei": "F",
+            "last": "Keegan",
+            "lasti": "K"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "May",
+            "short": "May",
+            "digit": "05"
+         },
+         "dayofweek": {
+            "long": "Thursday",
+            "short": "Thu"
+         },
+         "day": {
+            "long": "26",
+            "short": "26",
+            "ordinal": "th"
+         },
+         "hour": {
+            "long": "06",
+            "short": "6",
+            "military": "18",
+            "ampm": "pm"
+         },
+         "minute": {
+            "long": "37",
+            "short": "37"
+         },
+         "seconds": "24"
+      },
+      "6": {
+         "title": "Thunder, thunder, thundercats, Ho!",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/arch",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/animals",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/people/grayscale",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "Hong Kong Phooey, number one super g",
+            "medium": "Hong Kong Phooey, quicker than the human eye. He's got style, a groovy"
+         },
+         "excerpt": {
+            "short": "Style, and a car that just won't stop. When the going gets tough, he's really rough, with a Hong Kong Phooey chop (Hi-Ya!). Hong Kong Phooey, number.",
+            "medium": "One super guy. Hong Kong Phooey, quicker than the human eye. Hong Kong Phooey, he's fan-riffic! One for all and all for one, Muskehounds are always ready. One for all and all for one, helping everybody. One for all and all for one.",
+            "long": "It's a pretty story. Sharing everything with fun, that's the way to be. One for all and all for one, Muskehounds are always ready. One for all and all for one, helping everybody. One for all and all for one, can sound pretty corny. If you've got a problem chum, think how it could be. This is my boss, Jonathan Hart, a self-made millionaire, he's quite a guy. This is Mrs H., she's gorgeous, she's one lady who knows how to take care of herself."
+         },
+         "description": "Beats all you've ever saw, been in trouble with the law since the day they was born. Straight'nin' the curve, flat'nin' the hills. Someday the mountain might get 'em, but the law never will. Makin' their way, the only way they know how, that's just a little bit more than the law will allow. Just good ol' boys, wouldn't change if they could, fightin' the system like a true modern day Robin Hood.",
+         "url": "http://www.malevole.com/mv/misc/text/",
+         "name": {
+            "first": "Fergus",
+            "firsti": "F",
+            "middle": "Jon",
+            "middlei": "J",
+            "last": "Althuis",
+            "lasti": "A"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "June",
+            "short": "Jun",
+            "digit": "06"
+         },
+         "dayofweek": {
+            "long": "Friday",
+            "short": "Fri"
+         },
+         "day": {
+            "long": "08",
+            "short": "8",
+            "ordinal": "th"
+         },
+         "hour": {
+            "long": "11",
+            "short": "11",
+            "military": "23",
+            "ampm": "pm"
+         },
+         "minute": {
+            "long": "37",
+            "short": "37"
+         },
+         "seconds": "33"
+      },
+      "7": {
+         "title": "Yeah, I like animals better than people sometimes",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/any",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/any",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/any",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "Now that we know who you are, I know",
+            "medium": "Who I am. I'm not a mistake! It all makes sense! In a comic, you know"
+         },
+         "excerpt": {
+            "short": "How you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me.",
+            "medium": "The lysine contingency - it's intended to prevent the spread of the animals is case they ever got off the island. Dr. Wu inserted a gene that makes a single faulty enzyme in protein metabolism. The animals can't manufacture the amin.",
+            "long": "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb. Acid lysine. Unless they're."
+         },
+         "description": "Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people. Like pit bulls. The dog of dogs. Pit bull can be the right man's best friend... or the wrong man's worst enemy. You going to give me a dog for a pet, give me a pit bull.",
+         "url": "http://slipsum.com/lite/",
+         "name": {
+            "first": "Bertil",
+            "firsti": "B",
+            "middle": "Pier",
+            "middlei": "P",
+            "last": "Aaij",
+            "lasti": "A"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "July",
+            "short": "Jul",
+            "digit": "07"
+         },
+         "dayofweek": {
+            "long": "Saturday",
+            "short": "Sat"
+         },
+         "day": {
+            "long": "22",
+            "short": "22",
+            "ordinal": "nd"
+         },
+         "hour": {
+            "long": "11",
+            "short": "11",
+            "military": "11",
+            "ampm": "am"
+         },
+         "minute": {
+            "long": "12",
+            "short": "12"
+         },
+         "seconds": "47"
+      },
+      "8": {
+         "title": "Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/any/grayscale",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/any/grayscale",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/any/grayscale",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "Webtwo ipsum dolor sit amet, eskobo",
+            "medium": "Chumby doostang bebo. Wakoopa oooj geni zoho loopt eskobo sifteo chart"
+         },
+         "excerpt": {
+            "short": "Dropio, chumby waze dopplr plugg oooj yammer jibjab imvu yuntaa knewton, mobly trulia airbnb bitly chegg tivo empressr knewton. Plickers spock voxy.",
+            "medium": "Zooomr kippt voxy zinch appjet napster trulia, zappos wufoo zapier spotify mzinga jaiku fleck, disqus lijit voxy voki yoono. Dogster elgg jibjab xobni kazaa bebo udemy sifteo kiko, elgg knewton skype mog octopart zoodles kazaa udem.",
+            "long": "Appjet spock handango empressr lijit palantir weebly dropio jibjab revver kaboodle spotify orkut mobly chegg akismet, handango ebay woopra revver joukuu kosmix unigo oooooc wufoo zanga kno zinch spock knewton. Balihoo greplin bebo squidoo skype kaboodle meebo disqus joost gooru, zlio tumblr edmodo palantir eskobo shopify kiko gsnap. Greplin balihoo chartly plugg imeem diigo trulia plickers qeyno wikia akismet, palantir grockit prezi jabber zo."
+         },
+         "description": "Wufoo diigo grockit sifteo divvyshot, unigo zooomr revver. Edmodo appjet joyent skype bubbli jajah zoodles joukuu xobni hojoki edmodo appjet, mozy mzinga akismet yuntaa joost yuntaa geni tivo insala yoono chumby, grockit sococo loopt zanga etsy cloudera koofers empressr jiglu blippy. Omgpop lanyrd joukuu sococo zimbra airbnb movity jibjab, foodzie.",
+         "url": "http://web20ipsum.com",
+         "name": {
+            "first": "Freyr",
+            "firsti": "F",
+            "middle": "Ninian",
+            "middlei": "N",
+            "last": "Hines",
+            "lasti": "H"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "August",
+            "short": "Aug",
+            "digit": "08"
+         },
+         "dayofweek": {
+            "long": "Sunday",
+            "short": "Sun"
+         },
+         "day": {
+            "long": "31",
+            "short": "31",
+            "ordinal": "st"
+         },
+         "hour": {
+            "long": "03",
+            "short": "3",
+            "military": "15",
+            "ampm": "pm"
+         },
+         "minute": {
+            "long": "42",
+            "short": "42"
+         },
+         "seconds": "21"
+      },
+      "9": {
+         "title": "Rebel Mission to Ord Mantell",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/any/sepia",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/any/sepia",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/any/sepia",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "All right. Well, take care of yourself, Han",
+            "medium": "You don't believe in the Force, do you? The Force is strong with this one"
+         },
+         "excerpt": {
+            "short": "I'm trying not to, kid. I find your lack of faith disturbing. You are a part of the Rebel Alliance and a traitor! Take her away! I want to come with.",
+            "medium": "I'm surprised you had the courage to take the responsibility yourself. Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. You don't be.",
+            "long": "A tremor in the Force. The last time I felt it was in the presence of my old master. You don't believe in the Force, do you? I have traced the Rebel spies to her. Now she is my only link to finding their secret base. A tremor in the Force. The last time I felt it was in the presence of my old master. I'm trying not to, kid. The more you tighten your grip, Tarkin, the more star systems will slip through your fingers. There's nothing for me here."
+         },
+         "description": "I find your lack of faith disturbing. A tremor in the Force. The last time I felt it was in the presence of my old master. Don't act so surprised, Your Highness. You weren't on any mercy mission this time. Several transmissions were beamed to this ship by Rebel spies. I want to know what happened to the plans they sent you. The plans you refer to will soon be back in our hands.",
+         "url": "http://chrisvalleskey.com/fillerama/",
+         "name": {
+            "first": "Jacobus",
+            "firsti": "J",
+            "middle": "Domitianus",
+            "middlei": "D",
+            "last": "Sneiders",
+            "lasti": "S"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "September",
+            "short": "Sep",
+            "digit": "09"
+         },
+         "dayofweek": {
+            "long": "Monday",
+            "short": "Mon"
+         },
+         "day": {
+            "long": "04",
+            "short": "4",
+            "ordinal": "th"
+         },
+         "hour": {
+            "long": "09",
+            "short": "9",
+            "military": "09",
+            "ampm": "am"
+         },
+         "minute": {
+            "long": "04",
+            "short": "4"
+         },
+         "seconds": "37"
+      },
+      "10": {
+         "title": "Help, help, I'm being repressed!",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/tech/grayscale",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/nature/grayscale",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/arch/grayscale",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "The swallow may fly south with the sun",
+            "medium": "On second thoughts, let's not go there. It is a silly place. You don't"
+         },
+         "excerpt": {
+            "short": "The swallow may fly south with the sun, and the house martin or the plover may seek warmer climes in winter, yet these are not strangers to our land.",
+            "medium": "The Knights Who Say Ni demand a sacrifice! Found them? In Mercia?! The coconut's tropical! Where'd you get the coconuts? Why do you think that she is a witch? I am your king. You don't vote for kings. But you are dressed as one. Oh, ow!",
+            "long": "Well, I didn't vote for you. Burn her! Be quiet! He hasn't got shit all over him. Where'd you get the coconuts? The swallow may fly south with the sun, and the house martin or the plover may seek warmer climes in winter, yet these are not strangers to our land. No! Yes, yes. A bit. But she's got a wart. Shut up! Will you shut up?! I have to push the pram a lot. Now, look here, my good man. Frighten us, English pig-dogs! Go and boil your bottoms."
+         },
+         "description": "The Knights Who Say Ni demand a sacrifice! …Are you suggesting that coconuts migrate? Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods. You don't frighten us, English pig-dogs! Go and boil your bottoms, sons of a silly person! I blow my nose at you, so-called Ah-thoor Keeng, you and all your silly English K-n-n-n-n-n-n-n-niggits!",
+         "url": "http://chrisvalleskey.com/fillerama/",
+         "name": {
+            "first": "Plinius",
+            "firsti": "P",
+            "middle": "Varinius",
+            "middlei": "V",
+            "last": "Sloane",
+            "lasti": "S"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "October",
+            "short": "Oct",
+            "digit": "10"
+         },
+         "dayofweek": {
+            "long": "Tuesday",
+            "short": "Tue"
+         },
+         "day": {
+            "long": "25",
+            "short": "25",
+            "ordinal": "th"
+         },
+         "hour": {
+            "long": "03",
+            "short": "3",
+            "military": "03",
+            "ampm": "am"
+         },
+         "minute": {
+            "long": "51",
+            "short": "51"
+         },
+         "second": "19"
+      },
+      "11": {
+         "title": "Danish danish candy canes bonbon cheesecake danish marzipan",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/tech/sepia",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/animals/sepia",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/arch/sepia",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "Carrot cake fruitcake dessert apple",
+            "medium": "Pie powder lemon drops sesame snaps cake brownie. Biscuit ice cream gin"
+         },
+         "excerpt": {
+            "short": "Bread cotton candy marzipan. Baker too go gingerbread topping cupcake donut. Fruitcake marzipan bear claw tart toffee candy cheesecake. Lemon drops.",
+            "medium": "Cupcake chupa chups pudding gummies. Unerdwear.com cupcake candy soufflé sesame snaps macaroon sesame snaps. Tart dragée muffin. Sweet roll gummi bears caramels fruitcake candy cake. Cotton candy carrot cake tart cotton candy. Jelly.",
+            "long": "Gingerbread candy icing pastry cake bonbon fruitcake donut. Powder liquorice dessert tart croissant cake. Dessert chocolate cake sweet roll candy candy sesame snaps tiramisu ice cream. Candy candy canes marzipan biscuit cupcake pie pudding. Donut cotton candy muffin. Pastry bear claw icing halvah. Gingerbread cotton candy sweet roll toffee chocolate jujubes. Wafer jujubes danish ice cream lemon drops wafer. Sesame snaps cupcake gummies browni."
+         },
+         "description": "Sugar plum wafer soufflé ice cream. Wafer topping biscuit pie gummi bears topping. Gummies toffee powder applicake oat cake cookie. Bear claw candy tootsie roll fruitcake danish applicake candy canes macaroon. Liquorice tiramisu danish cotton candy gummies. Tiramisu dessert gummi bears macaroon sweet roll jelly-o gummi bears marzipan.",
+         "url": "http://cupcakeipsum.com/",
+         "name": {
+            "first": "Matthias",
+            "firsti": "M",
+            "middle": "Brady",
+            "middlei": "B",
+            "last": "Macguinness",
+            "lasti": "M"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "November",
+            "short": "Nov",
+            "digit": "11"
+         },
+         "dayofweek": {
+            "long": "Wednesday",
+            "short": "Wed"
+         },
+         "day": {
+            "long": "19",
+            "short": "19",
+            "ordinal": "th"
+         },
+         "hour": {
+            "long": "11",
+            "short": "11",
+            "military": "23",
+            "ampm": "pm"
+         },
+         "minute": {
+            "long": "55",
+            "short": "55"
+         },
+         "seconds": "12"
+      },
+      "12": {
+         "title": "Cottage cheese brie lancashire. Boursin when the cheese comes out.",
+         "img": {
+            "avatar": {
+               "src": "http://placeimg.com/100/100/people/sepia",
+               "alt": "Avatar"
+            },
+            "square": {
+               "src": "http://placeimg.com/300/300/people/sepia",
+               "alt": "Square"
+            },
+            "rectangle": {
+               "src": "http://placeimg.com/400/300/people/sepia",
+               "alt": "Rectangle"
+            }
+         },
+         "headline": {
+            "short": "Cauliflower cheese cream cheese baby",
+            "medium": "Lancashire cheesy feet rubber cheese cheese and wine gouda the big chee"
+         },
+         "excerpt": {
+            "short": "Queso fromage. Taleggio boursin bavarian bergkase cream cheese when the cheese comes out everybody's happy port-salut halloumi pecorino. Caerphilly cut the cheese manchego camembert de normandie goat melted cheese cheese and biscuit.",
+            "medium": "Pecorino queso lancashire. Manchego lancashire cheesy feet emmental babybel cheese strings dolcelatte bavarian bergkase. Ricotta cheese slices cheesy grin cow cheesecake smelly cheese mascarpone lancashire. Cow say cheese babybel do.",
+            "long": "Cheesy grin macaroni cheese airedale. Fromage frais airedale cheese and wine brie cow swiss swiss mozzarella. Emmental cheese triangles edam rubber cheese pepper jack ricotta airedale airedale. Brie parmesan smelly cheese cheese strings stinking bishop cheese strings taleggio. Bocconcini blue castello gouda. Everyone loves caerphilly rubber cheese halloumi smelly cheese melted cheese melted cheese bavarian bergkase. Rubber cheese ricotta emm."
+         },
+         "description": "Queso caerphilly cheesecake. Parmesan chalk and cheese port-salut port-salut babybel cottage cheese cheesy grin pepper jack. Croque monsieur paneer st. agur blue cheese emmental airedale monterey jack bavarian bergkase cheese triangles. Halloumi parmesan.",
+         "url": "http://www.cheeseipsum.co.uk/",
+         "name": {
+            "first": "Aquila",
+            "firsti": "A",
+            "middle": "Gaius",
+            "middlei": "G",
+            "last": "Achterkamp",
+            "lasti": "A"
+         },
+         "year": {
+            "long": "2013",
+            "short": "13"
+         },
+         "month": {
+            "long": "December",
+            "short": "Dec",
+            "digit": "12"
+         },
+         "dayofweek": {
+            "long": "Thursday",
+            "short": "Thu"
+         },
+         "day": {
+            "long": "28",
+            "short": "28",
+            "ordinal": "th"
+         },
+         "hour": {
+            "long": "08",
+            "short": "8",
+            "military": "08",
+            "ampm": "am"
+         },
+         "minute": {
+            "long": "34",
+            "short": "34"
+         },
+         "seconds": "56"
+      }
+   },
+   "header": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\t<title>Pattern Lab Pattern</title>\r\n\t<meta charset=\"UTF-8\">\r\n\t<meta name=\"viewport\" content=\"width=device-width\" />\r\n\t\r\n\t<!-- never cache patterns -->\r\n\t<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\r\n\t<meta http-equiv=\"cache-control\" content=\"no-cache\" />\r\n\t<meta http-equiv=\"expires\" content=\"0\" />\r\n\t<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\r\n\t<meta http-equiv=\"pragma\" content=\"no-cache\" />\r\n\r\n\t<!--\r\n\t\tStyleguide CSS is included for \r\n\t-->\r\n\t<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.css\" media=\"all\">\r\n\t<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide-specific.css\" media=\"all\" />\r\n\t\r\n\t<!--\r\n\t\tRemember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)\r\n\t\tTherefore all calls to assets should have the ../../ in order to work in an apache-less environment\r\n\t-->\r\n\t<link rel=\"stylesheet\" href=\"../../css/style.css\" media=\"all\" />\r\n\t\r\n\t<style>\r\n\t\t.has-comment, .has-comment a {\r\n\t\t\tcursor: help !important; \r\n\t\t}\r\n\t</style>\r\n\t\r\n</head>\r\n<body class=\"sg-single-pattern\">\t\r\n\t<!-- Start of Pattern -->",
+   "footer": "\t<!-- End of Pattern -->\r\n\t\r\n\t<!--\r\n\t\tRemember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)\r\n\t\tTherefore all calls to assets should have the ../../ in order to work in an apache-less environment\r\n\t-->\r\n\t\r\n\t<!-- DO NOT MODIFY -->\r\n\t<script>\r\n\t\t// handle injection of items from PHP\r\n\t\tvar patternPartial = \"{{ patternGroup }}-{{ patternName }}\";\r\n\t\tvar lineage = [{{{ lineage }}}];\r\n\t\tvar lineageR = [{{{ lineageR }}}];\r\n\t\tvar patternState = \"{{patternState}}\"\r\n\t\tvar cssEnabled = false; //TODO\r\n\t</script>\r\n\t\r\n\t<script type=\"text/html\" id=\"sg-pattern-html\">\r\n{{ patternHTML }}\r\n\t</script>\r\n\t\r\n\t<script type=\"text/html\" id=\"sg-pattern-css\">\r\n{{ patternCSS }}\r\n\t</script>\r\n\t<script src=\"../../styleguide/js/vendor/jwerty.js\"></script>\r\n\t<script src=\"../../styleguide/js/postmessage.js\"></script>\r\n\t<script src=\"../../data/annotations.js\"></script>\r\n\t<script src=\"../../styleguide/js/annotations-pattern.js\"></script>\r\n\t<script src=\"../../styleguide/js/code-pattern.js\"></script>\r\n\t<!-- /DO NOT MODIFY -->\r\n\t\r\n</body>\r\n</html>",
+   "patterns": [
+      {
+         "name": "00-atoms-00-global-00-colors",
+         "subdir": "00-atoms\\00-global",
+         "filename": "00-colors.mustache",
+         "data": null,
+         "template": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #B2F33C;\"></span>\r\n\t\t<span class=\"sg-label\">#B2F33C</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #55731D;\"></span>\r\n\t\t<span class=\"sg-label\">#55731D</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #CEF586;\"></span>\r\n\t\t<span class=\"sg-label\">#CEF586</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #4c4c4c;\"></span>\r\n\t\t<span class=\"sg-label\">#4c4c4c</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #666666;\"></span>\r\n\t\t<span class=\"sg-label\">#666666</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #b2b2b2;\"></span>\r\n\t\t<span class=\"sg-label\">#b2b2b2</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #f2f2f2;\"></span>\r\n\t\t<span class=\"sg-label\">#f2f2f2</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #C93CF3;\"></span>\r\n\t\t<span class=\"sg-label\">#C93CF3</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #8208A6;\"></span>\r\n\t\t<span class=\"sg-label\">#8208A6</span>\r\n\t</li>\r\n</ul>",
+         "patternPartial": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #B2F33C;\"></span>\r\n\t\t<span class=\"sg-label\">#B2F33C</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #55731D;\"></span>\r\n\t\t<span class=\"sg-label\">#55731D</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #CEF586;\"></span>\r\n\t\t<span class=\"sg-label\">#CEF586</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #4c4c4c;\"></span>\r\n\t\t<span class=\"sg-label\">#4c4c4c</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #666666;\"></span>\r\n\t\t<span class=\"sg-label\">#666666</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #b2b2b2;\"></span>\r\n\t\t<span class=\"sg-label\">#b2b2b2</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #f2f2f2;\"></span>\r\n\t\t<span class=\"sg-label\">#f2f2f2</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #C93CF3;\"></span>\r\n\t\t<span class=\"sg-label\">#C93CF3</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #8208A6;\"></span>\r\n\t\t<span class=\"sg-label\">#8208A6</span>\r\n\t</li>\r\n</ul>",
+         "patternName": "colors",
+         "patternLink": "00-atoms-00-global-00-colors/00-atoms-00-global-00-colors.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\00-global",
+         "flatPatternPath": "00-atoms\\00-global",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-colors",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-00-global-01-fonts",
+         "subdir": "00-atoms\\00-global",
+         "filename": "01-fonts.mustache",
+         "data": null,
+         "template": "<p class=\"font-base\">Base font: Arial, Tahoma, sans-serif;</p>\r\n<p class=\"font-base\"><em>Base font italic: Arial, Tahoma, sans-serif;</em></p>\r\n<p class=\"font-base\"><strong>Base font bold: Arial, Tahoma, sans-serif;</strong></p>\r\n<p class=\"font-web\">Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</p>\r\n<p class=\"font-web\"><em>Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</em></p>\r\n<p class=\"font-web\"><strong>Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</strong></p>",
+         "patternPartial": "<p class=\"font-base\">Base font: Arial, Tahoma, sans-serif;</p>\r\n<p class=\"font-base\"><em>Base font italic: Arial, Tahoma, sans-serif;</em></p>\r\n<p class=\"font-base\"><strong>Base font bold: Arial, Tahoma, sans-serif;</strong></p>\r\n<p class=\"font-web\">Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</p>\r\n<p class=\"font-web\"><em>Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</em></p>\r\n<p class=\"font-web\"><strong>Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</strong></p>",
+         "patternName": "fonts",
+         "patternLink": "00-atoms-00-global-01-fonts/00-atoms-00-global-01-fonts.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\00-global",
+         "flatPatternPath": "00-atoms\\00-global",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-fonts",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-01-text-00-headings",
+         "subdir": "00-atoms\\01-text",
+         "filename": "00-headings.mustache",
+         "data": null,
+         "template": "<h1>Heading Level 1</h1>\r\n<h2>Heading Level 2</h2>\r\n<h3>Heading Level 3</h3>  \r\n<h4>Heading Level 4</h4>\r\n<h5>Heading Level 5</h5> \r\n<h6>Heading Level 6</h6>",
+         "patternPartial": "<h1>Heading Level 1</h1>\r\n<h2>Heading Level 2</h2>\r\n<h3>Heading Level 3</h3>  \r\n<h4>Heading Level 4</h4>\r\n<h5>Heading Level 5</h5> \r\n<h6>Heading Level 6</h6>",
+         "patternName": "headings",
+         "patternLink": "00-atoms-01-text-00-headings/00-atoms-01-text-00-headings.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\01-text",
+         "flatPatternPath": "00-atoms\\01-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-headings",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-01-text-02-headings-with-links",
+         "subdir": "00-atoms\\01-text",
+         "filename": "02-headings-with-links.mustache",
+         "data": null,
+         "template": "<h1><a href=\"#\">Heading 1 with link</a></h1>\r\n<h2><a href=\"#\">Heading 2 with link</a></h2>\r\n<h3><a href=\"#\">Heading 3 with link</a></h3>  \r\n<h4><a href=\"#\">Heading 4 with link</a></h4>\r\n<h5><a href=\"#\">Heading 5 with link</a></h5> \r\n<h6><a href=\"#\">Heading 6 with link</a></h6>",
+         "patternPartial": "<h1><a href=\"#\">Heading 1 with link</a></h1>\r\n<h2><a href=\"#\">Heading 2 with link</a></h2>\r\n<h3><a href=\"#\">Heading 3 with link</a></h3>  \r\n<h4><a href=\"#\">Heading 4 with link</a></h4>\r\n<h5><a href=\"#\">Heading 5 with link</a></h5> \r\n<h6><a href=\"#\">Heading 6 with link</a></h6>",
+         "patternName": "headings-with-links",
+         "patternLink": "00-atoms-01-text-02-headings-with-links/00-atoms-01-text-02-headings-with-links.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\01-text",
+         "flatPatternPath": "00-atoms\\01-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-headings-with-links",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-01-text-03-paragraph",
+         "subdir": "00-atoms\\01-text",
+         "filename": "03-paragraph.mustache",
+         "data": null,
+         "template": "<p>{{ crunchyowl.dev }}</p>\r\n<p>{{ crunchyowl.design }}</p>\r\n<p>{{ crunchyowl.perf }}</p>\r\n<p>{{ crunchyowl.content }}</p>",
+         "patternPartial": "<p>I deliver quality code with an eye towards standards compliance and industry best practices. Responsive design principles extend from time-honored standards compliance and progressive enhancement. Sign me up for some of that! In a world of cut and paste snippets, WYSIWYG editors, and tight timelines, some of us still write code by hand, testing diligently and with little regard for sunrise.</p>\r\n<p>Communicate effective messages to your audience. Crafting a functional product often starts with a deep dive into your needs and the needs of your users. From this input, Crunchy Owl can dial in and iterate quickly on a solution. Let&#39;s not forget to make it strikingly beautiful too.</p>\r\n<p>Speed matters, but performance is more than that. Performance is content meets execution, and I can help you push your codebase further, directly equating to more engagement. Understanding delivery options is key to an inclusive experience. Push the limits of deployment and send what matters most.</p>\r\n<p>With a proper content strategy, your message has a broader voice in the community, has more impact, and builds your brand. Creating reusable content to leverage social media is a must in today&#39;s environment. I fit right-sized solutions to the right requirements, offering full-stack solutions when necessary, or a handcrafted microsite when the need arises.</p>",
+         "patternName": "paragraph",
+         "patternLink": "00-atoms-01-text-03-paragraph/00-atoms-01-text-03-paragraph.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\01-text",
+         "flatPatternPath": "00-atoms\\01-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-paragraph",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-01-text-04-blockquote",
+         "subdir": "00-atoms\\01-text",
+         "filename": "04-blockquote.mustache",
+         "data": null,
+         "template": "<blockquote>\r\n\t<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>\r\n</blockquote>",
+         "patternPartial": "<blockquote>\r\n\t<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>\r\n</blockquote>",
+         "patternName": "blockquote",
+         "patternLink": "00-atoms-01-text-04-blockquote/00-atoms-01-text-04-blockquote.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\01-text",
+         "flatPatternPath": "00-atoms\\01-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-blockquote",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-01-text-07-preformatted-text",
+         "subdir": "00-atoms\\01-text",
+         "filename": "07-preformatted-text.mustache",
+         "data": null,
+         "template": "<pre>  \t\r\nP R E F O R M A T T E D T E X T\r\n! \" # $ % &amp; ' ( ) * + , - . /\r\n0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?\r\n@ A B C D E F G H I J K L M N O\r\nP Q R S T U V W X Y Z [ \\ ] ^ _\r\n` a b c d e f g h i j k l m n o\r\np q r s t u v w x y z { | } ~ \r\n</pre>",
+         "patternPartial": "<pre>  \t\r\nP R E F O R M A T T E D T E X T\r\n! \" # $ % &amp; ' ( ) * + , - . /\r\n0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?\r\n@ A B C D E F G H I J K L M N O\r\nP Q R S T U V W X Y Z [ \\ ] ^ _\r\n` a b c d e f g h i j k l m n o\r\np q r s t u v w x y z { | } ~ \r\n</pre>",
+         "patternName": "preformatted-text",
+         "patternLink": "00-atoms-01-text-07-preformatted-text/00-atoms-01-text-07-preformatted-text.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\01-text",
+         "flatPatternPath": "00-atoms\\01-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-preformatted-text",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-01-text-09-hr",
+         "subdir": "00-atoms\\01-text",
+         "filename": "09-hr.mustache",
+         "data": null,
+         "template": "<hr />",
+         "patternPartial": "<hr />",
+         "patternName": "hr",
+         "patternLink": "00-atoms-01-text-09-hr/00-atoms-01-text-09-hr.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\01-text",
+         "flatPatternPath": "00-atoms\\01-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-hr",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-01-text-10-caption",
+         "subdir": "00-atoms\\01-text",
+         "filename": "10-caption.mustache",
+         "data": null,
+         "template": "<p class=\"caption\">A caption can be applied to an image, quote, form field, etc.</p>",
+         "patternPartial": "<p class=\"caption\">A caption can be applied to an image, quote, form field, etc.</p>",
+         "patternName": "caption",
+         "patternLink": "00-atoms-01-text-10-caption/00-atoms-01-text-10-caption.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\01-text",
+         "flatPatternPath": "00-atoms\\01-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-caption",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-02-lists-00-unordered",
+         "subdir": "00-atoms\\02-lists",
+         "filename": "00-unordered.mustache",
+         "data": null,
+         "template": "<div class=\"text\">\r\n\t<ul>\r\n\t\t<li>This is a list item in an unordered list</li>\r\n\t\t<li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>\r\n\t\t<li>\r\n\t\t\tLists can be nested inside of each other\r\n\t\t\t<ul>\r\n\t\t\t\t<li>This is a nested list item</li>\r\n\t\t\t\t<li>This is another nested list item in an unordered list</li>\r\n\t\t\t</ul>\r\n\t\t</li>\r\n\t\t<li>This is the last list item</li>\r\n\t</ul>\r\n</div>",
+         "patternPartial": "<div class=\"text\">\r\n\t<ul>\r\n\t\t<li>This is a list item in an unordered list</li>\r\n\t\t<li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>\r\n\t\t<li>\r\n\t\t\tLists can be nested inside of each other\r\n\t\t\t<ul>\r\n\t\t\t\t<li>This is a nested list item</li>\r\n\t\t\t\t<li>This is another nested list item in an unordered list</li>\r\n\t\t\t</ul>\r\n\t\t</li>\r\n\t\t<li>This is the last list item</li>\r\n\t</ul>\r\n</div>",
+         "patternName": "unordered",
+         "patternLink": "00-atoms-02-lists-00-unordered/00-atoms-02-lists-00-unordered.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\02-lists",
+         "flatPatternPath": "00-atoms\\02-lists",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-unordered",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-02-lists-01-ordered",
+         "subdir": "00-atoms\\02-lists",
+         "filename": "01-ordered.mustache",
+         "data": null,
+         "template": "<div class=\"text\">\r\n\t<ol>\r\n\t\t<li>This is a list item in an ordered list</li>\r\n\t\t<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>\r\n\t\t<li>\r\n\t\t\tLists can be nested inside of each other\r\n\t\t\t<ol>\r\n\t\t\t\t<li>This is a nested list item</li>\r\n\t\t\t\t<li>This is another nested list item in an ordered list</li>\r\n\t\t\t</ol>\r\n\t\t</li>\r\n\t\t<li>This is the last list item</li>\r\n\t</ol>\r\n</div>",
+         "patternPartial": "<div class=\"text\">\r\n\t<ol>\r\n\t\t<li>This is a list item in an ordered list</li>\r\n\t\t<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>\r\n\t\t<li>\r\n\t\t\tLists can be nested inside of each other\r\n\t\t\t<ol>\r\n\t\t\t\t<li>This is a nested list item</li>\r\n\t\t\t\t<li>This is another nested list item in an ordered list</li>\r\n\t\t\t</ol>\r\n\t\t</li>\r\n\t\t<li>This is the last list item</li>\r\n\t</ol>\r\n</div>",
+         "patternName": "ordered",
+         "patternLink": "00-atoms-02-lists-01-ordered/00-atoms-02-lists-01-ordered.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\02-lists",
+         "flatPatternPath": "00-atoms\\02-lists",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-ordered",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-02-lists-02-definition",
+         "subdir": "00-atoms\\02-lists",
+         "filename": "02-definition.mustache",
+         "data": null,
+         "template": "<dl>\r\n\t<dt>Definition List</dt>\r\n\t<dd>A number of connected items or names written or printed consecutively, typically one below the other.</dd>\r\n    <dt>This is a term.</dt>\r\n    <dd>This is the definition of that term, which both live in a <code>dl</code>.</dd>\r\n    <dt>Here is another term.</dt>\r\n    <dd>And it gets a definition too, which is this line.</dd>\r\n    <dt>Here is term that shares a definition with the term below.</dt>\r\n    <dd>And it gets a definition too, which is this line.</dd>\r\n</dl>",
+         "patternPartial": "<dl>\r\n\t<dt>Definition List</dt>\r\n\t<dd>A number of connected items or names written or printed consecutively, typically one below the other.</dd>\r\n    <dt>This is a term.</dt>\r\n    <dd>This is the definition of that term, which both live in a <code>dl</code>.</dd>\r\n    <dt>Here is another term.</dt>\r\n    <dd>And it gets a definition too, which is this line.</dd>\r\n    <dt>Here is term that shares a definition with the term below.</dt>\r\n    <dd>And it gets a definition too, which is this line.</dd>\r\n</dl>",
+         "patternName": "definition",
+         "patternLink": "00-atoms-02-lists-02-definition/00-atoms-02-lists-02-definition.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\02-lists",
+         "flatPatternPath": "00-atoms\\02-lists",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-definition",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-05-buttons-00-buttons",
+         "subdir": "00-atoms\\05-buttons",
+         "filename": "00-buttons.mustache",
+         "data": null,
+         "template": "<p><a href=\"#\" class=\"btn\">Button</a></p>\r\n<p><a href=\"#\" class=\"btn alt\">Alternate Button</a></p>\r\n<p><a href=\"#\" class=\"btn disabled\">Disabled Button</a></p>\r\n<p><a href=\"#\" class=\"text-btn\">Text Button</a></p>",
+         "patternPartial": "<p><a href=\"#\" class=\"btn\">Button</a></p>\r\n<p><a href=\"#\" class=\"btn alt\">Alternate Button</a></p>\r\n<p><a href=\"#\" class=\"btn disabled\">Disabled Button</a></p>\r\n<p><a href=\"#\" class=\"text-btn\">Text Button</a></p>",
+         "patternName": "buttons",
+         "patternLink": "00-atoms-05-buttons-00-buttons/00-atoms-05-buttons-00-buttons.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\05-buttons",
+         "flatPatternPath": "00-atoms\\05-buttons",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-buttons",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-06-tables-00-table",
+         "subdir": "00-atoms\\06-tables",
+         "filename": "00-table.mustache",
+         "data": null,
+         "template": "<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>Table Heading 1</th>\r\n\t\t\t<th>Table Heading 2</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 4</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tfoot>\r\n\t\t<tr>\r\n\t\t\t<th>Table Footer 1</th>\r\n\t\t\t<th>Table Footer 2</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 4</th>\r\n\t\t</tr>\r\n\t</tfoot>\r\n\t<tbody>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t</tbody>\r\n</table>",
+         "patternPartial": "<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>Table Heading 1</th>\r\n\t\t\t<th>Table Heading 2</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 4</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tfoot>\r\n\t\t<tr>\r\n\t\t\t<th>Table Footer 1</th>\r\n\t\t\t<th>Table Footer 2</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 4</th>\r\n\t\t</tr>\r\n\t</tfoot>\r\n\t<tbody>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t</tbody>\r\n</table>",
+         "patternName": "table",
+         "patternLink": "00-atoms-06-tables-00-table/00-atoms-06-tables-00-table.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\06-tables",
+         "flatPatternPath": "00-atoms\\06-tables",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-table",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-07-media-00-video",
+         "subdir": "00-atoms\\07-media",
+         "filename": "00-video.mustache",
+         "data": null,
+         "template": "<video width=\"640\" height=\"360\" controls=\"\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4\" type=\"video/mp4\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.webm\" type=\"video/webm\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.ogv\" type=\"video/ogg\">\r\n\t<img src=\"\" width=\"640\" height=\"360\" alt=\"Big Buck Bunny\" title=\"No video playback capabilities, please download\">\r\n</video>",
+         "patternPartial": "<video width=\"640\" height=\"360\" controls=\"\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4\" type=\"video/mp4\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.webm\" type=\"video/webm\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.ogv\" type=\"video/ogg\">\r\n\t<img src=\"\" width=\"640\" height=\"360\" alt=\"Big Buck Bunny\" title=\"No video playback capabilities, please download\">\r\n</video>",
+         "patternName": "video",
+         "patternLink": "00-atoms-07-media-00-video/00-atoms-07-media-00-video.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\07-media",
+         "flatPatternPath": "00-atoms\\07-media",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-video",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-07-media-01-audio",
+         "subdir": "00-atoms\\07-media",
+         "filename": "01-audio.mustache",
+         "data": null,
+         "template": "<audio controls=\"controls\">  \r\n   <source src=\"#\" />  \r\n   <source src=\"#\" />  \r\n</audio>",
+         "patternPartial": "<audio controls=\"controls\">  \r\n   <source src=\"#\" />  \r\n   <source src=\"#\" />  \r\n</audio>",
+         "patternName": "audio",
+         "patternLink": "00-atoms-07-media-01-audio/00-atoms-07-media-01-audio.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\07-media",
+         "flatPatternPath": "00-atoms\\07-media",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-audio",
+         "patternState": ""
+      },
+      {
+         "name": "02-organisms-00-global-00-header",
+         "subdir": "02-organisms\\00-global",
+         "filename": "00-header.mustache",
+         "data": null,
+         "template": "  <header class=\"masthead\">\r\n    <h1><a href=\"http://www.brianmuenzenmeyer.com\">Brian Muenzenmeyer</a></h1>\r\n  </header>",
+         "patternPartial": "  <header class=\"masthead\">\r\n    <h1><a href=\"http://www.brianmuenzenmeyer.com\">Brian Muenzenmeyer</a></h1>\r\n  </header>",
+         "patternName": "header",
+         "patternLink": "02-organisms-00-global-00-header/02-organisms-00-global-00-header.html",
+         "patternGroup": "organisms",
+         "patternSubGroup": "organisms\\00-global",
+         "flatPatternPath": "02-organisms\\00-global",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "organisms-header",
+         "patternState": ""
+      }
+   ],
+   "patternIndex": [
+      "00-atoms-00-global-00-colors",
+      "00-atoms-00-global-01-fonts",
+      "00-atoms-01-text-00-headings",
+      "00-atoms-01-text-02-headings-with-links",
+      "00-atoms-01-text-03-paragraph",
+      "00-atoms-01-text-04-blockquote",
+      "00-atoms-01-text-07-preformatted-text",
+      "00-atoms-01-text-09-hr",
+      "00-atoms-01-text-10-caption",
+      "00-atoms-02-lists-00-unordered",
+      "00-atoms-02-lists-01-ordered",
+      "00-atoms-02-lists-02-definition",
+      "00-atoms-05-buttons-00-buttons",
+      "00-atoms-06-tables-00-table",
+      "00-atoms-07-media-00-video",
+      "00-atoms-07-media-01-audio",
+      "02-organisms-00-global-00-header"
+   ],
+   "partials": {
+      "atoms-colors": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #B2F33C;\"></span>\r\n\t\t<span class=\"sg-label\">#B2F33C</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #55731D;\"></span>\r\n\t\t<span class=\"sg-label\">#55731D</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #CEF586;\"></span>\r\n\t\t<span class=\"sg-label\">#CEF586</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #4c4c4c;\"></span>\r\n\t\t<span class=\"sg-label\">#4c4c4c</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #666666;\"></span>\r\n\t\t<span class=\"sg-label\">#666666</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #b2b2b2;\"></span>\r\n\t\t<span class=\"sg-label\">#b2b2b2</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #f2f2f2;\"></span>\r\n\t\t<span class=\"sg-label\">#f2f2f2</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #C93CF3;\"></span>\r\n\t\t<span class=\"sg-label\">#C93CF3</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #8208A6;\"></span>\r\n\t\t<span class=\"sg-label\">#8208A6</span>\r\n\t</li>\r\n</ul>",
+      "atoms-fonts": "<p class=\"font-base\">Base font: Arial, Tahoma, sans-serif;</p>\r\n<p class=\"font-base\"><em>Base font italic: Arial, Tahoma, sans-serif;</em></p>\r\n<p class=\"font-base\"><strong>Base font bold: Arial, Tahoma, sans-serif;</strong></p>\r\n<p class=\"font-web\">Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</p>\r\n<p class=\"font-web\"><em>Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</em></p>\r\n<p class=\"font-web\"><strong>Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</strong></p>",
+      "atoms-headings": "<h1>Heading Level 1</h1>\r\n<h2>Heading Level 2</h2>\r\n<h3>Heading Level 3</h3>  \r\n<h4>Heading Level 4</h4>\r\n<h5>Heading Level 5</h5> \r\n<h6>Heading Level 6</h6>",
+      "atoms-headings-with-links": "<h1><a href=\"#\">Heading 1 with link</a></h1>\r\n<h2><a href=\"#\">Heading 2 with link</a></h2>\r\n<h3><a href=\"#\">Heading 3 with link</a></h3>  \r\n<h4><a href=\"#\">Heading 4 with link</a></h4>\r\n<h5><a href=\"#\">Heading 5 with link</a></h5> \r\n<h6><a href=\"#\">Heading 6 with link</a></h6>",
+      "atoms-paragraph": "<p>{{ crunchyowl.dev }}</p>\r\n<p>{{ crunchyowl.design }}</p>\r\n<p>{{ crunchyowl.perf }}</p>\r\n<p>{{ crunchyowl.content }}</p>",
+      "atoms-blockquote": "<blockquote>\r\n\t<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>\r\n</blockquote>",
+      "atoms-preformatted-text": "<pre>  \t\r\nP R E F O R M A T T E D T E X T\r\n! \" # $ % &amp; ' ( ) * + , - . /\r\n0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?\r\n@ A B C D E F G H I J K L M N O\r\nP Q R S T U V W X Y Z [ \\ ] ^ _\r\n` a b c d e f g h i j k l m n o\r\np q r s t u v w x y z { | } ~ \r\n</pre>",
+      "atoms-hr": "<hr />",
+      "atoms-caption": "<p class=\"caption\">A caption can be applied to an image, quote, form field, etc.</p>",
+      "atoms-unordered": "<div class=\"text\">\r\n\t<ul>\r\n\t\t<li>This is a list item in an unordered list</li>\r\n\t\t<li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>\r\n\t\t<li>\r\n\t\t\tLists can be nested inside of each other\r\n\t\t\t<ul>\r\n\t\t\t\t<li>This is a nested list item</li>\r\n\t\t\t\t<li>This is another nested list item in an unordered list</li>\r\n\t\t\t</ul>\r\n\t\t</li>\r\n\t\t<li>This is the last list item</li>\r\n\t</ul>\r\n</div>",
+      "atoms-ordered": "<div class=\"text\">\r\n\t<ol>\r\n\t\t<li>This is a list item in an ordered list</li>\r\n\t\t<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>\r\n\t\t<li>\r\n\t\t\tLists can be nested inside of each other\r\n\t\t\t<ol>\r\n\t\t\t\t<li>This is a nested list item</li>\r\n\t\t\t\t<li>This is another nested list item in an ordered list</li>\r\n\t\t\t</ol>\r\n\t\t</li>\r\n\t\t<li>This is the last list item</li>\r\n\t</ol>\r\n</div>",
+      "atoms-definition": "<dl>\r\n\t<dt>Definition List</dt>\r\n\t<dd>A number of connected items or names written or printed consecutively, typically one below the other.</dd>\r\n    <dt>This is a term.</dt>\r\n    <dd>This is the definition of that term, which both live in a <code>dl</code>.</dd>\r\n    <dt>Here is another term.</dt>\r\n    <dd>And it gets a definition too, which is this line.</dd>\r\n    <dt>Here is term that shares a definition with the term below.</dt>\r\n    <dd>And it gets a definition too, which is this line.</dd>\r\n</dl>",
+      "atoms-buttons": "<p><a href=\"#\" class=\"btn\">Button</a></p>\r\n<p><a href=\"#\" class=\"btn alt\">Alternate Button</a></p>\r\n<p><a href=\"#\" class=\"btn disabled\">Disabled Button</a></p>\r\n<p><a href=\"#\" class=\"text-btn\">Text Button</a></p>",
+      "atoms-table": "<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>Table Heading 1</th>\r\n\t\t\t<th>Table Heading 2</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 4</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tfoot>\r\n\t\t<tr>\r\n\t\t\t<th>Table Footer 1</th>\r\n\t\t\t<th>Table Footer 2</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 4</th>\r\n\t\t</tr>\r\n\t</tfoot>\r\n\t<tbody>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t</tbody>\r\n</table>",
+      "atoms-video": "<video width=\"640\" height=\"360\" controls=\"\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4\" type=\"video/mp4\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.webm\" type=\"video/webm\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.ogv\" type=\"video/ogg\">\r\n\t<img src=\"\" width=\"640\" height=\"360\" alt=\"Big Buck Bunny\" title=\"No video playback capabilities, please download\">\r\n</video>",
+      "atoms-audio": "<audio controls=\"controls\">  \r\n   <source src=\"#\" />  \r\n   <source src=\"#\" />  \r\n</audio>",
+      "organisms-header": "  <header class=\"masthead\">\r\n    <h1><a href=\"http://www.brianmuenzenmeyer.com\">Brian Muenzenmeyer</a></h1>\r\n  </header>"
+   },
+   "buckets": [
+      {
+         "bucketNameLC": "atoms",
+         "bucketNameUC": "Atoms",
+         "navItems": [
+            {
+               "sectionNameLC": "global",
+               "sectionNameUC": "Global",
+               "navSubItems": [
+                  {
+                     "patternPath": "00-atoms-00-global-00-colors/00-atoms-00-global-00-colors.html",
+                     "patternPartial": "atoms-colors",
+                     "patternName": "Colors"
+                  },
+                  {
+                     "patternPath": "00-atoms-00-global-01-fonts/00-atoms-00-global-01-fonts.html",
+                     "patternPartial": "atoms-fonts",
+                     "patternName": "Fonts"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "colors",
+                  "fonts"
+               ]
+            },
+            {
+               "sectionNameLC": "text",
+               "sectionNameUC": "Text",
+               "navSubItems": [
+                  {
+                     "patternPath": "00-atoms-01-text-00-headings/00-atoms-01-text-00-headings.html",
+                     "patternPartial": "atoms-headings",
+                     "patternName": "Headings"
+                  },
+                  {
+                     "patternPath": "00-atoms-01-text-02-headings-with-links/00-atoms-01-text-02-headings-with-links.html",
+                     "patternPartial": "atoms-headings-with-links",
+                     "patternName": "Headings with links"
+                  },
+                  {
+                     "patternPath": "00-atoms-01-text-03-paragraph/00-atoms-01-text-03-paragraph.html",
+                     "patternPartial": "atoms-paragraph",
+                     "patternName": "Paragraph"
+                  },
+                  {
+                     "patternPath": "00-atoms-01-text-04-blockquote/00-atoms-01-text-04-blockquote.html",
+                     "patternPartial": "atoms-blockquote",
+                     "patternName": "Blockquote"
+                  },
+                  {
+                     "patternPath": "00-atoms-01-text-07-preformatted-text/00-atoms-01-text-07-preformatted-text.html",
+                     "patternPartial": "atoms-preformatted-text",
+                     "patternName": "Preformatted text"
+                  },
+                  {
+                     "patternPath": "00-atoms-01-text-09-hr/00-atoms-01-text-09-hr.html",
+                     "patternPartial": "atoms-hr",
+                     "patternName": "Hr"
+                  },
+                  {
+                     "patternPath": "00-atoms-01-text-10-caption/00-atoms-01-text-10-caption.html",
+                     "patternPartial": "atoms-caption",
+                     "patternName": "Caption"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "headings",
+                  "headings with links",
+                  "paragraph",
+                  "blockquote",
+                  "preformatted text",
+                  "hr",
+                  "caption"
+               ]
+            },
+            {
+               "sectionNameLC": "lists",
+               "sectionNameUC": "Lists",
+               "navSubItems": [
+                  {
+                     "patternPath": "00-atoms-02-lists-00-unordered/00-atoms-02-lists-00-unordered.html",
+                     "patternPartial": "atoms-unordered",
+                     "patternName": "Unordered"
+                  },
+                  {
+                     "patternPath": "00-atoms-02-lists-01-ordered/00-atoms-02-lists-01-ordered.html",
+                     "patternPartial": "atoms-ordered",
+                     "patternName": "Ordered"
+                  },
+                  {
+                     "patternPath": "00-atoms-02-lists-02-definition/00-atoms-02-lists-02-definition.html",
+                     "patternPartial": "atoms-definition",
+                     "patternName": "Definition"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "unordered",
+                  "ordered",
+                  "definition"
+               ]
+            },
+            {
+               "sectionNameLC": "buttons",
+               "sectionNameUC": "Buttons",
+               "navSubItems": [
+                  {
+                     "patternPath": "00-atoms-05-buttons-00-buttons/00-atoms-05-buttons-00-buttons.html",
+                     "patternPartial": "atoms-buttons",
+                     "patternName": "Buttons"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "buttons"
+               ]
+            },
+            {
+               "sectionNameLC": "tables",
+               "sectionNameUC": "Tables",
+               "navSubItems": [
+                  {
+                     "patternPath": "00-atoms-06-tables-00-table/00-atoms-06-tables-00-table.html",
+                     "patternPartial": "atoms-table",
+                     "patternName": "Table"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "table"
+               ]
+            },
+            {
+               "sectionNameLC": "media",
+               "sectionNameUC": "Media",
+               "navSubItems": [
+                  {
+                     "patternPath": "00-atoms-07-media-00-video/00-atoms-07-media-00-video.html",
+                     "patternPartial": "atoms-video",
+                     "patternName": "Video"
+                  },
+                  {
+                     "patternPath": "00-atoms-07-media-01-audio/00-atoms-07-media-01-audio.html",
+                     "patternPartial": "atoms-audio",
+                     "patternName": "Audio"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "video",
+                  "audio"
+               ]
+            }
+         ],
+         "navItemsIndex": [
+            "global",
+            "text",
+            "lists",
+            "buttons",
+            "tables",
+            "media"
+         ],
+         "patternItems": [],
+         "patternItemsIndex": []
+      },
+      {
+         "bucketNameLC": "organisms",
+         "bucketNameUC": "Organisms",
+         "navItems": [
+            {
+               "sectionNameLC": "global",
+               "sectionNameUC": "Global",
+               "navSubItems": [
+                  {
+                     "patternPath": "02-organisms-00-global-00-header/02-organisms-00-global-00-header.html",
+                     "patternPartial": "organisms-header",
+                     "patternName": "Header"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "header"
+               ]
+            }
+         ],
+         "navItemsIndex": [
+            "global"
+         ],
+         "patternItems": [],
+         "patternItemsIndex": []
+      }
+   ],
+   "bucketIndex": [
+      "atoms",
+      "organisms"
+   ],
+   "patternPaths": {
+      "atoms": {
+         "colors": "00-atoms/00-global/00-colors",
+         "fonts": "00-atoms/00-global/01-fonts",
+         "headings": "00-atoms/01-text/00-headings",
+         "headings-with-links": "00-atoms/01-text/02-headings-with-links",
+         "paragraph": "00-atoms/01-text/03-paragraph",
+         "blockquote": "00-atoms/01-text/04-blockquote",
+         "preformatted-text": "00-atoms/01-text/07-preformatted-text",
+         "hr": "00-atoms/01-text/09-hr",
+         "caption": "00-atoms/01-text/10-caption",
+         "unordered": "00-atoms/02-lists/00-unordered",
+         "ordered": "00-atoms/02-lists/01-ordered",
+         "definition": "00-atoms/02-lists/02-definition",
+         "buttons": "00-atoms/05-buttons/00-buttons",
+         "table": "00-atoms/06-tables/00-table",
+         "video": "00-atoms/07-media/00-video",
+         "audio": "00-atoms/07-media/01-audio"
+      },
+      "organisms": {
+         "header": "02-organisms/00-global/00-header"
+      }
+   },
+   "viewAllPaths": {},
+   "mediaQueries": [
+      "45em"
+   ],
+   "contentsyncport": 8002,
+   "navsyncport": 8003
+}
