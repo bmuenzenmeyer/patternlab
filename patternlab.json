@@ -86,7 +86,8 @@
       },
       "patternStates": {},
       "patternExportKeys": [
-         "organisms-header"
+         "organisms-header",
+         "molecules-feature-redesign"
       ],
       "patternExportDirectory": "./../_includes/",
       "mqs": [
@@ -1257,6 +1258,44 @@
          "patternState": ""
       },
       {
+         "name": "01-molecules-00-text-00-feature-block",
+         "subdir": "01-molecules\\00-text",
+         "filename": "00-feature-block.mustache",
+         "data": null,
+         "template": "<em>_This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
+         "patternPartial": "<em>_This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
+         "patternName": "feature-block",
+         "patternLink": "01-molecules-00-text-00-feature-block/01-molecules-00-text-00-feature-block.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "molecules\\00-text",
+         "flatPatternPath": "01-molecules\\00-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "molecules-feature-block",
+         "patternState": ""
+      },
+      {
+         "name": "01-molecules-00-text-00-feature-redesign",
+         "subdir": "01-molecules\\00-text",
+         "filename": "00-feature-redesign.mustache",
+         "data": null,
+         "template": "<em>_This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
+         "patternPartial": "<em>_This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
+         "patternName": "feature-redesign",
+         "patternLink": "01-molecules-00-text-00-feature-redesign/01-molecules-00-text-00-feature-redesign.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "molecules\\00-text",
+         "flatPatternPath": "01-molecules\\00-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "molecules-feature-redesign",
+         "patternState": ""
+      },
+      {
          "name": "02-organisms-00-global-00-header",
          "subdir": "02-organisms\\00-global",
          "filename": "00-header.mustache",
@@ -1293,6 +1332,8 @@
       "00-atoms-06-tables-00-table",
       "00-atoms-07-media-00-video",
       "00-atoms-07-media-01-audio",
+      "01-molecules-00-text-00-feature-block",
+      "01-molecules-00-text-00-feature-redesign",
       "02-organisms-00-global-00-header"
    ],
    "partials": {
@@ -1312,6 +1353,8 @@
       "atoms-table": "<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>Table Heading 1</th>\r\n\t\t\t<th>Table Heading 2</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 4</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tfoot>\r\n\t\t<tr>\r\n\t\t\t<th>Table Footer 1</th>\r\n\t\t\t<th>Table Footer 2</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 4</th>\r\n\t\t</tr>\r\n\t</tfoot>\r\n\t<tbody>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t</tbody>\r\n</table>",
       "atoms-video": "<video width=\"640\" height=\"360\" controls=\"\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4\" type=\"video/mp4\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.webm\" type=\"video/webm\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.ogv\" type=\"video/ogg\">\r\n\t<img src=\"\" width=\"640\" height=\"360\" alt=\"Big Buck Bunny\" title=\"No video playback capabilities, please download\">\r\n</video>",
       "atoms-audio": "<audio controls=\"controls\">  \r\n   <source src=\"#\" />  \r\n   <source src=\"#\" />  \r\n</audio>",
+      "molecules-feature-block": "<em>_This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
+      "molecules-feature-redesign": "<em>_This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
       "organisms-header": "  <header class=\"masthead\">\r\n    <h1><a href=\"http://www.brianmuenzenmeyer.com\">Brian Muenzenmeyer</a></h1>\r\n  </header>"
    },
    "buckets": [
@@ -1476,6 +1519,37 @@
          "patternItemsIndex": []
       },
       {
+         "bucketNameLC": "molecules",
+         "bucketNameUC": "Molecules",
+         "navItems": [
+            {
+               "sectionNameLC": "text",
+               "sectionNameUC": "Text",
+               "navSubItems": [
+                  {
+                     "patternPath": "01-molecules-00-text-00-feature-block/01-molecules-00-text-00-feature-block.html",
+                     "patternPartial": "molecules-feature-block",
+                     "patternName": "Feature block"
+                  },
+                  {
+                     "patternPath": "01-molecules-00-text-00-feature-redesign/01-molecules-00-text-00-feature-redesign.html",
+                     "patternPartial": "molecules-feature-redesign",
+                     "patternName": "Feature redesign"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "feature block",
+                  "feature redesign"
+               ]
+            }
+         ],
+         "navItemsIndex": [
+            "text"
+         ],
+         "patternItems": [],
+         "patternItemsIndex": []
+      },
+      {
          "bucketNameLC": "organisms",
          "bucketNameUC": "Organisms",
          "navItems": [
@@ -1503,6 +1577,7 @@
    ],
    "bucketIndex": [
       "atoms",
+      "molecules",
       "organisms"
    ],
    "patternPaths": {
@@ -1523,6 +1598,10 @@
          "table": "00-atoms/06-tables/00-table",
          "video": "00-atoms/07-media/00-video",
          "audio": "00-atoms/07-media/01-audio"
+      },
+      "molecules": {
+         "feature-block": "01-molecules/00-text/00-feature-block",
+         "feature-redesign": "01-molecules/00-text/00-feature-redesign"
       },
       "organisms": {
          "header": "02-organisms/00-global/00-header"

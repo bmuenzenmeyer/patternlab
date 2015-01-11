@@ -30,6 +30,6 @@
  	},
  	"patternStates": {
  	},
-  "patternExportKeys": ["organisms-header"],
+  "patternExportKeys": ["organisms-header", "molecules-feature-redesign"],
   "patternExportDirectory": "./../_includes/"
  }
