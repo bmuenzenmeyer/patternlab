@@ -60,6 +60,9 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			scss: { //scss can be watched if you like
+				options: {
+					livereload: true
+				},
 				files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
 				tasks: ['default']
 			},
