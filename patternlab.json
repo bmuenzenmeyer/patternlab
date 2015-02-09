@@ -87,7 +87,8 @@
       "patternStates": {},
       "patternExportKeys": [
          "organisms-header",
-         "molecules-feature-redesign"
+         "molecules-feature-redesign",
+         "molecules-feature-block"
       ],
       "patternExportDirectory": "./../_includes/",
       "mqs": [
@@ -1182,6 +1183,63 @@
          "patternState": ""
       },
       {
+         "name": "00-atoms-03-images-00-dotted-background",
+         "subdir": "00-atoms\\03-images",
+         "filename": "00-dotted-background.mustache",
+         "data": null,
+         "template": "<div class=\"dotted\">\r\n\r\n  <h2>This is a dotted background</h2>\r\n\r\n</div>",
+         "patternPartial": "<div class=\"dotted\">\r\n\r\n  <h2>This is a dotted background</h2>\r\n\r\n</div>",
+         "patternName": "dotted-background",
+         "patternLink": "00-atoms-03-images-00-dotted-background/00-atoms-03-images-00-dotted-background.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\03-images",
+         "flatPatternPath": "00-atoms\\03-images",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-dotted-background",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-03-images-01-striped-background",
+         "subdir": "00-atoms\\03-images",
+         "filename": "01-striped-background.mustache",
+         "data": null,
+         "template": "<div class=\"striped\">\r\n\r\n  <h2>This is a striped background</h2>\r\n\r\n</div>",
+         "patternPartial": "<div class=\"striped\">\r\n\r\n  <h2>This is a striped background</h2>\r\n\r\n</div>",
+         "patternName": "striped-background",
+         "patternLink": "00-atoms-03-images-01-striped-background/00-atoms-03-images-01-striped-background.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\03-images",
+         "flatPatternPath": "00-atoms\\03-images",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-striped-background",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-03-images-02-grid-background",
+         "subdir": "00-atoms\\03-images",
+         "filename": "02-grid-background.mustache",
+         "data": null,
+         "template": "<div class=\"grid\">\r\n\r\n  <h2>This is a grid background</h2>\r\n\r\n</div>",
+         "patternPartial": "<div class=\"grid\">\r\n\r\n  <h2>This is a grid background</h2>\r\n\r\n</div>",
+         "patternName": "grid-background",
+         "patternLink": "00-atoms-03-images-02-grid-background/00-atoms-03-images-02-grid-background.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\03-images",
+         "flatPatternPath": "00-atoms\\03-images",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-grid-background",
+         "patternState": ""
+      },
+      {
          "name": "00-atoms-05-buttons-00-buttons",
          "subdir": "00-atoms\\05-buttons",
          "filename": "00-buttons.mustache",
@@ -1262,8 +1320,8 @@
          "subdir": "01-molecules\\00-text",
          "filename": "00-feature-block.mustache",
          "data": null,
-         "template": "<em>This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
-         "patternPartial": "<em>This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
+         "template": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>. Find me elsewhere online too, as noted below.</p>",
+         "patternPartial": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>. Find me elsewhere online too, as noted below.</p>",
          "patternName": "feature-block",
          "patternLink": "01-molecules-00-text-00-feature-block/01-molecules-00-text-00-feature-block.html",
          "patternGroup": "molecules",
@@ -1328,6 +1386,9 @@
       "00-atoms-02-lists-00-unordered",
       "00-atoms-02-lists-01-ordered",
       "00-atoms-02-lists-02-definition",
+      "00-atoms-03-images-00-dotted-background",
+      "00-atoms-03-images-01-striped-background",
+      "00-atoms-03-images-02-grid-background",
       "00-atoms-05-buttons-00-buttons",
       "00-atoms-06-tables-00-table",
       "00-atoms-07-media-00-video",
@@ -1349,11 +1410,14 @@
       "atoms-unordered": "<div class=\"text\">\r\n\t<ul>\r\n\t\t<li>This is a list item in an unordered list</li>\r\n\t\t<li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>\r\n\t\t<li>\r\n\t\t\tLists can be nested inside of each other\r\n\t\t\t<ul>\r\n\t\t\t\t<li>This is a nested list item</li>\r\n\t\t\t\t<li>This is another nested list item in an unordered list</li>\r\n\t\t\t</ul>\r\n\t\t</li>\r\n\t\t<li>This is the last list item</li>\r\n\t</ul>\r\n</div>",
       "atoms-ordered": "<div class=\"text\">\r\n\t<ol>\r\n\t\t<li>This is a list item in an ordered list</li>\r\n\t\t<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>\r\n\t\t<li>\r\n\t\t\tLists can be nested inside of each other\r\n\t\t\t<ol>\r\n\t\t\t\t<li>This is a nested list item</li>\r\n\t\t\t\t<li>This is another nested list item in an ordered list</li>\r\n\t\t\t</ol>\r\n\t\t</li>\r\n\t\t<li>This is the last list item</li>\r\n\t</ol>\r\n</div>",
       "atoms-definition": "<dl>\r\n\t<dt>Definition List</dt>\r\n\t<dd>A number of connected items or names written or printed consecutively, typically one below the other.</dd>\r\n    <dt>This is a term.</dt>\r\n    <dd>This is the definition of that term, which both live in a <code>dl</code>.</dd>\r\n    <dt>Here is another term.</dt>\r\n    <dd>And it gets a definition too, which is this line.</dd>\r\n    <dt>Here is term that shares a definition with the term below.</dt>\r\n    <dd>And it gets a definition too, which is this line.</dd>\r\n</dl>",
+      "atoms-dotted-background": "<div class=\"dotted\">\r\n\r\n  <h2>This is a dotted background</h2>\r\n\r\n</div>",
+      "atoms-striped-background": "<div class=\"striped\">\r\n\r\n  <h2>This is a striped background</h2>\r\n\r\n</div>",
+      "atoms-grid-background": "<div class=\"grid\">\r\n\r\n  <h2>This is a grid background</h2>\r\n\r\n</div>",
       "atoms-buttons": "<p><a href=\"#\" class=\"btn\">Button</a></p>\r\n<p><a href=\"#\" class=\"btn alt\">Alternate Button</a></p>\r\n<p><a href=\"#\" class=\"btn disabled\">Disabled Button</a></p>\r\n<p><a href=\"#\" class=\"text-btn\">Text Button</a></p>",
       "atoms-table": "<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>Table Heading 1</th>\r\n\t\t\t<th>Table Heading 2</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 4</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tfoot>\r\n\t\t<tr>\r\n\t\t\t<th>Table Footer 1</th>\r\n\t\t\t<th>Table Footer 2</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 4</th>\r\n\t\t</tr>\r\n\t</tfoot>\r\n\t<tbody>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t</tbody>\r\n</table>",
       "atoms-video": "<video width=\"640\" height=\"360\" controls=\"\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4\" type=\"video/mp4\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.webm\" type=\"video/webm\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.ogv\" type=\"video/ogg\">\r\n\t<img src=\"\" width=\"640\" height=\"360\" alt=\"Big Buck Bunny\" title=\"No video playback capabilities, please download\">\r\n</video>",
       "atoms-audio": "<audio controls=\"controls\">  \r\n   <source src=\"#\" />  \r\n   <source src=\"#\" />  \r\n</audio>",
-      "molecules-feature-block": "<em>This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
+      "molecules-feature-block": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>. Find me elsewhere online too, as noted below.</p>",
       "molecules-feature-redesign": "<em>This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
       "organisms-header": "  <header class=\"masthead\">\r\n    <h1><a href=\"http://www.brianmuenzenmeyer.com\">Brian Muenzenmeyer</a></h1>\r\n  </header>"
    },
@@ -1459,6 +1523,32 @@
                ]
             },
             {
+               "sectionNameLC": "images",
+               "sectionNameUC": "Images",
+               "navSubItems": [
+                  {
+                     "patternPath": "00-atoms-03-images-00-dotted-background/00-atoms-03-images-00-dotted-background.html",
+                     "patternPartial": "atoms-dotted-background",
+                     "patternName": "Dotted background"
+                  },
+                  {
+                     "patternPath": "00-atoms-03-images-01-striped-background/00-atoms-03-images-01-striped-background.html",
+                     "patternPartial": "atoms-striped-background",
+                     "patternName": "Striped background"
+                  },
+                  {
+                     "patternPath": "00-atoms-03-images-02-grid-background/00-atoms-03-images-02-grid-background.html",
+                     "patternPartial": "atoms-grid-background",
+                     "patternName": "Grid background"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "dotted background",
+                  "striped background",
+                  "grid background"
+               ]
+            },
+            {
                "sectionNameLC": "buttons",
                "sectionNameUC": "Buttons",
                "navSubItems": [
@@ -1511,6 +1601,7 @@
             "global",
             "text",
             "lists",
+            "images",
             "buttons",
             "tables",
             "media"
@@ -1594,6 +1685,9 @@
          "unordered": "00-atoms/02-lists/00-unordered",
          "ordered": "00-atoms/02-lists/01-ordered",
          "definition": "00-atoms/02-lists/02-definition",
+         "dotted-background": "00-atoms/03-images/00-dotted-background",
+         "striped-background": "00-atoms/03-images/01-striped-background",
+         "grid-background": "00-atoms/03-images/02-grid-background",
          "buttons": "00-atoms/05-buttons/00-buttons",
          "table": "00-atoms/06-tables/00-table",
          "video": "00-atoms/07-media/00-video",

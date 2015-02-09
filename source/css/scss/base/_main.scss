@@ -9,6 +9,7 @@ body{
   font: 18px/150% $font;
   -webkit-text-size-adjust: 100%;
   color: $gray-dark;
+  margin: 0 .5em;
 
   @media all and (min-width: $bp-small){
     width: 800px;
