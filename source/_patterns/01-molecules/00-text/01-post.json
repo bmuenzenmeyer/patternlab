@@ -1,0 +1,8 @@
+{
+  "post": {
+    "url" : "http://brianmuenzenmeyer.com",
+    "title" : "A Post Title of Certain Length",
+    "subtitle" : "",
+    "date | date_to_string" : "10/10/2010" 
+  } 
+}

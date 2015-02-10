@@ -1354,6 +1354,32 @@
          "patternState": ""
       },
       {
+         "name": "01-molecules-00-text-01-post",
+         "subdir": "01-molecules\\00-text",
+         "filename": "01-post.mustache",
+         "data": {
+            "post": {
+               "url": "http://brianmuenzenmeyer.com",
+               "title": "A Post Title of Certain Length",
+               "subtitle": "",
+               "date | date_to_string": "10/10/2010"
+            }
+         },
+         "template": "<li class=\"post\"><a href=\"{{ post.url }}\">{{ post.title }}</a>{{ post.subtitle }} &raquo; <span>{{ post.date | date_to_string }}</span>\r\n</li>",
+         "patternPartial": "<li class=\"post\"><a href=\"http:&#x2F;&#x2F;brianmuenzenmeyer.com\">A Post Title of Certain Length</a> &raquo; <span>10&#x2F;10&#x2F;2010</span>\r\n</li>",
+         "patternName": "post",
+         "patternLink": "01-molecules-00-text-01-post/01-molecules-00-text-01-post.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "molecules\\00-text",
+         "flatPatternPath": "01-molecules\\00-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "molecules-post",
+         "patternState": ""
+      },
+      {
          "name": "02-organisms-00-global-00-header",
          "subdir": "02-organisms\\00-global",
          "filename": "00-header.mustache",
@@ -1395,6 +1421,7 @@
       "00-atoms-07-media-01-audio",
       "01-molecules-00-text-00-feature-block",
       "01-molecules-00-text-00-feature-redesign",
+      "01-molecules-00-text-01-post",
       "02-organisms-00-global-00-header"
    ],
    "partials": {
@@ -1419,6 +1446,7 @@
       "atoms-audio": "<audio controls=\"controls\">  \r\n   <source src=\"#\" />  \r\n   <source src=\"#\" />  \r\n</audio>",
       "molecules-feature-block": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>. Find me elsewhere online too, as noted below.</p>",
       "molecules-feature-redesign": "<em>This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
+      "molecules-post": "<li class=\"post\"><a href=\"{{ post.url }}\">{{ post.title }}</a>{{ post.subtitle }} &raquo; <span>{{ post.date | date_to_string }}</span>\r\n</li>",
       "organisms-header": "  <header class=\"masthead\">\r\n    <h1><a href=\"http://www.brianmuenzenmeyer.com\">Brian Muenzenmeyer</a></h1>\r\n  </header>"
    },
    "buckets": [
@@ -1626,11 +1654,17 @@
                      "patternPath": "01-molecules-00-text-00-feature-redesign/01-molecules-00-text-00-feature-redesign.html",
                      "patternPartial": "molecules-feature-redesign",
                      "patternName": "Feature redesign"
+                  },
+                  {
+                     "patternPath": "01-molecules-00-text-01-post/01-molecules-00-text-01-post.html",
+                     "patternPartial": "molecules-post",
+                     "patternName": "Post"
                   }
                ],
                "navSubItemsIndex": [
                   "feature block",
-                  "feature redesign"
+                  "feature redesign",
+                  "post"
                ]
             }
          ],
@@ -1695,7 +1729,8 @@
       },
       "molecules": {
          "feature-block": "01-molecules/00-text/00-feature-block",
-         "feature-redesign": "01-molecules/00-text/00-feature-redesign"
+         "feature-redesign": "01-molecules/00-text/00-feature-redesign",
+         "post": "01-molecules/00-text/01-post"
       },
       "organisms": {
          "header": "02-organisms/00-global/00-header"
