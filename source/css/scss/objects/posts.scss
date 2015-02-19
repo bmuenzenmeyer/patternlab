@@ -1,0 +1,31 @@
+/* Unordered lists */
+.post{
+  background-color: $green-light;
+  margin-bottom: 5px;
+  padding-left: .5em;
+  min-height: 1.8em;
+  overflow: hidden;
+  a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 3px;
+    padding-right: 4em;
+    float: left;
+  }
+  span{
+    float: right;
+    color: white;
+    width: 4em;
+    background-color: transparentize($gray-dark, .8);
+    padding: 3px 1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+ul.list{
+  clear: both;
+  margin: 0;
+  padding: 0;
+  margin-top: 1em;
+  list-style: none;
+}

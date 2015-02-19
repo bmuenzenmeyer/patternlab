@@ -1,0 +1,8 @@
+.masthead{
+  @media all and (min-width: $bp-small){
+    header{
+      width: 800px;
+      margin: 0 auto;
+    }
+  }
+}

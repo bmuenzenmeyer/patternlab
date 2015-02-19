@@ -10,9 +10,23 @@ body{
   -webkit-text-size-adjust: 100%;
   color: $gray-dark;
   margin: 0 .5em;
+}
 
+main, footer{
   @media all and (min-width: $bp-small){
     width: 800px;
     margin: 0 auto;
+  }
+}
+
+hr{
+  margin: $space-triple auto;
+}
+
+footer{
+  img{
+    float: left;
+    height: 8em;
+    margin-right: $space;
   }
 }

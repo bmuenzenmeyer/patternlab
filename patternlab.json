@@ -87,8 +87,10 @@
       "patternStates": {},
       "patternExportKeys": [
          "organisms-header",
+         "organisms-footer",
          "molecules-feature-redesign",
-         "molecules-feature-block"
+         "molecules-feature-block",
+         "molecules-social-buttons"
       ],
       "patternExportDirectory": "./../_includes/",
       "mqs": [
@@ -1320,8 +1322,8 @@
          "subdir": "01-molecules\\00-text",
          "filename": "00-feature-block.mustache",
          "data": null,
-         "template": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>. Find me elsewhere online too, as noted below.</p>",
-         "patternPartial": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>. Find me elsewhere online too, as noted below.</p>",
+         "template": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>.</p>",
+         "patternPartial": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>.</p>",
          "patternName": "feature-block",
          "patternLink": "01-molecules-00-text-00-feature-block/01-molecules-00-text-00-feature-block.html",
          "patternGroup": "molecules",
@@ -1362,11 +1364,11 @@
                "url": "http://brianmuenzenmeyer.com",
                "title": "A Post Title of Certain Length",
                "subtitle": "",
-               "date | date_to_string": "10/10/2010"
+               "type": "POST"
             }
          },
-         "template": "<li class=\"post\"><a href=\"{{ post.url }}\">{{ post.title }}</a>{{ post.subtitle }} &raquo; <span>{{ post.date | date_to_string }}</span>\r\n</li>",
-         "patternPartial": "<li class=\"post\"><a href=\"http:&#x2F;&#x2F;brianmuenzenmeyer.com\">A Post Title of Certain Length</a> &raquo; <span>10&#x2F;10&#x2F;2010</span>\r\n</li>",
+         "template": "<li class=\"post\"><a href=\"{{ post.url }}\">{{ post.title }}</a>{{ post.subtitle }} <span>{{ post.type }}</span>\r\n</li>",
+         "patternPartial": "<li class=\"post\"><a href=\"http:&#x2F;&#x2F;brianmuenzenmeyer.com\">A Post Title of Certain Length</a> <span>POST</span>\r\n</li>",
          "patternName": "post",
          "patternLink": "01-molecules-00-text-01-post/01-molecules-00-text-01-post.html",
          "patternGroup": "molecules",
@@ -1374,9 +1376,32 @@
          "flatPatternPath": "01-molecules\\00-text",
          "lineage": [],
          "lineageIndex": [],
+         "lineageR": [
+            "{\"lineagePattern\":\"organisms-posts\",\"lineagePath\":\"../../patterns/02-organisms-01-lists-00-posts/02-organisms-01-lists-00-posts.html\"}"
+         ],
+         "lineageRIndex": [
+            "organisms-posts"
+         ],
+         "key": "molecules-post",
+         "patternState": ""
+      },
+      {
+         "name": "01-molecules-06-components-00-social-buttons",
+         "subdir": "01-molecules\\06-components",
+         "filename": "00-social-buttons.mustache",
+         "data": null,
+         "template": "<div class=\"buttons\">\r\n  <a href=\"https://twitter.com/bmuenzenmeyer\"><i class=\"fa fa-twitter\"></i> Twitter</a> \r\n  <a href=\"mailto:brian.muenzenmeyer@gmail.com\"><i class=\"fa fa-envelope\"></i> Email</a> \r\n  <a href=\"https://github.com/bmuenzenmeyer\"><i class=\"fa fa-github\"></i> Github</a> \r\n  <a href=\"http://codepen.io/bmuenzenmeyer/\"><i class=\"fa fa-codepen\"></i> Codepen</a>\r\n</div>",
+         "patternPartial": "<div class=\"buttons\">\r\n  <a href=\"https://twitter.com/bmuenzenmeyer\"><i class=\"fa fa-twitter\"></i> Twitter</a> \r\n  <a href=\"mailto:brian.muenzenmeyer@gmail.com\"><i class=\"fa fa-envelope\"></i> Email</a> \r\n  <a href=\"https://github.com/bmuenzenmeyer\"><i class=\"fa fa-github\"></i> Github</a> \r\n  <a href=\"http://codepen.io/bmuenzenmeyer/\"><i class=\"fa fa-codepen\"></i> Codepen</a>\r\n</div>",
+         "patternName": "social-buttons",
+         "patternLink": "01-molecules-06-components-00-social-buttons/01-molecules-06-components-00-social-buttons.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "molecules\\06-components",
+         "flatPatternPath": "01-molecules\\06-components",
+         "lineage": [],
+         "lineageIndex": [],
          "lineageR": [],
          "lineageRIndex": [],
-         "key": "molecules-post",
+         "key": "molecules-social-buttons",
          "patternState": ""
       },
       {
@@ -1384,8 +1409,8 @@
          "subdir": "02-organisms\\00-global",
          "filename": "00-header.mustache",
          "data": null,
-         "template": "  <header class=\"masthead\">\r\n    <h1><a href=\"http://www.brianmuenzenmeyer.com\">Brian Muenzenmeyer</a></h1>\r\n  </header>",
-         "patternPartial": "  <header class=\"masthead\">\r\n    <h1><a href=\"http://www.brianmuenzenmeyer.com\">Brian Muenzenmeyer</a></h1>\r\n  </header>",
+         "template": "<div class=\"masthead pat dotted\">\r\n  <header>\r\n    <h1 class=\"\">HI HI I&apos;M BRIAN\r\n    </h1>\r\n  </header>\r\n</div>",
+         "patternPartial": "<div class=\"masthead pat dotted\">\r\n  <header>\r\n    <h1 class=\"\">HI HI I&apos;M BRIAN\r\n    </h1>\r\n  </header>\r\n</div>",
          "patternName": "header",
          "patternLink": "02-organisms-00-global-00-header/02-organisms-00-global-00-header.html",
          "patternGroup": "organisms",
@@ -1396,6 +1421,55 @@
          "lineageR": [],
          "lineageRIndex": [],
          "key": "organisms-header",
+         "patternState": ""
+      },
+      {
+         "name": "02-organisms-00-global-01-footer",
+         "subdir": "02-organisms\\00-global",
+         "filename": "01-footer.mustache",
+         "data": null,
+         "template": "{{> molecules-social-buttons}}\r\n<img src=\"img/brian.jpg\" alt=\"A picture of me in grey.\"/>\r\n\r\n<p>I spend my working days in ux/ui design and my waking nights maintaining the <a href=\"https://github.com/pattern-lab/patternlab-node\">node port</a> of Brad Frost and Dave Molsen’s Pattern Lab and moonlighting as <a href=\"http://crunchyowl.com\">Crunchy Owl</a>, a small studio. I am interested in the intersection of performance and responsive design to craft better things that reach more people. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. When not online, I am digging up the yard, wearing an afghan, talking about something I heard on public radio, dressing in grayscale, or pretending to play the piano. The best way to reach me is on Twitter <a href=\"https://twitter.com/bmuenzenmeyer\">@bmuenzenmeyer</a>.</p>",
+         "patternPartial": "<div class=\"buttons\">\r\n  <a href=\"https://twitter.com/bmuenzenmeyer\"><i class=\"fa fa-twitter\"></i> Twitter</a> \r\n  <a href=\"mailto:brian.muenzenmeyer@gmail.com\"><i class=\"fa fa-envelope\"></i> Email</a> \r\n  <a href=\"https://github.com/bmuenzenmeyer\"><i class=\"fa fa-github\"></i> Github</a> \r\n  <a href=\"http://codepen.io/bmuenzenmeyer/\"><i class=\"fa fa-codepen\"></i> Codepen</a>\r\n</div><img src=\"img/brian.jpg\" alt=\"A picture of me in grey.\"/>\r\n\r\n<p>I spend my working days in ux/ui design and my waking nights maintaining the <a href=\"https://github.com/pattern-lab/patternlab-node\">node port</a> of Brad Frost and Dave Molsen’s Pattern Lab and moonlighting as <a href=\"http://crunchyowl.com\">Crunchy Owl</a>, a small studio. I am interested in the intersection of performance and responsive design to craft better things that reach more people. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. When not online, I am digging up the yard, wearing an afghan, talking about something I heard on public radio, dressing in grayscale, or pretending to play the piano. The best way to reach me is on Twitter <a href=\"https://twitter.com/bmuenzenmeyer\">@bmuenzenmeyer</a>.</p>",
+         "patternName": "footer",
+         "patternLink": "02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html",
+         "patternGroup": "organisms",
+         "patternSubGroup": "organisms\\00-global",
+         "flatPatternPath": "02-organisms\\00-global",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "organisms-footer",
+         "patternState": ""
+      },
+      {
+         "name": "02-organisms-01-lists-00-posts",
+         "subdir": "02-organisms\\01-lists",
+         "filename": "00-posts.mustache",
+         "data": {
+            "post": {
+               "url": "http://brianmuenzenmeyer.com",
+               "title": "A Post Title of Certain Length",
+               "subtitle": "",
+               "type": "POST"
+            }
+         },
+         "template": "<h2 class=\"pat subheading\">Subheading</h2>\r\n<ul class=\"list\">\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n</ul>",
+         "patternPartial": "<h2 class=\"pat subheading\">Subheading</h2>\r\n<ul class=\"list\">\r\n<li class=\"post\"><a href=\"http:&#x2F;&#x2F;brianmuenzenmeyer.com\">A Post Title of Certain Length</a> <span>POST</span>\r\n</li><li class=\"post\"><a href=\"http:&#x2F;&#x2F;brianmuenzenmeyer.com\">A Post Title of Certain Length</a> <span>POST</span>\r\n</li><li class=\"post\"><a href=\"http:&#x2F;&#x2F;brianmuenzenmeyer.com\">A Post Title of Certain Length</a> <span>POST</span>\r\n</li><li class=\"post\"><a href=\"http:&#x2F;&#x2F;brianmuenzenmeyer.com\">A Post Title of Certain Length</a> <span>POST</span>\r\n</li><li class=\"post\"><a href=\"http:&#x2F;&#x2F;brianmuenzenmeyer.com\">A Post Title of Certain Length</a> <span>POST</span>\r\n</li><li class=\"post\"><a href=\"http:&#x2F;&#x2F;brianmuenzenmeyer.com\">A Post Title of Certain Length</a> <span>POST</span>\r\n</li></ul>",
+         "patternName": "posts",
+         "patternLink": "02-organisms-01-lists-00-posts/02-organisms-01-lists-00-posts.html",
+         "patternGroup": "organisms",
+         "patternSubGroup": "organisms\\01-lists",
+         "flatPatternPath": "02-organisms\\01-lists",
+         "lineage": [
+            "{\"lineagePattern\":\"molecules-post\",\"lineagePath\":\"../../patterns/01-molecules-00-text-01-post/01-molecules-00-text-01-post.html\"}"
+         ],
+         "lineageIndex": [
+            "molecules-post"
+         ],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "organisms-posts",
          "patternState": ""
       }
    ],
@@ -1422,7 +1496,10 @@
       "01-molecules-00-text-00-feature-block",
       "01-molecules-00-text-00-feature-redesign",
       "01-molecules-00-text-01-post",
-      "02-organisms-00-global-00-header"
+      "01-molecules-06-components-00-social-buttons",
+      "02-organisms-00-global-00-header",
+      "02-organisms-00-global-01-footer",
+      "02-organisms-01-lists-00-posts"
    ],
    "partials": {
       "atoms-colors": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #B2F33C;\"></span>\r\n\t\t<span class=\"sg-label\">#B2F33C</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #55731D;\"></span>\r\n\t\t<span class=\"sg-label\">#55731D</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #CEF586;\"></span>\r\n\t\t<span class=\"sg-label\">#CEF586</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #4c4c4c;\"></span>\r\n\t\t<span class=\"sg-label\">#4c4c4c</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #666666;\"></span>\r\n\t\t<span class=\"sg-label\">#666666</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #b2b2b2;\"></span>\r\n\t\t<span class=\"sg-label\">#b2b2b2</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #f2f2f2;\"></span>\r\n\t\t<span class=\"sg-label\">#f2f2f2</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #C93CF3;\"></span>\r\n\t\t<span class=\"sg-label\">#C93CF3</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #8208A6;\"></span>\r\n\t\t<span class=\"sg-label\">#8208A6</span>\r\n\t</li>\r\n</ul>",
@@ -1444,10 +1521,13 @@
       "atoms-table": "<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>Table Heading 1</th>\r\n\t\t\t<th>Table Heading 2</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 4</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tfoot>\r\n\t\t<tr>\r\n\t\t\t<th>Table Footer 1</th>\r\n\t\t\t<th>Table Footer 2</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 4</th>\r\n\t\t</tr>\r\n\t</tfoot>\r\n\t<tbody>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t</tbody>\r\n</table>",
       "atoms-video": "<video width=\"640\" height=\"360\" controls=\"\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4\" type=\"video/mp4\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.webm\" type=\"video/webm\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.ogv\" type=\"video/ogg\">\r\n\t<img src=\"\" width=\"640\" height=\"360\" alt=\"Big Buck Bunny\" title=\"No video playback capabilities, please download\">\r\n</video>",
       "atoms-audio": "<audio controls=\"controls\">  \r\n   <source src=\"#\" />  \r\n   <source src=\"#\" />  \r\n</audio>",
-      "molecules-feature-block": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>. Find me elsewhere online too, as noted below.</p>",
+      "molecules-feature-block": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>.</p>",
       "molecules-feature-redesign": "<em>This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
-      "molecules-post": "<li class=\"post\"><a href=\"{{ post.url }}\">{{ post.title }}</a>{{ post.subtitle }} &raquo; <span>{{ post.date | date_to_string }}</span>\r\n</li>",
-      "organisms-header": "  <header class=\"masthead\">\r\n    <h1><a href=\"http://www.brianmuenzenmeyer.com\">Brian Muenzenmeyer</a></h1>\r\n  </header>"
+      "molecules-post": "<li class=\"post\"><a href=\"{{ post.url }}\">{{ post.title }}</a>{{ post.subtitle }} <span>{{ post.type }}</span>\r\n</li>",
+      "molecules-social-buttons": "<div class=\"buttons\">\r\n  <a href=\"https://twitter.com/bmuenzenmeyer\"><i class=\"fa fa-twitter\"></i> Twitter</a> \r\n  <a href=\"mailto:brian.muenzenmeyer@gmail.com\"><i class=\"fa fa-envelope\"></i> Email</a> \r\n  <a href=\"https://github.com/bmuenzenmeyer\"><i class=\"fa fa-github\"></i> Github</a> \r\n  <a href=\"http://codepen.io/bmuenzenmeyer/\"><i class=\"fa fa-codepen\"></i> Codepen</a>\r\n</div>",
+      "organisms-header": "<div class=\"masthead pat dotted\">\r\n  <header>\r\n    <h1 class=\"\">HI HI I&apos;M BRIAN\r\n    </h1>\r\n  </header>\r\n</div>",
+      "organisms-footer": "{{> molecules-social-buttons}}\r\n<img src=\"img/brian.jpg\" alt=\"A picture of me in grey.\"/>\r\n\r\n<p>I spend my working days in ux/ui design and my waking nights maintaining the <a href=\"https://github.com/pattern-lab/patternlab-node\">node port</a> of Brad Frost and Dave Molsen’s Pattern Lab and moonlighting as <a href=\"http://crunchyowl.com\">Crunchy Owl</a>, a small studio. I am interested in the intersection of performance and responsive design to craft better things that reach more people. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. When not online, I am digging up the yard, wearing an afghan, talking about something I heard on public radio, dressing in grayscale, or pretending to play the piano. The best way to reach me is on Twitter <a href=\"https://twitter.com/bmuenzenmeyer\">@bmuenzenmeyer</a>.</p>",
+      "organisms-posts": "<h2 class=\"pat subheading\">Subheading</h2>\r\n<ul class=\"list\">\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n</ul>"
    },
    "buckets": [
       {
@@ -1666,10 +1746,25 @@
                   "feature redesign",
                   "post"
                ]
+            },
+            {
+               "sectionNameLC": "components",
+               "sectionNameUC": "Components",
+               "navSubItems": [
+                  {
+                     "patternPath": "01-molecules-06-components-00-social-buttons/01-molecules-06-components-00-social-buttons.html",
+                     "patternPartial": "molecules-social-buttons",
+                     "patternName": "Social buttons"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "social buttons"
+               ]
             }
          ],
          "navItemsIndex": [
-            "text"
+            "text",
+            "components"
          ],
          "patternItems": [],
          "patternItemsIndex": []
@@ -1686,15 +1781,36 @@
                      "patternPath": "02-organisms-00-global-00-header/02-organisms-00-global-00-header.html",
                      "patternPartial": "organisms-header",
                      "patternName": "Header"
+                  },
+                  {
+                     "patternPath": "02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html",
+                     "patternPartial": "organisms-footer",
+                     "patternName": "Footer"
                   }
                ],
                "navSubItemsIndex": [
-                  "header"
+                  "header",
+                  "footer"
+               ]
+            },
+            {
+               "sectionNameLC": "lists",
+               "sectionNameUC": "Lists",
+               "navSubItems": [
+                  {
+                     "patternPath": "02-organisms-01-lists-00-posts/02-organisms-01-lists-00-posts.html",
+                     "patternPartial": "organisms-posts",
+                     "patternName": "Posts"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "posts"
                ]
             }
          ],
          "navItemsIndex": [
-            "global"
+            "global",
+            "lists"
          ],
          "patternItems": [],
          "patternItemsIndex": []
@@ -1730,10 +1846,13 @@
       "molecules": {
          "feature-block": "01-molecules/00-text/00-feature-block",
          "feature-redesign": "01-molecules/00-text/00-feature-redesign",
-         "post": "01-molecules/00-text/01-post"
+         "post": "01-molecules/00-text/01-post",
+         "social-buttons": "01-molecules/06-components/00-social-buttons"
       },
       "organisms": {
-         "header": "02-organisms/00-global/00-header"
+         "header": "02-organisms/00-global/00-header",
+         "footer": "02-organisms/00-global/01-footer",
+         "posts": "02-organisms/01-lists/00-posts"
       }
    },
    "viewAllPaths": {},

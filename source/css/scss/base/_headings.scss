@@ -38,3 +38,8 @@ h6, .zeta    {
   font-weight: 300;
   margin: 1rem auto;
 }
+
+.subheading{
+  @extend .striped;
+  padding: .25em;
+}

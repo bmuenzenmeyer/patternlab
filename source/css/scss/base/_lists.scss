@@ -16,35 +16,3 @@ dt {
 dd {
 	margin-left: 0;
 }
-
-/* Unordered lists */
-li.post{
-  border-left: 1em solid $green;
-  background-color: $green-light;
-  margin-bottom: 5px;
-  height: 1.8em;
-  &:hover{
-    border-left: 1em solid $green-dark;
-  }
-  a{
-    text-decoration: none;
-    display: inline-block;
-    padding: 3px;
-    float: left;
-  }
-  span{
-    float: right;
-    color: white;
-    background-color: transparentize($gray-dark, .8);
-    padding: 3px 1em;
-    
-  }
-}
-ul.list{
-  clear: both;
-  margin: 0;
-  padding: 0;
-  margin-top: 1em;
-  list-style: none;
-
-}

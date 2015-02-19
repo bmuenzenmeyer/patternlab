@@ -30,6 +30,6 @@
  	},
  	"patternStates": {
  	},
-  "patternExportKeys": ["organisms-header", "molecules-feature-redesign", "molecules-feature-block"],
+  "patternExportKeys": ["organisms-header", "organisms-footer", "molecules-feature-redesign", "molecules-feature-block", "molecules-social-buttons"],
   "patternExportDirectory": "./../_includes/"
  }
