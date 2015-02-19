@@ -159,9 +159,16 @@ hr {
 }
 
 footer img {
-  float: left;
-  height: 8em;
-  margin-right: 1rem;
+  width: 100%;
+  margin: 1rem auto;
+}
+@media all and (min-width: 45em) {
+  footer img {
+    float: left;
+    height: 8em;
+    width: auto;
+    margin-right: 1rem;
+  }
 }
 
 @media all and (min-width: 45em) {
