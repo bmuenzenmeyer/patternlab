@@ -9,15 +9,15 @@
     text-decoration: none;
     display: inline-block;
     padding: 3px;
-    padding-right: 4em;
+    padding-right: 4.5em;
     float: left;
   }
   span{
     float: right;
     color: white;
-    width: 4em;
+    width: 4.5em;
     background-color: transparentize($gray-dark, .8);
-    padding: 3px 1em;
+    padding: 3px 2px;
     text-align: center;
     text-transform: uppercase;
   }

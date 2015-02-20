@@ -1,4 +1,17 @@
 .masthead{
+  h1{
+    text-align: center;
+  }
+  a{
+    text-decoration: none;
+    color: $gray-dark;
+    &:visited, &:active{
+      color: $gray-dark;
+    }
+    &:hover{
+      color: $green;
+    }
+  }
   @media all and (min-width: $bp-small){
     header{
       width: 800px;

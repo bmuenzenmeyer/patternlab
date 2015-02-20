@@ -22,6 +22,10 @@
   margin-bottom: $space;
 }
 
+.affordance-inner{
+  padding: $space-double $space-double;
+}
+
 /* Completely remove from the flow and screen readers. */
 .is-hidden {
     display: none !important;
@@ -96,4 +100,8 @@
   -webkit-background-size: 2px 2px;
   -moz-background-size: 2px 2px;
   background-size: 2px 2px;
+}
+
+.bg-green{
+  background-color: $green;
 }

@@ -43,3 +43,10 @@ h6, .zeta    {
   @extend .striped;
   padding: .25em;
 }
+
+.alt{
+  margin: $space auto $space-quarter;
+  color: $green;
+  border-left: $space solid rgba(0, 0, 0, 0.1);
+  padding: $space-quarter;
+}

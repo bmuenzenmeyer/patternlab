@@ -30,6 +30,16 @@
  	},
  	"patternStates": {
  	},
-  "patternExportKeys": ["organisms-header", "organisms-footer", "molecules-feature-redesign", "molecules-feature-block", "molecules-social-buttons"],
+  "patternExportKeys": [
+    "organisms-header", 
+    "organisms-footer", 
+    "molecules-feature-redesign", 
+    "molecules-feature-block", 
+    "molecules-social-buttons",
+    "molecules-crunchyowl-teaser",
+    "molecules-crunchyowl-services",
+    "molecules-postscript",
+    "molecules-notfound"
+    ],
   "patternExportDirectory": "./../_includes/"
  }

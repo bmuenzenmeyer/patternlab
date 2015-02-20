@@ -90,7 +90,11 @@
          "organisms-footer",
          "molecules-feature-redesign",
          "molecules-feature-block",
-         "molecules-social-buttons"
+         "molecules-social-buttons",
+         "molecules-crunchyowl-teaser",
+         "molecules-crunchyowl-services",
+         "molecules-postscript",
+         "molecules-notfound"
       ],
       "patternExportDirectory": "./../_includes/",
       "mqs": [
@@ -1033,14 +1037,52 @@
          "patternState": ""
       },
       {
-         "name": "00-atoms-01-text-03-paragraph",
+         "name": "00-atoms-01-text-03-subheadings",
          "subdir": "00-atoms\\01-text",
-         "filename": "03-paragraph.mustache",
+         "filename": "03-subheadings.mustache",
+         "data": null,
+         "template": "<h1 class=\"subheading\">Heading Level 1</h1>\r\n<h2 class=\"subheading\">Heading Level 2</h2>\r\n<h3 class=\"subheading\">Heading Level 3</h3>  \r\n<h4 class=\"subheading\">Heading Level 4</h4>\r\n<h5 class=\"subheading\">Heading Level 5</h5> \r\n<h6 class=\"subheading\">Heading Level 6</h6>",
+         "patternPartial": "<h1 class=\"subheading\">Heading Level 1</h1>\r\n<h2 class=\"subheading\">Heading Level 2</h2>\r\n<h3 class=\"subheading\">Heading Level 3</h3>  \r\n<h4 class=\"subheading\">Heading Level 4</h4>\r\n<h5 class=\"subheading\">Heading Level 5</h5> \r\n<h6 class=\"subheading\">Heading Level 6</h6>",
+         "patternName": "subheadings",
+         "patternLink": "00-atoms-01-text-03-subheadings/00-atoms-01-text-03-subheadings.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\01-text",
+         "flatPatternPath": "00-atoms\\01-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-subheadings",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-01-text-05-alt-headings",
+         "subdir": "00-atoms\\01-text",
+         "filename": "05-alt-headings.mustache",
+         "data": null,
+         "template": "<h1 class=\"alt\">Heading Level 1</h1>\r\n<h2 class=\"alt\">Heading Level 2</h2>\r\n<h3 class=\"alt\">Heading Level 3</h3>  \r\n<h4 class=\"alt\">Heading Level 4</h4>\r\n<h5 class=\"alt\">Heading Level 5</h5> \r\n<h6 class=\"alt\">Heading Level 6</h6>",
+         "patternPartial": "<h1 class=\"alt\">Heading Level 1</h1>\r\n<h2 class=\"alt\">Heading Level 2</h2>\r\n<h3 class=\"alt\">Heading Level 3</h3>  \r\n<h4 class=\"alt\">Heading Level 4</h4>\r\n<h5 class=\"alt\">Heading Level 5</h5> \r\n<h6 class=\"alt\">Heading Level 6</h6>",
+         "patternName": "alt-headings",
+         "patternLink": "00-atoms-01-text-05-alt-headings/00-atoms-01-text-05-alt-headings.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\01-text",
+         "flatPatternPath": "00-atoms\\01-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-alt-headings",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-01-text-06-paragraph",
+         "subdir": "00-atoms\\01-text",
+         "filename": "06-paragraph.mustache",
          "data": null,
          "template": "<p>{{ crunchyowl.dev }}</p>\r\n<p>{{ crunchyowl.design }}</p>\r\n<p>{{ crunchyowl.perf }}</p>\r\n<p>{{ crunchyowl.content }}</p>",
          "patternPartial": "<p>I deliver quality code with an eye towards standards compliance and industry best practices. Responsive design principles extend from time-honored standards compliance and progressive enhancement. Sign me up for some of that! In a world of cut and paste snippets, WYSIWYG editors, and tight timelines, some of us still write code by hand, testing diligently and with little regard for sunrise.</p>\r\n<p>Communicate effective messages to your audience. Crafting a functional product often starts with a deep dive into your needs and the needs of your users. From this input, Crunchy Owl can dial in and iterate quickly on a solution. Let&#39;s not forget to make it strikingly beautiful too.</p>\r\n<p>Speed matters, but performance is more than that. Performance is content meets execution, and I can help you push your codebase further, directly equating to more engagement. Understanding delivery options is key to an inclusive experience. Push the limits of deployment and send what matters most.</p>\r\n<p>With a proper content strategy, your message has a broader voice in the community, has more impact, and builds your brand. Creating reusable content to leverage social media is a must in today&#39;s environment. I fit right-sized solutions to the right requirements, offering full-stack solutions when necessary, or a handcrafted microsite when the need arises.</p>",
          "patternName": "paragraph",
-         "patternLink": "00-atoms-01-text-03-paragraph/00-atoms-01-text-03-paragraph.html",
+         "patternLink": "00-atoms-01-text-06-paragraph/00-atoms-01-text-06-paragraph.html",
          "patternGroup": "atoms",
          "patternSubGroup": "atoms\\01-text",
          "flatPatternPath": "00-atoms\\01-text",
@@ -1049,25 +1091,6 @@
          "lineageR": [],
          "lineageRIndex": [],
          "key": "atoms-paragraph",
-         "patternState": ""
-      },
-      {
-         "name": "00-atoms-01-text-04-blockquote",
-         "subdir": "00-atoms\\01-text",
-         "filename": "04-blockquote.mustache",
-         "data": null,
-         "template": "<blockquote>\r\n\t<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>\r\n</blockquote>",
-         "patternPartial": "<blockquote>\r\n\t<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>\r\n</blockquote>",
-         "patternName": "blockquote",
-         "patternLink": "00-atoms-01-text-04-blockquote/00-atoms-01-text-04-blockquote.html",
-         "patternGroup": "atoms",
-         "patternSubGroup": "atoms\\01-text",
-         "flatPatternPath": "00-atoms\\01-text",
-         "lineage": [],
-         "lineageIndex": [],
-         "lineageR": [],
-         "lineageRIndex": [],
-         "key": "atoms-blockquote",
          "patternState": ""
       },
       {
@@ -1087,6 +1110,25 @@
          "lineageR": [],
          "lineageRIndex": [],
          "key": "atoms-preformatted-text",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-01-text-08-blockquote",
+         "subdir": "00-atoms\\01-text",
+         "filename": "08-blockquote.mustache",
+         "data": null,
+         "template": "<blockquote>\r\n\t<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>\r\n</blockquote>",
+         "patternPartial": "<blockquote>\r\n\t<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>\r\n</blockquote>",
+         "patternName": "blockquote",
+         "patternLink": "00-atoms-01-text-08-blockquote/00-atoms-01-text-08-blockquote.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\01-text",
+         "flatPatternPath": "00-atoms\\01-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-blockquote",
          "patternState": ""
       },
       {
@@ -1242,6 +1284,71 @@
          "patternState": ""
       },
       {
+         "name": "00-atoms-03-images-03-chevron",
+         "subdir": "00-atoms\\03-images",
+         "filename": "03-chevron.mustache",
+         "data": null,
+         "template": "<svg class=\"separator chevron3\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"80%\" height=\"100\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\">\r\n  <path id=\"rayPath1\" d=\"M0 0 L50 100 L100 0 Z\"></path>\r\n</svg>",
+         "patternPartial": "<svg class=\"separator chevron3\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"80%\" height=\"100\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\">\r\n  <path id=\"rayPath1\" d=\"M0 0 L50 100 L100 0 Z\"></path>\r\n</svg>",
+         "patternName": "chevron",
+         "patternLink": "00-atoms-03-images-03-chevron/00-atoms-03-images-03-chevron.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\03-images",
+         "flatPatternPath": "00-atoms\\03-images",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [
+            "{\"lineagePattern\":\"molecules-crunchyowl-teaser\",\"lineagePath\":\"../../patterns/01-molecules-06-components-01-crunchyowl-teaser/01-molecules-06-components-01-crunchyowl-teaser.html\"}"
+         ],
+         "lineageRIndex": [
+            "molecules-crunchyowl-teaser"
+         ],
+         "key": "atoms-chevron",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-03-images-04-upton",
+         "subdir": "00-atoms\\03-images",
+         "filename": "04-upton.mustache",
+         "data": null,
+         "template": "<img src=\"data:image/jpeg;base64,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\" alt=\"blurry upton\">",
+         "patternPartial": "<img src=\"data:image/jpeg;base64,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\" alt=\"blurry upton\">",
+         "patternName": "upton",
+         "patternLink": "00-atoms-03-images-04-upton/00-atoms-03-images-04-upton.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\03-images",
+         "flatPatternPath": "00-atoms\\03-images",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "atoms-upton",
+         "patternState": ""
+      },
+      {
+         "name": "00-atoms-03-images-05-bear",
+         "subdir": "00-atoms\\03-images",
+         "filename": "05-bear.mustache",
+         "data": null,
+         "template": "<img src=\"data:image/png;base64,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\" width=\"48\"/>",
+         "patternPartial": "<img src=\"data:image/png;base64,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\" width=\"48\"/>",
+         "patternName": "bear",
+         "patternLink": "00-atoms-03-images-05-bear/00-atoms-03-images-05-bear.html",
+         "patternGroup": "atoms",
+         "patternSubGroup": "atoms\\03-images",
+         "flatPatternPath": "00-atoms\\03-images",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [
+            "{\"lineagePattern\":\"molecules-notfound\",\"lineagePath\":\"../../patterns/01-molecules-06-components-03-notfound/01-molecules-06-components-03-notfound.html\"}"
+         ],
+         "lineageRIndex": [
+            "molecules-notfound"
+         ],
+         "key": "atoms-bear",
+         "patternState": ""
+      },
+      {
          "name": "00-atoms-05-buttons-00-buttons",
          "subdir": "00-atoms\\05-buttons",
          "filename": "00-buttons.mustache",
@@ -1386,6 +1493,29 @@
          "patternState": ""
       },
       {
+         "name": "01-molecules-00-text-02-postscript",
+         "subdir": "01-molecules\\00-text",
+         "filename": "02-postscript.mustache",
+         "data": null,
+         "template": "<div class=\"align-center\">\r\n  <blockquote>&ldquo;Above all, I have been a sentient being, a thinking animal, on this beautiful planet, and that in itself has been an enormous privilege and adventure.&rdquo; <cite><a href=\"http://mobile.nytimes.com/2015/02/19/opinion/oliver-sacks-on-learning-he-has-terminal-cancer.html\">Oliver Sacks</a></cite></blockquote>  \r\n</div>",
+         "patternPartial": "<div class=\"align-center\">\r\n  <blockquote>&ldquo;Above all, I have been a sentient being, a thinking animal, on this beautiful planet, and that in itself has been an enormous privilege and adventure.&rdquo; <cite><a href=\"http://mobile.nytimes.com/2015/02/19/opinion/oliver-sacks-on-learning-he-has-terminal-cancer.html\">Oliver Sacks</a></cite></blockquote>  \r\n</div>",
+         "patternName": "postscript",
+         "patternLink": "01-molecules-00-text-02-postscript/01-molecules-00-text-02-postscript.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "molecules\\00-text",
+         "flatPatternPath": "01-molecules\\00-text",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [
+            "{\"lineagePattern\":\"organisms-footer\",\"lineagePath\":\"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html\"}"
+         ],
+         "lineageRIndex": [
+            "organisms-footer"
+         ],
+         "key": "molecules-postscript",
+         "patternState": ""
+      },
+      {
          "name": "01-molecules-06-components-00-social-buttons",
          "subdir": "01-molecules\\06-components",
          "filename": "00-social-buttons.mustache",
@@ -1399,9 +1529,78 @@
          "flatPatternPath": "01-molecules\\06-components",
          "lineage": [],
          "lineageIndex": [],
+         "lineageR": [
+            "{\"lineagePattern\":\"organisms-footer\",\"lineagePath\":\"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html\"}"
+         ],
+         "lineageRIndex": [
+            "organisms-footer"
+         ],
+         "key": "molecules-social-buttons",
+         "patternState": ""
+      },
+      {
+         "name": "01-molecules-06-components-01-crunchyowl-teaser",
+         "subdir": "01-molecules\\06-components",
+         "filename": "01-crunchyowl-teaser.mustache",
+         "data": null,
+         "template": "\r\n<a href=\"http://www.crunchyowl.com\" class=\"crunchy-hero\"><img src=\"img/owl.png\" alt=\"My small design studio, Crunchy Owl\"/></a>\r\n\r\n<div class=\"bg-green\" style=\"z-index: 2; position: relative;\">\r\n\r\n  <p class=\"align-center affordance-inner\">Crunchy Owl is my small web design and development shop. I hand-craft effective &amp; performant digital experiences.</p>\r\n\r\n</div>\r\n\r\n{{> atoms-chevron }}",
+         "patternPartial": "\r\n<a href=\"http://www.crunchyowl.com\" class=\"crunchy-hero\"><img src=\"img/owl.png\" alt=\"My small design studio, Crunchy Owl\"/></a>\r\n\r\n<div class=\"bg-green\" style=\"z-index: 2; position: relative;\">\r\n\r\n  <p class=\"align-center affordance-inner\">Crunchy Owl is my small web design and development shop. I hand-craft effective &amp; performant digital experiences.</p>\r\n\r\n</div>\r\n\r\n<svg class=\"separator chevron3\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"80%\" height=\"100\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\">\r\n  <path id=\"rayPath1\" d=\"M0 0 L50 100 L100 0 Z\"></path>\r\n</svg>",
+         "patternName": "crunchyowl-teaser",
+         "patternLink": "01-molecules-06-components-01-crunchyowl-teaser/01-molecules-06-components-01-crunchyowl-teaser.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "molecules\\06-components",
+         "flatPatternPath": "01-molecules\\06-components",
+         "lineage": [
+            "{\"lineagePattern\":\"atoms-chevron\",\"lineagePath\":\"../../patterns/00-atoms-03-images-03-chevron/00-atoms-03-images-03-chevron.html\"}"
+         ],
+         "lineageIndex": [
+            "atoms-chevron"
+         ],
          "lineageR": [],
          "lineageRIndex": [],
-         "key": "molecules-social-buttons",
+         "key": "molecules-crunchyowl-teaser",
+         "patternState": ""
+      },
+      {
+         "name": "01-molecules-06-components-02-crunchyowl-services",
+         "subdir": "01-molecules\\06-components",
+         "filename": "02-crunchyowl-services.mustache",
+         "data": null,
+         "template": "  <article class=\"half padded\">\r\n    <h4 class=\"alt\">Web Development</h4>\r\n    <p>I deliver quality code with an eye towards standards compliance and industry best practices. Responsive design principles extend from time-honored standards compliance and progressive enhancement. Sign me up for some of that! In a world of cut and paste snippets, WYSIWYG editors, and tight timelines, some of us still write code by hand, testing diligently and with little regard for sunrise.</p>\r\n  </article>\r\n\r\n  <article class=\"half padded\">\r\n    <h4 class=\"alt\">UX &amp; UI Design</h4>\r\n    <p>Communicate effective messages to your audience. Crafting a functional product often starts with a deep dive into your needs and the needs of your users. From this input, Crunchy Owl can dial in and iterate quickly on a solution. Let's not forget to make it strikingly beautiful too.</p>\r\n  </article>\r\n\r\n  <div class=\"cf\"></div>\r\n\r\n  <article class=\"half padded\">\r\n    <h4 class=\"alt\">Performance Optimization</h4>\r\n    <p>Speed matters, but performance is more than that. Performance is content meets execution, and I can help you push your codebase further, directly equating to more engagement. Understanding delivery options is key to an inclusive experience. Push the limits of deployment and send what matters most.</p>\r\n  </article>\r\n\r\n  <article class=\"half padded\">  \r\n    <h4 class=\"alt\">Content Strategy</h4>\r\n    <p>With a proper content strategy, your message has a broader voice in the community, has more impact, and builds your brand. Creating reusable content to leverage social media is a must in today's environment. I fit right-sized solutions to the right requirements, offering full-stack solutions when necessary, or a handcrafted microsite when the need arises.</p>\r\n  </article>\r\n</section>",
+         "patternPartial": "  <article class=\"half padded\">\r\n    <h4 class=\"alt\">Web Development</h4>\r\n    <p>I deliver quality code with an eye towards standards compliance and industry best practices. Responsive design principles extend from time-honored standards compliance and progressive enhancement. Sign me up for some of that! In a world of cut and paste snippets, WYSIWYG editors, and tight timelines, some of us still write code by hand, testing diligently and with little regard for sunrise.</p>\r\n  </article>\r\n\r\n  <article class=\"half padded\">\r\n    <h4 class=\"alt\">UX &amp; UI Design</h4>\r\n    <p>Communicate effective messages to your audience. Crafting a functional product often starts with a deep dive into your needs and the needs of your users. From this input, Crunchy Owl can dial in and iterate quickly on a solution. Let's not forget to make it strikingly beautiful too.</p>\r\n  </article>\r\n\r\n  <div class=\"cf\"></div>\r\n\r\n  <article class=\"half padded\">\r\n    <h4 class=\"alt\">Performance Optimization</h4>\r\n    <p>Speed matters, but performance is more than that. Performance is content meets execution, and I can help you push your codebase further, directly equating to more engagement. Understanding delivery options is key to an inclusive experience. Push the limits of deployment and send what matters most.</p>\r\n  </article>\r\n\r\n  <article class=\"half padded\">  \r\n    <h4 class=\"alt\">Content Strategy</h4>\r\n    <p>With a proper content strategy, your message has a broader voice in the community, has more impact, and builds your brand. Creating reusable content to leverage social media is a must in today's environment. I fit right-sized solutions to the right requirements, offering full-stack solutions when necessary, or a handcrafted microsite when the need arises.</p>\r\n  </article>\r\n</section>",
+         "patternName": "crunchyowl-services",
+         "patternLink": "01-molecules-06-components-02-crunchyowl-services/01-molecules-06-components-02-crunchyowl-services.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "molecules\\06-components",
+         "flatPatternPath": "01-molecules\\06-components",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "molecules-crunchyowl-services",
+         "patternState": ""
+      },
+      {
+         "name": "01-molecules-06-components-03-notfound",
+         "subdir": "01-molecules\\06-components",
+         "filename": "03-notfound.mustache",
+         "data": null,
+         "template": "<div class=\"align-center notfound\">\r\n  <h2 class=\"subheading\">Lost?</h2>\r\n  {{> atoms-bear }} <span><a href=\"http://brianmuenzenmeyer.com\">Look over here</a></span>\r\n</div>",
+         "patternPartial": "<div class=\"align-center notfound\">\r\n  <h2 class=\"subheading\">Lost?</h2>\r\n  <img src=\"data:image/png;base64,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\" width=\"48\"/> <span><a href=\"http://brianmuenzenmeyer.com\">Look over here</a></span>\r\n</div>",
+         "patternName": "notfound",
+         "patternLink": "01-molecules-06-components-03-notfound/01-molecules-06-components-03-notfound.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "molecules\\06-components",
+         "flatPatternPath": "01-molecules\\06-components",
+         "lineage": [
+            "{\"lineagePattern\":\"atoms-bear\",\"lineagePath\":\"../../patterns/00-atoms-03-images-05-bear/00-atoms-03-images-05-bear.html\"}"
+         ],
+         "lineageIndex": [
+            "atoms-bear"
+         ],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "key": "molecules-notfound",
          "patternState": ""
       },
       {
@@ -1409,8 +1608,8 @@
          "subdir": "02-organisms\\00-global",
          "filename": "00-header.mustache",
          "data": null,
-         "template": "<div class=\"masthead pat dotted\">\r\n  <header>\r\n    <h1 class=\"\">HI HI I&apos;M BRIAN\r\n    </h1>\r\n  </header>\r\n</div>",
-         "patternPartial": "<div class=\"masthead pat dotted\">\r\n  <header>\r\n    <h1 class=\"\">HI HI I&apos;M BRIAN\r\n    </h1>\r\n  </header>\r\n</div>",
+         "template": "<div class=\"masthead pat dotted\">\r\n  <header>\r\n    <h1 class=\"\"><a href=\"http://brianmuenzenmeyer.com\">HI HI I&apos;M BRIAN</a>\r\n    </h1>\r\n  </header>\r\n</div>",
+         "patternPartial": "<div class=\"masthead pat dotted\">\r\n  <header>\r\n    <h1 class=\"\"><a href=\"http://brianmuenzenmeyer.com\">HI HI I&apos;M BRIAN</a>\r\n    </h1>\r\n  </header>\r\n</div>",
          "patternName": "header",
          "patternLink": "02-organisms-00-global-00-header/02-organisms-00-global-00-header.html",
          "patternGroup": "organisms",
@@ -1428,15 +1627,21 @@
          "subdir": "02-organisms\\00-global",
          "filename": "01-footer.mustache",
          "data": null,
-         "template": "{{> molecules-social-buttons}}\r\n<img src=\"img/brian.jpg\" alt=\"A picture of me in grey.\"/>\r\n\r\n<p>I spend my working days in ux/ui design and my waking nights maintaining the <a href=\"https://github.com/pattern-lab/patternlab-node\">node port</a> of Brad Frost and Dave Molsen’s Pattern Lab and moonlighting as <a href=\"http://crunchyowl.com\">Crunchy Owl</a>, a small studio. I am interested in the intersection of performance and responsive design to craft better things that reach more people. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. When not online, I am digging up the yard, wearing an afghan, talking about something I heard on public radio, dressing in grayscale, or pretending to play the piano. The best way to reach me is on Twitter <a href=\"https://twitter.com/bmuenzenmeyer\">@bmuenzenmeyer</a>.</p>",
-         "patternPartial": "<div class=\"buttons\">\r\n  <a href=\"https://twitter.com/bmuenzenmeyer\"><i class=\"fa fa-twitter\"></i> Twitter</a> \r\n  <a href=\"mailto:brian.muenzenmeyer@gmail.com\"><i class=\"fa fa-envelope\"></i> Email</a> \r\n  <a href=\"https://github.com/bmuenzenmeyer\"><i class=\"fa fa-github\"></i> Github</a> \r\n  <a href=\"http://codepen.io/bmuenzenmeyer/\"><i class=\"fa fa-codepen\"></i> Codepen</a>\r\n</div><img src=\"img/brian.jpg\" alt=\"A picture of me in grey.\"/>\r\n\r\n<p>I spend my working days in ux/ui design and my waking nights maintaining the <a href=\"https://github.com/pattern-lab/patternlab-node\">node port</a> of Brad Frost and Dave Molsen’s Pattern Lab and moonlighting as <a href=\"http://crunchyowl.com\">Crunchy Owl</a>, a small studio. I am interested in the intersection of performance and responsive design to craft better things that reach more people. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. When not online, I am digging up the yard, wearing an afghan, talking about something I heard on public radio, dressing in grayscale, or pretending to play the piano. The best way to reach me is on Twitter <a href=\"https://twitter.com/bmuenzenmeyer\">@bmuenzenmeyer</a>.</p>",
+         "template": "{{> molecules-social-buttons }}\r\n<img src=\"/img/brian.jpg\" alt=\"A picture of me in grey.\" class=\"bio\"/>\r\n\r\n<p>I spend my working days in ux/ui design and my waking nights maintaining the <a href=\"https://github.com/pattern-lab/patternlab-node\">node port</a> of Brad Frost and Dave Molsen’s Pattern Lab and moonlighting as <a href=\"http://crunchyowl.com\">Crunchy Owl</a>, a small studio. I am interested in the intersection of performance and responsive design to craft better things that reach more people. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. When not online, I am digging up the yard, wearing an afghan, talking about something I heard on public radio, dressing in grayscale, or pretending to play the piano. The best way to reach me is on Twitter <a href=\"https://twitter.com/bmuenzenmeyer\">@bmuenzenmeyer</a>.</p>\r\n\r\n<hr class=\"cf\"/>\r\n\r\n{{> molecules-postscript }}",
+         "patternPartial": "<div class=\"buttons\">\r\n  <a href=\"https://twitter.com/bmuenzenmeyer\"><i class=\"fa fa-twitter\"></i> Twitter</a> \r\n  <a href=\"mailto:brian.muenzenmeyer@gmail.com\"><i class=\"fa fa-envelope\"></i> Email</a> \r\n  <a href=\"https://github.com/bmuenzenmeyer\"><i class=\"fa fa-github\"></i> Github</a> \r\n  <a href=\"http://codepen.io/bmuenzenmeyer/\"><i class=\"fa fa-codepen\"></i> Codepen</a>\r\n</div><img src=\"/img/brian.jpg\" alt=\"A picture of me in grey.\" class=\"bio\"/>\r\n\r\n<p>I spend my working days in ux/ui design and my waking nights maintaining the <a href=\"https://github.com/pattern-lab/patternlab-node\">node port</a> of Brad Frost and Dave Molsen’s Pattern Lab and moonlighting as <a href=\"http://crunchyowl.com\">Crunchy Owl</a>, a small studio. I am interested in the intersection of performance and responsive design to craft better things that reach more people. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. When not online, I am digging up the yard, wearing an afghan, talking about something I heard on public radio, dressing in grayscale, or pretending to play the piano. The best way to reach me is on Twitter <a href=\"https://twitter.com/bmuenzenmeyer\">@bmuenzenmeyer</a>.</p>\r\n\r\n<hr class=\"cf\"/>\r\n\r\n<div class=\"align-center\">\r\n  <blockquote>&ldquo;Above all, I have been a sentient being, a thinking animal, on this beautiful planet, and that in itself has been an enormous privilege and adventure.&rdquo; <cite><a href=\"http://mobile.nytimes.com/2015/02/19/opinion/oliver-sacks-on-learning-he-has-terminal-cancer.html\">Oliver Sacks</a></cite></blockquote>  \r\n</div>",
          "patternName": "footer",
          "patternLink": "02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html",
          "patternGroup": "organisms",
          "patternSubGroup": "organisms\\00-global",
          "flatPatternPath": "02-organisms\\00-global",
-         "lineage": [],
-         "lineageIndex": [],
+         "lineage": [
+            "{\"lineagePattern\":\"molecules-social-buttons\",\"lineagePath\":\"../../patterns/01-molecules-06-components-00-social-buttons/01-molecules-06-components-00-social-buttons.html\"}",
+            "{\"lineagePattern\":\"molecules-postscript\",\"lineagePath\":\"../../patterns/01-molecules-00-text-02-postscript/01-molecules-00-text-02-postscript.html\"}"
+         ],
+         "lineageIndex": [
+            "molecules-social-buttons",
+            "molecules-postscript"
+         ],
          "lineageR": [],
          "lineageRIndex": [],
          "key": "organisms-footer",
@@ -1478,9 +1683,11 @@
       "00-atoms-00-global-01-fonts",
       "00-atoms-01-text-00-headings",
       "00-atoms-01-text-02-headings-with-links",
-      "00-atoms-01-text-03-paragraph",
-      "00-atoms-01-text-04-blockquote",
+      "00-atoms-01-text-03-subheadings",
+      "00-atoms-01-text-05-alt-headings",
+      "00-atoms-01-text-06-paragraph",
       "00-atoms-01-text-07-preformatted-text",
+      "00-atoms-01-text-08-blockquote",
       "00-atoms-01-text-09-hr",
       "00-atoms-01-text-10-caption",
       "00-atoms-02-lists-00-unordered",
@@ -1489,6 +1696,9 @@
       "00-atoms-03-images-00-dotted-background",
       "00-atoms-03-images-01-striped-background",
       "00-atoms-03-images-02-grid-background",
+      "00-atoms-03-images-03-chevron",
+      "00-atoms-03-images-04-upton",
+      "00-atoms-03-images-05-bear",
       "00-atoms-05-buttons-00-buttons",
       "00-atoms-06-tables-00-table",
       "00-atoms-07-media-00-video",
@@ -1496,7 +1706,11 @@
       "01-molecules-00-text-00-feature-block",
       "01-molecules-00-text-00-feature-redesign",
       "01-molecules-00-text-01-post",
+      "01-molecules-00-text-02-postscript",
       "01-molecules-06-components-00-social-buttons",
+      "01-molecules-06-components-01-crunchyowl-teaser",
+      "01-molecules-06-components-02-crunchyowl-services",
+      "01-molecules-06-components-03-notfound",
       "02-organisms-00-global-00-header",
       "02-organisms-00-global-01-footer",
       "02-organisms-01-lists-00-posts"
@@ -1506,9 +1720,11 @@
       "atoms-fonts": "<p class=\"font-base\">Base font: Arial, Tahoma, sans-serif;</p>\r\n<p class=\"font-base\"><em>Base font italic: Arial, Tahoma, sans-serif;</em></p>\r\n<p class=\"font-base\"><strong>Base font bold: Arial, Tahoma, sans-serif;</strong></p>\r\n<p class=\"font-web\">Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</p>\r\n<p class=\"font-web\"><em>Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</em></p>\r\n<p class=\"font-web\"><strong>Web font: 'PT Sans Narrow', Arial, Tahoma, sans-serif;</strong></p>",
       "atoms-headings": "<h1>Heading Level 1</h1>\r\n<h2>Heading Level 2</h2>\r\n<h3>Heading Level 3</h3>  \r\n<h4>Heading Level 4</h4>\r\n<h5>Heading Level 5</h5> \r\n<h6>Heading Level 6</h6>",
       "atoms-headings-with-links": "<h1><a href=\"#\">Heading 1 with link</a></h1>\r\n<h2><a href=\"#\">Heading 2 with link</a></h2>\r\n<h3><a href=\"#\">Heading 3 with link</a></h3>  \r\n<h4><a href=\"#\">Heading 4 with link</a></h4>\r\n<h5><a href=\"#\">Heading 5 with link</a></h5> \r\n<h6><a href=\"#\">Heading 6 with link</a></h6>",
+      "atoms-subheadings": "<h1 class=\"subheading\">Heading Level 1</h1>\r\n<h2 class=\"subheading\">Heading Level 2</h2>\r\n<h3 class=\"subheading\">Heading Level 3</h3>  \r\n<h4 class=\"subheading\">Heading Level 4</h4>\r\n<h5 class=\"subheading\">Heading Level 5</h5> \r\n<h6 class=\"subheading\">Heading Level 6</h6>",
+      "atoms-alt-headings": "<h1 class=\"alt\">Heading Level 1</h1>\r\n<h2 class=\"alt\">Heading Level 2</h2>\r\n<h3 class=\"alt\">Heading Level 3</h3>  \r\n<h4 class=\"alt\">Heading Level 4</h4>\r\n<h5 class=\"alt\">Heading Level 5</h5> \r\n<h6 class=\"alt\">Heading Level 6</h6>",
       "atoms-paragraph": "<p>{{ crunchyowl.dev }}</p>\r\n<p>{{ crunchyowl.design }}</p>\r\n<p>{{ crunchyowl.perf }}</p>\r\n<p>{{ crunchyowl.content }}</p>",
-      "atoms-blockquote": "<blockquote>\r\n\t<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>\r\n</blockquote>",
       "atoms-preformatted-text": "<pre>  \t\r\nP R E F O R M A T T E D T E X T\r\n! \" # $ % &amp; ' ( ) * + , - . /\r\n0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?\r\n@ A B C D E F G H I J K L M N O\r\nP Q R S T U V W X Y Z [ \\ ] ^ _\r\n` a b c d e f g h i j k l m n o\r\np q r s t u v w x y z { | } ~ \r\n</pre>",
+      "atoms-blockquote": "<blockquote>\r\n\t<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>\r\n</blockquote>",
       "atoms-hr": "<hr />",
       "atoms-caption": "<p class=\"caption\">A caption can be applied to an image, quote, form field, etc.</p>",
       "atoms-unordered": "<div class=\"text\">\r\n\t<ul>\r\n\t\t<li>This is a list item in an unordered list</li>\r\n\t\t<li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>\r\n\t\t<li>\r\n\t\t\tLists can be nested inside of each other\r\n\t\t\t<ul>\r\n\t\t\t\t<li>This is a nested list item</li>\r\n\t\t\t\t<li>This is another nested list item in an unordered list</li>\r\n\t\t\t</ul>\r\n\t\t</li>\r\n\t\t<li>This is the last list item</li>\r\n\t</ul>\r\n</div>",
@@ -1517,6 +1733,9 @@
       "atoms-dotted-background": "<div class=\"dotted\">\r\n\r\n  <h2>This is a dotted background</h2>\r\n\r\n</div>",
       "atoms-striped-background": "<div class=\"striped\">\r\n\r\n  <h2>This is a striped background</h2>\r\n\r\n</div>",
       "atoms-grid-background": "<div class=\"grid\">\r\n\r\n  <h2>This is a grid background</h2>\r\n\r\n</div>",
+      "atoms-chevron": "<svg class=\"separator chevron3\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"80%\" height=\"100\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\">\r\n  <path id=\"rayPath1\" d=\"M0 0 L50 100 L100 0 Z\"></path>\r\n</svg>",
+      "atoms-upton": "<img src=\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gv4SUNDX1BST0ZJTEUAAQEAAAvoAAAAAAIAAABtbnRyUkdCIFhZWiAH2QADABsAFQAkAB9hY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA9tYAAQAAAADTLQAAAAAp+D3er/JVrnhC+uTKgzkNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBkZXNjAAABRAAAAHliWFlaAAABwAAAABRiVFJDAAAB1AAACAxkbWRkAAAJ4AAAAIhnWFlaAAAKaAAAABRnVFJDAAAB1AAACAxsdW1pAAAKfAAAABRtZWFzAAAKkAAAACRia3B0AAAKtAAAABRyWFlaAAAKyAAAABRyVFJDAAAB1AAACAx0ZWNoAAAK3AAAAAx2dWVkAAAK6AAAAId3dHB0AAALcAAAABRjcHJ0AAALhAAAADdjaGFkAAALvAAAACxkZXNjAAAAAAAAAB9zUkdCIElFQzYxOTY2LTItMSBibGFjayBzY2FsZWQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWFlaIAAAAAAAACSgAAAPhAAAts9jdXJ2AAAAAAAABAAAAAAFAAoADwAUABkAHgAjACgALQAyADcAOwBAAEUASgBPAFQAWQBeAGMAaABtAHIAdwB8AIEAhgCLAJAAlQCaAJ8ApACpAK4AsgC3ALwAwQDGAMsA0ADVANsA4ADlAOsA8AD2APsBAQEHAQ0BEwEZAR8BJQErATIBOAE+AUUBTAFSAVkBYAFnAW4BdQF8AYMBiwGSAZoBoQGpAbEBuQHBAckB0QHZAeEB6QHyAfoCAwIMAhQCHQImAi8COAJBAksCVAJdAmcCcQJ6AoQCjgKYAqICrAK2AsECywLVAuAC6wL1AwADCwMWAyEDLQM4A0MDTwNaA2YDcgN+A4oDlgOiA64DugPHA9MD4APsA/kEBgQTBCAELQQ7BEgEVQRjBHEEfgSMBJoEqAS2BMQE0wThBPAE/gUNBRwFKwU6BUkFWAVnBXcFhgWWBaYFtQXFBdUF5QX2BgYGFgYnBjcGSAZZBmoGewaMBp0GrwbABtEG4wb1BwcHGQcrBz0HTwdhB3QHhgeZB6wHvwfSB+UH+AgLCB8IMghGCFoIbgiCCJYIqgi+CNII5wj7CRAJJQk6CU8JZAl5CY8JpAm6Cc8J5Qn7ChEKJwo9ClQKagqBCpgKrgrFCtwK8wsLCyILOQtRC2kLgAuYC7ALyAvhC/kMEgwqDEMMXAx1DI4MpwzADNkM8w0NDSYNQA1aDXQNjg2pDcMN3g34DhMOLg5JDmQOfw6bDrYO0g7uDwkPJQ9BD14Peg+WD7MPzw/sEAkQJhBDEGEQfhCbELkQ1xD1ERMRMRFPEW0RjBGqEckR6BIHEiYSRRJkEoQSoxLDEuMTAxMjE0MTYxODE6QTxRPlFAYUJxRJFGoUixStFM4U8BUSFTQVVhV4FZsVvRXgFgMWJhZJFmwWjxayFtYW+hcdF0EXZReJF64X0hf3GBsYQBhlGIoYrxjVGPoZIBlFGWsZkRm3Gd0aBBoqGlEadxqeGsUa7BsUGzsbYxuKG7Ib2hwCHCocUhx7HKMczBz1HR4dRx1wHZkdwx3sHhYeQB5qHpQevh7pHxMfPh9pH5Qfvx/qIBUgQSBsIJggxCDwIRwhSCF1IaEhziH7IiciVSKCIq8i3SMKIzgjZiOUI8Ij8CQfJE0kfCSrJNolCSU4JWgllyXHJfcmJyZXJocmtyboJxgnSSd6J6sn3CgNKD8ocSiiKNQpBik4KWspnSnQKgIqNSpoKpsqzysCKzYraSudK9EsBSw5LG4soizXLQwtQS12Last4S4WLkwugi63Lu4vJC9aL5Evxy/+MDUwbDCkMNsxEjFKMYIxujHyMioyYzKbMtQzDTNGM38zuDPxNCs0ZTSeNNg1EzVNNYc1wjX9Njc2cjauNuk3JDdgN5w31zgUOFA4jDjIOQU5Qjl/Obw5+To2OnQ6sjrvOy07azuqO+g8JzxlPKQ84z0iPWE9oT3gPiA+YD6gPuA/IT9hP6I/4kAjQGRApkDnQSlBakGsQe5CMEJyQrVC90M6Q31DwEQDREdEikTORRJFVUWaRd5GIkZnRqtG8Ec1R3tHwEgFSEtIkUjXSR1JY0mpSfBKN0p9SsRLDEtTS5pL4kwqTHJMuk0CTUpNk03cTiVObk63TwBPSU+TT91QJ1BxULtRBlFQUZtR5lIxUnxSx1MTU19TqlP2VEJUj1TbVShVdVXCVg9WXFapVvdXRFeSV+BYL1h9WMtZGllpWbhaB1pWWqZa9VtFW5Vb5Vw1XIZc1l0nXXhdyV4aXmxevV8PX2Ffs2AFYFdgqmD8YU9homH1YklinGLwY0Njl2PrZEBklGTpZT1lkmXnZj1mkmboZz1nk2fpaD9olmjsaUNpmmnxakhqn2r3a09rp2v/bFdsr20IbWBtuW4SbmtuxG8eb3hv0XArcIZw4HE6cZVx8HJLcqZzAXNdc7h0FHRwdMx1KHWFdeF2Pnabdvh3VnezeBF4bnjMeSp5iXnnekZ6pXsEe2N7wnwhfIF84X1BfaF+AX5ifsJ/I3+Ef+WAR4CogQqBa4HNgjCCkoL0g1eDuoQdhICE44VHhauGDoZyhteHO4efiASIaYjOiTOJmYn+imSKyoswi5aL/IxjjMqNMY2Yjf+OZo7OjzaPnpAGkG6Q1pE/kaiSEZJ6kuOTTZO2lCCUipT0lV+VyZY0lp+XCpd1l+CYTJi4mSSZkJn8mmia1ZtCm6+cHJyJnPedZJ3SnkCerp8dn4uf+qBpoNihR6G2oiailqMGo3aj5qRWpMelOKWpphqmi6b9p26n4KhSqMSpN6mpqhyqj6sCq3Wr6axcrNCtRK24ri2uoa8Wr4uwALB1sOqxYLHWskuywrM4s660JbSctRO1irYBtnm28Ldot+C4WbjRuUq5wro7urW7LrunvCG8m70VvY++Cr6Evv+/er/1wHDA7MFnwePCX8Lbw1jD1MRRxM7FS8XIxkbGw8dBx7/IPci8yTrJuco4yrfLNsu2zDXMtc01zbXONs62zzfPuNA50LrRPNG+0j/SwdNE08bUSdTL1U7V0dZV1tjXXNfg2GTY6Nls2fHadtr724DcBdyK3RDdlt4c3qLfKd+v4DbgveFE4cziU+Lb42Pj6+Rz5PzlhOYN5pbnH+ep6DLovOlG6dDqW+rl63Dr++yG7RHtnO4o7rTvQO/M8Fjw5fFy8f/yjPMZ86f0NPTC9VD13vZt9vv3ivgZ+Kj5OPnH+lf65/t3/Af8mP0p/br+S/7c/23//2Rlc2MAAAAAAAAALklFQyA2MTk2Ni0yLTEgRGVmYXVsdCBSR0IgQ29sb3VyIFNwYWNlIC0gc1JHQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYWVogAAAAAAAAYpkAALeFAAAY2lhZWiAAAAAAAAAAAABQAAAAAAAAbWVhcwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACWFlaIAAAAAAAAAMWAAADMwAAAqRYWVogAAAAAAAAb6IAADj1AAADkHNpZyAAAAAAQ1JUIGRlc2MAAAAAAAAALVJlZmVyZW5jZSBWaWV3aW5nIENvbmRpdGlvbiBpbiBJRUMgNjE5NjYtMi0xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLXRleHQAAAAAQ29weXJpZ2h0IEludGVybmF0aW9uYWwgQ29sb3IgQ29uc29ydGl1bSwgMjAwOQAAc2YzMgAAAAAAAQxEAAAF3///8yYAAAeUAAD9j///+6H///2iAAAD2wAAwHX/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHAAAAgICAwAAAAAAAAAAAAAABwgEBgABAwUJ/8QALhAAAQIEBQMDAgcAAAAAAAAAAQIDAAQFEQYHEiExE1FhCBRBcYEiIzJCkaHR/8QAGQEBAAIDAAAAAAAAAAAAAAAAAwIEAAEF/8QAHhEAAwACAgMBAAAAAAAAAAAAAAECAxEEEhMhMUH/2gAMAwEAAhEDEQA/AHIjIyNExAgVDN3ED2HcFzc1KqKJlxPTaWDYoJ+frCj1OpvvrW644txwm5UVXJ8mGD9Tkxqw23L6yhKPzL22J7Qt8s4wG0qePUeWfwIHN4TBkSl0L4u2kHj0p1Jmaaqkk86r3LWlxCSeUHmw+oH8we0KvCP0GqztDqbc/Ti6zMNqBUtCrWF9wfEHzKrMCoVSssSk285MomCUkWvpNtjGXat7BrC8T3+BkvEOenUsJIHMcr0y00kqKhtFQrdSSpS7HaKF06HmUga+pSoWwspZOpRuB/sLNS6oW5kuJUA58E/3Bw9RFVQjCwBJ6q1aEdhfn7wsq3lpdIbc/TtcRb4yTxkbrVbL8qpKcBBcFjzb5ghZD5i0DDWLAzWQpLLw6aJhJJDSj3HbzC7Oz00TpU8oDxE6nTHSGvkjuYdRoLLbtHoHWKk5osFbRT6vUSlCjcgDk3ifVZgqJA4ilYsm0y9NeWtVhpI53vHP69hXSQGM7cTOVeaTISatTcvq1Ej93iBOwh1vUXAQebxe66yPcrXZRKjfff5jrlSSJtsMtghxZ3tF2Go1IDbbKctWpZsCDEmTam3yEssqWONhBAw1lrMTr4U8VaCdx3gu4Zy2k5dKG+kD9o1kzxH1jTxrr2f/2Q==\" alt=\"blurry upton\">",
+      "atoms-bear": "<img src=\"data:image/png;base64,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\" width=\"48\"/>",
       "atoms-buttons": "<p><a href=\"#\" class=\"btn\">Button</a></p>\r\n<p><a href=\"#\" class=\"btn alt\">Alternate Button</a></p>\r\n<p><a href=\"#\" class=\"btn disabled\">Disabled Button</a></p>\r\n<p><a href=\"#\" class=\"text-btn\">Text Button</a></p>",
       "atoms-table": "<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>Table Heading 1</th>\r\n\t\t\t<th>Table Heading 2</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 3</th>\r\n\t\t\t<th>Table Heading 4</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tfoot>\r\n\t\t<tr>\r\n\t\t\t<th>Table Footer 1</th>\r\n\t\t\t<th>Table Footer 2</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 3</th>\r\n\t\t\t<th>Table Footer 4</th>\r\n\t\t</tr>\r\n\t</tfoot>\r\n\t<tbody>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>Table Cell 1</td>\r\n\t\t<td>Table Cell 2</td>\r\n\t\t<td>Table Cell 3</td>\r\n\t\t<td>Table Cell 4</td>\r\n\t\t<td>Table Cell 5</td>\r\n\t</tr>\r\n\t</tbody>\r\n</table>",
       "atoms-video": "<video width=\"640\" height=\"360\" controls=\"\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4\" type=\"video/mp4\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.webm\" type=\"video/webm\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.ogv\" type=\"video/ogg\">\r\n\t<img src=\"\" width=\"640\" height=\"360\" alt=\"Big Buck Bunny\" title=\"No video playback capabilities, please download\">\r\n</video>",
@@ -1524,9 +1743,13 @@
       "molecules-feature-block": "  <p class=\"feature-block dotted\">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href=\"site-redesign-in-the-open/index.html\">open redesign here</a>.</p>",
       "molecules-feature-redesign": "<em>This post is part of a series on the <a href=\"http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/\">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>",
       "molecules-post": "<li class=\"post\"><a href=\"{{ post.url }}\">{{ post.title }}</a>{{ post.subtitle }} <span>{{ post.type }}</span>\r\n</li>",
+      "molecules-postscript": "<div class=\"align-center\">\r\n  <blockquote>&ldquo;Above all, I have been a sentient being, a thinking animal, on this beautiful planet, and that in itself has been an enormous privilege and adventure.&rdquo; <cite><a href=\"http://mobile.nytimes.com/2015/02/19/opinion/oliver-sacks-on-learning-he-has-terminal-cancer.html\">Oliver Sacks</a></cite></blockquote>  \r\n</div>",
       "molecules-social-buttons": "<div class=\"buttons\">\r\n  <a href=\"https://twitter.com/bmuenzenmeyer\"><i class=\"fa fa-twitter\"></i> Twitter</a> \r\n  <a href=\"mailto:brian.muenzenmeyer@gmail.com\"><i class=\"fa fa-envelope\"></i> Email</a> \r\n  <a href=\"https://github.com/bmuenzenmeyer\"><i class=\"fa fa-github\"></i> Github</a> \r\n  <a href=\"http://codepen.io/bmuenzenmeyer/\"><i class=\"fa fa-codepen\"></i> Codepen</a>\r\n</div>",
-      "organisms-header": "<div class=\"masthead pat dotted\">\r\n  <header>\r\n    <h1 class=\"\">HI HI I&apos;M BRIAN\r\n    </h1>\r\n  </header>\r\n</div>",
-      "organisms-footer": "{{> molecules-social-buttons}}\r\n<img src=\"img/brian.jpg\" alt=\"A picture of me in grey.\"/>\r\n\r\n<p>I spend my working days in ux/ui design and my waking nights maintaining the <a href=\"https://github.com/pattern-lab/patternlab-node\">node port</a> of Brad Frost and Dave Molsen’s Pattern Lab and moonlighting as <a href=\"http://crunchyowl.com\">Crunchy Owl</a>, a small studio. I am interested in the intersection of performance and responsive design to craft better things that reach more people. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. When not online, I am digging up the yard, wearing an afghan, talking about something I heard on public radio, dressing in grayscale, or pretending to play the piano. The best way to reach me is on Twitter <a href=\"https://twitter.com/bmuenzenmeyer\">@bmuenzenmeyer</a>.</p>",
+      "molecules-crunchyowl-teaser": "\r\n<a href=\"http://www.crunchyowl.com\" class=\"crunchy-hero\"><img src=\"img/owl.png\" alt=\"My small design studio, Crunchy Owl\"/></a>\r\n\r\n<div class=\"bg-green\" style=\"z-index: 2; position: relative;\">\r\n\r\n  <p class=\"align-center affordance-inner\">Crunchy Owl is my small web design and development shop. I hand-craft effective &amp; performant digital experiences.</p>\r\n\r\n</div>\r\n\r\n{{> atoms-chevron }}",
+      "molecules-crunchyowl-services": "  <article class=\"half padded\">\r\n    <h4 class=\"alt\">Web Development</h4>\r\n    <p>I deliver quality code with an eye towards standards compliance and industry best practices. Responsive design principles extend from time-honored standards compliance and progressive enhancement. Sign me up for some of that! In a world of cut and paste snippets, WYSIWYG editors, and tight timelines, some of us still write code by hand, testing diligently and with little regard for sunrise.</p>\r\n  </article>\r\n\r\n  <article class=\"half padded\">\r\n    <h4 class=\"alt\">UX &amp; UI Design</h4>\r\n    <p>Communicate effective messages to your audience. Crafting a functional product often starts with a deep dive into your needs and the needs of your users. From this input, Crunchy Owl can dial in and iterate quickly on a solution. Let's not forget to make it strikingly beautiful too.</p>\r\n  </article>\r\n\r\n  <div class=\"cf\"></div>\r\n\r\n  <article class=\"half padded\">\r\n    <h4 class=\"alt\">Performance Optimization</h4>\r\n    <p>Speed matters, but performance is more than that. Performance is content meets execution, and I can help you push your codebase further, directly equating to more engagement. Understanding delivery options is key to an inclusive experience. Push the limits of deployment and send what matters most.</p>\r\n  </article>\r\n\r\n  <article class=\"half padded\">  \r\n    <h4 class=\"alt\">Content Strategy</h4>\r\n    <p>With a proper content strategy, your message has a broader voice in the community, has more impact, and builds your brand. Creating reusable content to leverage social media is a must in today's environment. I fit right-sized solutions to the right requirements, offering full-stack solutions when necessary, or a handcrafted microsite when the need arises.</p>\r\n  </article>\r\n</section>",
+      "molecules-notfound": "<div class=\"align-center notfound\">\r\n  <h2 class=\"subheading\">Lost?</h2>\r\n  {{> atoms-bear }} <span><a href=\"http://brianmuenzenmeyer.com\">Look over here</a></span>\r\n</div>",
+      "organisms-header": "<div class=\"masthead pat dotted\">\r\n  <header>\r\n    <h1 class=\"\"><a href=\"http://brianmuenzenmeyer.com\">HI HI I&apos;M BRIAN</a>\r\n    </h1>\r\n  </header>\r\n</div>",
+      "organisms-footer": "{{> molecules-social-buttons }}\r\n<img src=\"/img/brian.jpg\" alt=\"A picture of me in grey.\" class=\"bio\"/>\r\n\r\n<p>I spend my working days in ux/ui design and my waking nights maintaining the <a href=\"https://github.com/pattern-lab/patternlab-node\">node port</a> of Brad Frost and Dave Molsen’s Pattern Lab and moonlighting as <a href=\"http://crunchyowl.com\">Crunchy Owl</a>, a small studio. I am interested in the intersection of performance and responsive design to craft better things that reach more people. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. When not online, I am digging up the yard, wearing an afghan, talking about something I heard on public radio, dressing in grayscale, or pretending to play the piano. The best way to reach me is on Twitter <a href=\"https://twitter.com/bmuenzenmeyer\">@bmuenzenmeyer</a>.</p>\r\n\r\n<hr class=\"cf\"/>\r\n\r\n{{> molecules-postscript }}",
       "organisms-posts": "<h2 class=\"pat subheading\">Subheading</h2>\r\n<ul class=\"list\">\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n  {{> molecules-post }}\r\n</ul>"
    },
    "buckets": [
@@ -1569,19 +1792,29 @@
                      "patternName": "Headings with links"
                   },
                   {
-                     "patternPath": "00-atoms-01-text-03-paragraph/00-atoms-01-text-03-paragraph.html",
-                     "patternPartial": "atoms-paragraph",
-                     "patternName": "Paragraph"
+                     "patternPath": "00-atoms-01-text-03-subheadings/00-atoms-01-text-03-subheadings.html",
+                     "patternPartial": "atoms-subheadings",
+                     "patternName": "Subheadings"
                   },
                   {
-                     "patternPath": "00-atoms-01-text-04-blockquote/00-atoms-01-text-04-blockquote.html",
-                     "patternPartial": "atoms-blockquote",
-                     "patternName": "Blockquote"
+                     "patternPath": "00-atoms-01-text-05-alt-headings/00-atoms-01-text-05-alt-headings.html",
+                     "patternPartial": "atoms-alt-headings",
+                     "patternName": "Alt headings"
+                  },
+                  {
+                     "patternPath": "00-atoms-01-text-06-paragraph/00-atoms-01-text-06-paragraph.html",
+                     "patternPartial": "atoms-paragraph",
+                     "patternName": "Paragraph"
                   },
                   {
                      "patternPath": "00-atoms-01-text-07-preformatted-text/00-atoms-01-text-07-preformatted-text.html",
                      "patternPartial": "atoms-preformatted-text",
                      "patternName": "Preformatted text"
+                  },
+                  {
+                     "patternPath": "00-atoms-01-text-08-blockquote/00-atoms-01-text-08-blockquote.html",
+                     "patternPartial": "atoms-blockquote",
+                     "patternName": "Blockquote"
                   },
                   {
                      "patternPath": "00-atoms-01-text-09-hr/00-atoms-01-text-09-hr.html",
@@ -1597,9 +1830,11 @@
                "navSubItemsIndex": [
                   "headings",
                   "headings with links",
+                  "subheadings",
+                  "alt headings",
                   "paragraph",
-                  "blockquote",
                   "preformatted text",
+                  "blockquote",
                   "hr",
                   "caption"
                ]
@@ -1648,12 +1883,30 @@
                      "patternPath": "00-atoms-03-images-02-grid-background/00-atoms-03-images-02-grid-background.html",
                      "patternPartial": "atoms-grid-background",
                      "patternName": "Grid background"
+                  },
+                  {
+                     "patternPath": "00-atoms-03-images-03-chevron/00-atoms-03-images-03-chevron.html",
+                     "patternPartial": "atoms-chevron",
+                     "patternName": "Chevron"
+                  },
+                  {
+                     "patternPath": "00-atoms-03-images-04-upton/00-atoms-03-images-04-upton.html",
+                     "patternPartial": "atoms-upton",
+                     "patternName": "Upton"
+                  },
+                  {
+                     "patternPath": "00-atoms-03-images-05-bear/00-atoms-03-images-05-bear.html",
+                     "patternPartial": "atoms-bear",
+                     "patternName": "Bear"
                   }
                ],
                "navSubItemsIndex": [
                   "dotted background",
                   "striped background",
-                  "grid background"
+                  "grid background",
+                  "chevron",
+                  "upton",
+                  "bear"
                ]
             },
             {
@@ -1739,12 +1992,18 @@
                      "patternPath": "01-molecules-00-text-01-post/01-molecules-00-text-01-post.html",
                      "patternPartial": "molecules-post",
                      "patternName": "Post"
+                  },
+                  {
+                     "patternPath": "01-molecules-00-text-02-postscript/01-molecules-00-text-02-postscript.html",
+                     "patternPartial": "molecules-postscript",
+                     "patternName": "Postscript"
                   }
                ],
                "navSubItemsIndex": [
                   "feature block",
                   "feature redesign",
-                  "post"
+                  "post",
+                  "postscript"
                ]
             },
             {
@@ -1755,10 +2014,28 @@
                      "patternPath": "01-molecules-06-components-00-social-buttons/01-molecules-06-components-00-social-buttons.html",
                      "patternPartial": "molecules-social-buttons",
                      "patternName": "Social buttons"
+                  },
+                  {
+                     "patternPath": "01-molecules-06-components-01-crunchyowl-teaser/01-molecules-06-components-01-crunchyowl-teaser.html",
+                     "patternPartial": "molecules-crunchyowl-teaser",
+                     "patternName": "Crunchyowl teaser"
+                  },
+                  {
+                     "patternPath": "01-molecules-06-components-02-crunchyowl-services/01-molecules-06-components-02-crunchyowl-services.html",
+                     "patternPartial": "molecules-crunchyowl-services",
+                     "patternName": "Crunchyowl services"
+                  },
+                  {
+                     "patternPath": "01-molecules-06-components-03-notfound/01-molecules-06-components-03-notfound.html",
+                     "patternPartial": "molecules-notfound",
+                     "patternName": "Notfound"
                   }
                ],
                "navSubItemsIndex": [
-                  "social buttons"
+                  "social buttons",
+                  "crunchyowl teaser",
+                  "crunchyowl services",
+                  "notfound"
                ]
             }
          ],
@@ -1827,9 +2104,11 @@
          "fonts": "00-atoms/00-global/01-fonts",
          "headings": "00-atoms/01-text/00-headings",
          "headings-with-links": "00-atoms/01-text/02-headings-with-links",
-         "paragraph": "00-atoms/01-text/03-paragraph",
-         "blockquote": "00-atoms/01-text/04-blockquote",
+         "subheadings": "00-atoms/01-text/03-subheadings",
+         "alt-headings": "00-atoms/01-text/05-alt-headings",
+         "paragraph": "00-atoms/01-text/06-paragraph",
          "preformatted-text": "00-atoms/01-text/07-preformatted-text",
+         "blockquote": "00-atoms/01-text/08-blockquote",
          "hr": "00-atoms/01-text/09-hr",
          "caption": "00-atoms/01-text/10-caption",
          "unordered": "00-atoms/02-lists/00-unordered",
@@ -1838,6 +2117,9 @@
          "dotted-background": "00-atoms/03-images/00-dotted-background",
          "striped-background": "00-atoms/03-images/01-striped-background",
          "grid-background": "00-atoms/03-images/02-grid-background",
+         "chevron": "00-atoms/03-images/03-chevron",
+         "upton": "00-atoms/03-images/04-upton",
+         "bear": "00-atoms/03-images/05-bear",
          "buttons": "00-atoms/05-buttons/00-buttons",
          "table": "00-atoms/06-tables/00-table",
          "video": "00-atoms/07-media/00-video",
@@ -1847,7 +2129,11 @@
          "feature-block": "01-molecules/00-text/00-feature-block",
          "feature-redesign": "01-molecules/00-text/00-feature-redesign",
          "post": "01-molecules/00-text/01-post",
-         "social-buttons": "01-molecules/06-components/00-social-buttons"
+         "postscript": "01-molecules/00-text/02-postscript",
+         "social-buttons": "01-molecules/06-components/00-social-buttons",
+         "crunchyowl-teaser": "01-molecules/06-components/01-crunchyowl-teaser",
+         "crunchyowl-services": "01-molecules/06-components/02-crunchyowl-services",
+         "notfound": "01-molecules/06-components/03-notfound"
       },
       "organisms": {
          "header": "02-organisms/00-global/00-header",

@@ -19,21 +19,50 @@ main, footer{
   }
 }
 
-hr{
-  margin: $space-triple auto;
-}
-
 footer{
-  img{
+  .bio{
     width: 100%;
-    margin: $space auto;
+    margin: 0 auto $space auto;
   }
   @media all and (min-width: $bp-small){
-    img{
+    .bio{
       float: left;
       height: 8em;
       width: auto;
       margin-right: $space;
     }
   }
+}
+
+svg.chevron3 {
+  background-color: #FFF;
+  margin: 0 auto;
+}
+
+svg.chevron3 path {
+  fill: $green;
+  stroke: $green;
+  stroke-width: 0;
+}
+
+svg.separator {
+  display: block;
+  padding-bottom: 1rem;
+  pointer-events: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.crunchy-hero{
+  width: 300px;
+  display: block;
+  margin: 1em auto -9px;
+}
+
+.notfound span{
+  line-height: 48px;
+  height: 48px;
+  vertical-align: top;
+  display: inline-block;
 }
