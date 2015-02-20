@@ -303,8 +303,6 @@ p + p {
 }
 
 blockquote {
-  border: 1px dotted #b2b2b2;
-  padding: 0.5rem;
   margin: 1rem auto;
 }
 
@@ -436,7 +434,7 @@ td {
   transition: all 0.8s ease-in-out;
 }
 
-.feature-block {
+.feature-block, blockquote {
   padding: 1rem;
   border: 1px solid #b2b2b2;
 }

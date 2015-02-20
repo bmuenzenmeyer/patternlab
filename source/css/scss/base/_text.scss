@@ -7,8 +7,7 @@ p + p{
 }
 
 blockquote {
-  border: 1px dotted $gray-light;
-  padding: $space-half;
+  @extend .feature-block;
   margin: 1rem auto;
 }
 
