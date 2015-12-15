@@ -1,5 +1,5 @@
 /* 
- * patternlab-node - v0.1.7 - 2015 
+ * patternlab-node - v1.0.0 - 2015 
  * 
  * Brian Muenzenmeyer, and the web community.
  * Licensed under the MIT license. 
@@ -12,7 +12,7 @@
   "use strict";
 
   var fs = require('fs-extra'),
-      path = require('path');
+  path = require('path');
 
   var pattern_exporter = function(){
 
@@ -30,9 +30,6 @@
           }
         }
       }
-
-      
-
     }
 
     return {

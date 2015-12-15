@@ -3,43 +3,43 @@
  		"source" : "./source/_patterns/",
  		"public" : "./public/patterns/"
  	},
+	"styleGuideExcludes": [
+	],
  	"ignored-extensions" : ["scss", "DS_Store", "less"],
  	"ignored-directories" : ["scss"],
- 	"contentSyncPort" : 8002,
- 	"navSyncPort" : 8003,
- 	"debug": true,
+ 	"debug": false,
  	"ishControlsVisible": {
  		"s": true,
  		"m": true,
  		"l": true,
  		"full": true,
- 		"ranndom": true,
+ 		"random": true,
  		"disco": true,
  		"hay": true,
  		"mqs": true,
- 		"find": false,
+ 		"find": true,
  		"views-all": true,
  		"views-annotations": true,
  		"views-code": true,
  		"views-new": true,
  		"tools-all": true,
- 		"tools-follow": false,
- 		"tools-reload": false,
- 		"tools-shortcuts": false,
+ 		"tools-sync": true,
+ 		"tools-shortcuts": true,
  		"tools-docs": true
  	},
- 	"patternStates": {
- 	},
-  "patternExportKeys": [
-    "organisms-header", 
-    "organisms-footer", 
-    "molecules-feature-redesign", 
-    "molecules-feature-block", 
-    "molecules-social-buttons",
-    "molecules-crunchyowl-teaser",
-    "molecules-crunchyowl-services",
-    "molecules-postscript",
-    "molecules-notfound"
-    ],
-  "patternExportDirectory": "./../_includes/"
+  "patternStates": {
+  },
+   "patternExportKeys": [
+     "organisms-header",
+     "organisms-footer",
+     "molecules-feature-redesign",
+     "molecules-feature-block",
+     "molecules-social-buttons",
+     "molecules-crunchyowl-teaser",
+     "molecules-crunchyowl-services",
+     "molecules-postscript",
+     "molecules-notfound"
+   ],
+   "patternExportDirectory": "./../_includes/",
+  "baseurl" : ""
  }

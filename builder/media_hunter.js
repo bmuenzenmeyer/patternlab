@@ -1,7 +1,7 @@
 /* 
- * patternlab-node - v0.1.6 - 2015 
+ * patternlab-node - v1.0.0 - 2015 
  * 
- * [object Object], and the web community.
+ * Brian Muenzenmeyer, and the web community.
  * Licensed under the MIT license. 
  * 
  * Many thanks to Brad Frost and Dave Olsen for inspiration, encouragement, and advice. 
@@ -12,34 +12,37 @@
 	"use strict";
 
 	var diveSync = require('diveSync'),
-		path = require('path'),
-		fs = require('fs-extra');
+	path = require('path'),
+	fs = require('fs-extra');
 
 	var media_hunter = function(){
 
-		function findMediaQueries(patternlab){
+		function findMediaQueries(dir, patternlab){
 			patternlab.mediaQueries = [];
 
-			diveSync('./source/css', function(err, file){
+			diveSync(dir, function(err, file){
 				if(path.extname(file) === '.css'){
 					var contents = fs.readFileSync(file, 'utf8');
 					var safeContents = contents.replace("\r", " ").replace("\n", " ");
 					var matches = safeContents.match(/\((min|max)-width:([ ]+)?(([0-9]{1,5})(\.[0-9]{1,20}|)(px|em))/g);
 					for(var i = 0; i < matches.length; i++){
-						var breakpoint = matches[i].substring(matches[i].indexOf(' ') + 1);
+						var breakpoint = matches[i].substring(matches[i].indexOf(':') + 1).trimLeft();
 						if(patternlab.mediaQueries.indexOf(breakpoint) === -1){
 							patternlab.mediaQueries.push(breakpoint);
 						}
 					}
 				}
-			});	
-			//alpha sort for now, but should meet most use-cases except greater than 100ems. you are using ems right?
-			patternlab.mediaQueries.sort();
+			});
+			patternlab.mediaQueries.sort(function(a,b){
+				var integerPartA = a.match(/(?:\d*\.)?\d+/g);
+				var integerPartB = b.match(/(?:\d*\.)?\d+/g);
+				return parseInt(a,10) > parseInt(b,10);
+			});
 		}
 
 		return {
-			find_media_queries: function(patternlab){
-				findMediaQueries(patternlab);
+			find_media_queries: function(dir, patternlab){
+				findMediaQueries(dir, patternlab);
 			}
 		};
 
@@ -48,22 +51,3 @@
 	module.exports = media_hunter;
 
 }());
-
-	// protected function gatherMQs() {
-		
-	// 	$mqs = array();
-		
-	// 	foreach(glob($this->sd."/css/*.css") as $filename) {
-	// 		$data    = file_get_contents($filename);
-	// 		preg_match_all("/(min|max)-width:([ ]+)?(([0-9]{1,5})(\.[0-9]{1,20}|)(px|em))/",$data,$matches);
-	// 		foreach ($matches[3] as $match) {
-	// 			if (!in_array($match,$mqs)) {
-	// 				$mqs[] = $match;
-	// 			}
-	// 		}	
-	// 	}
-		
-	// 	sort($mqs);
-	// 	return $mqs;
-		
-	// }
