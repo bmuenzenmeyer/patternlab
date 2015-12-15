@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head id="patternlab-head">
+    <title>Pattern Lab Sub-type Style Guide</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css" media="all" />
+    <link rel="stylesheet" href="../../css/style.css" media="all" />
+  </head>
+  <body class="sg-pattern-list">
+
+    <!-- View All Patterns in a Pattern Sub-Type -->
+    <div class="sg-main" role="main">
+
+      <!-- Patterns -->
+      <div id="sg-patterns">
+          <div class="sg-pattern">
+            <h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-00-text-00-feature-block&#x2F;01-molecules-00-text-00-feature-block.html" class="patternLink" data-patternpartial="">Feature Block</a></h2>
+            <div class="sg-pattern-body">
+                <p class="feature-block dotted">This version of brianmuenzenmeyer.com is an ongoing, open redesign &mdash; showcasing design challenges and decisions along the way. I hope it's instructive and participatory. Read more about the <a href="site-redesign-in-the-open/index.html">open redesign here</a>.</p>
+
+              <div class="sg-code" style="display: none">
+                <h3 class="sg-code-head">HTML</h3>
+                <pre class="sg-code-html">
+                  <code>
+                      &lt;p class&#x3D;&quot;feature-block dotted&quot;&gt;This version of brianmuenzenmeyer.com is an ongoing, open redesign &amp;mdash; showcasing design challenges and decisions along the way. I hope it&#39;s instructive and participatory. Read more about the &lt;a href&#x3D;&quot;site-redesign-in-the-open&#x2F;index.html&quot;&gt;open redesign here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="sg-pattern">
+            <h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-00-text-00-feature-redesign&#x2F;01-molecules-00-text-00-feature-redesign.html" class="patternLink" data-patternpartial="">Feature Redesign</a></h2>
+            <div class="sg-pattern-body">
+              <em>This post is part of a series on the <a href="http://www.brianmuenzenmeyer.com/site-redesign-in-the-open/">open redesign of brianmuenzenmeyer.com</a> using atomic design and Pattern Lab.</em>
+              <div class="sg-code" style="display: none">
+                <h3 class="sg-code-head">HTML</h3>
+                <pre class="sg-code-html">
+                  <code>
+                    &lt;em&gt;This post is part of a series on the &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.brianmuenzenmeyer.com&#x2F;site-redesign-in-the-open&#x2F;&quot;&gt;open redesign of brianmuenzenmeyer.com&lt;&#x2F;a&gt; using atomic design and Pattern Lab.&lt;&#x2F;em&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="sg-pattern">
+            <h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-00-text-01-post&#x2F;01-molecules-00-text-01-post.html" class="patternLink" data-patternpartial="">Post</a></h2>
+            <div class="sg-pattern-body">
+              <li class="post"><a href="http:&#x2F;&#x2F;brianmuenzenmeyer.com">A Post Title of Certain Length</a> <span>POST</span>
+</li>
+              <div class="sg-code" style="display: none">
+                <h3 class="sg-code-head">HTML</h3>
+                <pre class="sg-code-html">
+                  <code>
+                    &lt;li class&#x3D;&quot;post&quot;&gt;&lt;a href&#x3D;&quot;http:&amp;#x2F;&amp;#x2F;brianmuenzenmeyer.com&quot;&gt;A Post Title of Certain Length&lt;&#x2F;a&gt; &lt;span&gt;POST&lt;&#x2F;span&gt;
+&lt;&#x2F;li&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="sg-pattern">
+            <h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-00-text-02-postscript&#x2F;01-molecules-00-text-02-postscript.html" class="patternLink" data-patternpartial="">Postscript</a></h2>
+            <div class="sg-pattern-body">
+              <div class="align-center">
+  <blockquote>&ldquo;Above all, I have been a sentient being, a thinking animal, on this beautiful planet, and that in itself has been an enormous privilege and adventure.&rdquo; <cite><a href="http://mobile.nytimes.com/2015/02/19/opinion/oliver-sacks-on-learning-he-has-terminal-cancer.html">Oliver Sacks</a></cite></blockquote>  
+</div>
+              <div class="sg-code" style="display: none">
+                <h3 class="sg-code-head">HTML</h3>
+                <pre class="sg-code-html">
+                  <code>
+                    &lt;div class&#x3D;&quot;align-center&quot;&gt;
+  &lt;blockquote&gt;&amp;ldquo;Above all, I have been a sentient being, a thinking animal, on this beautiful planet, and that in itself has been an enormous privilege and adventure.&amp;rdquo; &lt;cite&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;mobile.nytimes.com&#x2F;2015&#x2F;02&#x2F;19&#x2F;opinion&#x2F;oliver-sacks-on-learning-he-has-terminal-cancer.html&quot;&gt;Oliver Sacks&lt;&#x2F;a&gt;&lt;&#x2F;cite&gt;&lt;&#x2F;blockquote&gt;  
+&lt;&#x2F;div&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+      </div> <!--end #sg-patterns-->
+
+    </div><!--end .sg-main-->
+
+    <!-- JS to hook everything together and do annotations -->
+    <script>
+      // handle injection of items from patternlab.js
+      var patternPartial = "viewall-molecules-text";
+      var lineage = "";
+      var baseurl = "";
+    </script>
+    <script src="../../styleguide/js/vendor/jwerty.js"></script>
+    <script src="../../styleguide/js/postmessage.js"></script>
+    <script src="../../data/annotations.js"></script>
+    <script src="../../styleguide/js/annotations-pattern.js"></script>
+    <script src="../../styleguide/js/code-pattern.js"></script>
+
+  </body>
+</html>
