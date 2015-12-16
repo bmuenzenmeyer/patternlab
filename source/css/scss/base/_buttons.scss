@@ -21,13 +21,13 @@
   -webkit-box-align: start;
   -moz-box-align: start;
   -webkit-align-items: flex-start;
-  -ms-flex-align: start;  
+  -ms-flex-align: start;
   align-items: flex-start;
   a{
     -webkit-box-flex: 0;
     -moz-box-flex: 0;
     -webkit-flex: 0 1 24%;
-    -ms-flex: 0 1 24%; 
+    -ms-flex: 0 1 24%;
     flex: 0 1 24%;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
@@ -41,6 +41,24 @@
     background: rgba(0,0,0,.6);
     &:hover{
       background: rgba(0,0,0,.8);
+    }
+  }
+  &.buttons_autosize{
+    a{
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      -webkit-flex: 0 1 100%;
+      -ms-flex: 0 1 100%;
+      flex: 0 1 100%;
+    }
+  }
+  &.buttons_secondary{
+    a{
+      color: $gray-dark;
+      background: $white-alt;
+      &:hover{
+        background: $gray-light;
+      }
     }
   }
  }
