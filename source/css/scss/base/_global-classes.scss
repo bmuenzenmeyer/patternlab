@@ -2,6 +2,30 @@
     $GLOBAL CLASSES
 \*------------------------------------*/
 
+/* Webfont: Overpass-Reg */@font-face {
+    font-family: 'Overpass';
+    src: url('../fonts/Overpass-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Overpass-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Overpass-Regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Overpass-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Overpass-Regular.svg#Overpass-Regular') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Overpass-Bold */@font-face {
+    font-family: 'Overpass';
+    src: url('../fonts/Overpass-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Overpass-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Overpass-Bold.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Overpass-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Overpass-Bold.svg#Overpass-Bold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+}
+
 /* Clearfix */
 .cf {
     *zoom: 1;
@@ -104,4 +128,8 @@
 
 .bg-green{
   background-color: $green;
+}
+
+.fullbleed{
+  margin: auto -.5em;
 }

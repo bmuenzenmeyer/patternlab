@@ -38,7 +38,8 @@
      "molecules-crunchyowl-teaser",
      "molecules-crunchyowl-services",
      "molecules-postscript",
-     "molecules-notfound"
+     "molecules-notfound",
+     "molecules-elements"
    ],
    "patternExportDirectory": "./../_includes/",
   "baseurl" : ""

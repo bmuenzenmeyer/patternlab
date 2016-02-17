@@ -12,10 +12,21 @@ body{
   margin: 0 .5em;
 }
 
-main, footer{
+section, footer{
   @media all and (min-width: $bp-small){
-    width: 800px;
+    width: $max-width;
     margin: 0 auto;
+  }
+}
+
+section{
+  padding-bottom: $space;
+}
+
+#container{
+  margin: 1em auto;
+  @media only screen and (min-width: 70em){
+    max-width: 800px;
   }
 }
 
@@ -23,11 +34,9 @@ footer{
   .bio{
     width: 100%;
     margin: 0 auto $space auto;
-  }
-  @media all and (min-width: $bp-small){
-    .bio{
+    @media all and (min-width: $bp-small){
       float: left;
-      height: 8em;
+      height: 175px;
       width: auto;
       margin-right: $space;
     }

@@ -71,6 +71,9 @@
 			<li><a href="patterns/01-molecules-00-text-01-post&#x2F;01-molecules-00-text-01-post.html" class="sg-pop  " data-patternpartial="molecules-post">Post</a></li>
 			<li><a href="patterns/01-molecules-00-text-02-postscript&#x2F;01-molecules-00-text-02-postscript.html" class="sg-pop  " data-patternpartial="molecules-postscript">Postscript</a></li>
 			<li><a href="patterns/01-molecules-00-text-03-post-nav&#x2F;01-molecules-00-text-03-post-nav.html" class="sg-pop  " data-patternpartial="molecules-post-nav">Post Nav</a></li>
+			<li><a href="patterns/01-molecules-00-text-04-post-featured&#x2F;01-molecules-00-text-04-post-featured.html" class="sg-pop  " data-patternpartial="molecules-post-featured">Post Featured</a></li>
+			<li><a href="patterns/01-molecules-00-text-05-post-image&#x2F;01-molecules-00-text-05-post-image.html" class="sg-pop  " data-patternpartial="molecules-post-image">Post Image</a></li>
+			<li><a href="patterns/01-molecules-00-text-06-item&#x2F;01-molecules-00-text-06-item.html" class="sg-pop  " data-patternpartial="molecules-item">Item</a></li>
 			<li><a href="patterns/01-molecules-00-text&#x2F;index.html" class="sg-pop  " data-patternpartial="viewall-molecules-text">View All</a></li>
 			</ol></li>
 			<li class="sg-nav-components"><a class="sg-acc-handle">Components</a><ol class="sg-acc-panel">
@@ -78,6 +81,7 @@
 			<li><a href="patterns/01-molecules-06-components-01-crunchyowl-teaser&#x2F;01-molecules-06-components-01-crunchyowl-teaser.html" class="sg-pop  " data-patternpartial="molecules-crunchyowl-teaser">Crunchyowl Teaser</a></li>
 			<li><a href="patterns/01-molecules-06-components-02-crunchyowl-services&#x2F;01-molecules-06-components-02-crunchyowl-services.html" class="sg-pop  " data-patternpartial="molecules-crunchyowl-services">Crunchyowl Services</a></li>
 			<li><a href="patterns/01-molecules-06-components-03-notfound&#x2F;01-molecules-06-components-03-notfound.html" class="sg-pop  " data-patternpartial="molecules-notfound">Notfound</a></li>
+			<li><a href="patterns/01-molecules-06-components-04-elements&#x2F;01-molecules-06-components-04-elements.html" class="sg-pop  " data-patternpartial="molecules-elements">Elements</a></li>
 			<li><a href="patterns/01-molecules-06-components&#x2F;index.html" class="sg-pop  " data-patternpartial="viewall-molecules-components">View All</a></li>
 			</ol></li>
 		</ol></li>
@@ -88,9 +92,17 @@
 			<li><a href="patterns/02-organisms-00-global&#x2F;index.html" class="sg-pop  " data-patternpartial="viewall-organisms-global">View All</a></li>
 			</ol></li>
 			<li class="sg-nav-lists"><a class="sg-acc-handle">Lists</a><ol class="sg-acc-panel">
-			<li><a href="patterns/02-organisms-01-lists-00-posts&#x2F;02-organisms-01-lists-00-posts.html" class="sg-pop  " data-patternpartial="organisms-posts">Posts</a></li>
+			<li><a href="patterns/02-organisms-01-lists-00-items&#x2F;02-organisms-01-lists-00-items.html" class="sg-pop  " data-patternpartial="organisms-items">Items</a></li>
 			<li><a href="patterns/02-organisms-01-lists&#x2F;index.html" class="sg-pop  " data-patternpartial="viewall-organisms-lists">View All</a></li>
 			</ol></li>
+			<li class="sg-nav-post"><a class="sg-acc-handle">Post</a><ol class="sg-acc-panel">
+			<li><a href="patterns/02-organisms-02-post-00-article&#x2F;02-organisms-02-post-00-article.html" class="sg-pop  " data-patternpartial="organisms-article">Article</a></li>
+			<li><a href="patterns/02-organisms-02-post&#x2F;index.html" class="sg-pop  " data-patternpartial="viewall-organisms-post">View All</a></li>
+			</ol></li>
+		</ol></li>
+		<li class="sg-nav-templates"><a class="sg-acc-handle">Templates</a><ol class="sg-acc-panel">
+			<li><a href="patterns/03-templates-00-homepage&#x2F;03-templates-00-homepage.html" class="sg-pop "" data-patternpartial="templates-homepage">Homepage</a></li>
+			<li><a href="patterns/03-templates-01-post&#x2F;03-templates-01-post.html" class="sg-pop "" data-patternpartial="templates-post">Post</a></li>
 		</ol></li>
 	<li><a href="styleguide/html/styleguide.html" class="sg-pop" data-patternpartial="all">All</a></li>
 </ol>
@@ -119,6 +131,7 @@
 					<a href="#" class="mode-link sg-acc-handle" id="sg-size-mq" title="Media queries in stylesheet">MQ</a>
 					<ul class="sg-acc-panel sg-left" id="sg-mq">
 							<li><a href="#">45em</a></li>
+							<li><a href="#">70em</a></li>
 					</ul>
 				</li>
 				<li class="sg-find">
@@ -213,9 +226,9 @@
 	<script src="styleguide/js/vendor/typeahead.bundle.min.js"></script>
 	<script src="styleguide/js/data-saver.js"></script>
 <script>
-	var patternPaths = {"atoms":{"colors":"00-atoms/00-global/00-colors","fonts":"00-atoms/00-global/01-fonts","headings":"00-atoms/01-text/00-headings","headings-with-links":"00-atoms/01-text/02-headings-with-links","subheadings":"00-atoms/01-text/03-subheadings","alt-headings":"00-atoms/01-text/05-alt-headings","paragraph":"00-atoms/01-text/06-paragraph","preformatted-text":"00-atoms/01-text/07-preformatted-text","blockquote":"00-atoms/01-text/08-blockquote","hr":"00-atoms/01-text/09-hr","caption":"00-atoms/01-text/10-caption","unordered":"00-atoms/02-lists/00-unordered","ordered":"00-atoms/02-lists/01-ordered","definition":"00-atoms/02-lists/02-definition","dotted-background":"00-atoms/03-images/00-dotted-background","striped-background":"00-atoms/03-images/01-striped-background","grid-background":"00-atoms/03-images/02-grid-background","chevron":"00-atoms/03-images/03-chevron","upton":"00-atoms/03-images/04-upton","bear":"00-atoms/03-images/05-bear","buttons":"00-atoms/05-buttons/00-buttons","table":"00-atoms/06-tables/00-table","video":"00-atoms/07-media/00-video","audio":"00-atoms/07-media/01-audio"},"molecules":{"feature-block":"01-molecules/00-text/00-feature-block","feature-redesign":"01-molecules/00-text/00-feature-redesign","post":"01-molecules/00-text/01-post","postscript":"01-molecules/00-text/02-postscript","post-nav":"01-molecules/00-text/03-post-nav","social-buttons":"01-molecules/06-components/00-social-buttons","crunchyowl-teaser":"01-molecules/06-components/01-crunchyowl-teaser","crunchyowl-services":"01-molecules/06-components/02-crunchyowl-services","notfound":"01-molecules/06-components/03-notfound"},"organisms":{"header":"02-organisms/00-global/00-header","footer":"02-organisms/00-global/01-footer","posts":"02-organisms/01-lists/00-posts"}}
+	var patternPaths = {"atoms":{"colors":"00-atoms/00-global/00-colors","fonts":"00-atoms/00-global/01-fonts","headings":"00-atoms/01-text/00-headings","headings-with-links":"00-atoms/01-text/02-headings-with-links","subheadings":"00-atoms/01-text/03-subheadings","alt-headings":"00-atoms/01-text/05-alt-headings","paragraph":"00-atoms/01-text/06-paragraph","preformatted-text":"00-atoms/01-text/07-preformatted-text","blockquote":"00-atoms/01-text/08-blockquote","hr":"00-atoms/01-text/09-hr","caption":"00-atoms/01-text/10-caption","unordered":"00-atoms/02-lists/00-unordered","ordered":"00-atoms/02-lists/01-ordered","definition":"00-atoms/02-lists/02-definition","dotted-background":"00-atoms/03-images/00-dotted-background","striped-background":"00-atoms/03-images/01-striped-background","grid-background":"00-atoms/03-images/02-grid-background","chevron":"00-atoms/03-images/03-chevron","upton":"00-atoms/03-images/04-upton","bear":"00-atoms/03-images/05-bear","buttons":"00-atoms/05-buttons/00-buttons","table":"00-atoms/06-tables/00-table","video":"00-atoms/07-media/00-video","audio":"00-atoms/07-media/01-audio"},"molecules":{"feature-block":"01-molecules/00-text/00-feature-block","feature-redesign":"01-molecules/00-text/00-feature-redesign","post":"01-molecules/00-text/01-post","postscript":"01-molecules/00-text/02-postscript","post-nav":"01-molecules/00-text/03-post-nav","post-featured":"01-molecules/00-text/04-post-featured","post-image":"01-molecules/00-text/05-post-image","item":"01-molecules/00-text/06-item","social-buttons":"01-molecules/06-components/00-social-buttons","crunchyowl-teaser":"01-molecules/06-components/01-crunchyowl-teaser","crunchyowl-services":"01-molecules/06-components/02-crunchyowl-services","notfound":"01-molecules/06-components/03-notfound","elements":"01-molecules/06-components/04-elements"},"organisms":{"header":"02-organisms/00-global/00-header","footer":"02-organisms/00-global/01-footer","items":"02-organisms/01-lists/00-items","article":"02-organisms/02-post/00-article"},"templates":{"homepage":"03-templates/00-homepage","post":"03-templates/01-post"}}
 </script><script>
-	var viewAllPaths = {"atoms":{"global":"00-atoms-00-global","text":"00-atoms-01-text","lists":"00-atoms-02-lists","images":"00-atoms-03-images","buttons":"00-atoms-05-buttons","tables":"00-atoms-06-tables","media":"00-atoms-07-media"},"molecules":{"text":"01-molecules-00-text","components":"01-molecules-06-components"},"organisms":{"global":"02-organisms-00-global","lists":"02-organisms-01-lists"}}
+	var viewAllPaths = {"atoms":{"global":"00-atoms-00-global","text":"00-atoms-01-text","lists":"00-atoms-02-lists","images":"00-atoms-03-images","buttons":"00-atoms-05-buttons","tables":"00-atoms-06-tables","media":"00-atoms-07-media"},"molecules":{"text":"01-molecules-00-text","components":"01-molecules-06-components"},"organisms":{"global":"02-organisms-00-global","lists":"02-organisms-01-lists","post":"02-organisms-02-post"},"templates":{"templates":"03-templates"}}
 </script>	<script src="styleguide/js/url-handler.js"></script>
 	<script src="styleguide/js/styleguide.js"></script>
 	<script src="styleguide/js/annotations-viewer.js "></script>

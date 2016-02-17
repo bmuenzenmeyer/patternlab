@@ -1,3 +1,18 @@
+%button_base{
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.5;
+  padding: .2em 1em .2em 1em;
+  color: #fefefe;
+  text-shadow: none;
+  font-weight: normal;
+  text-decoration: none;
+  background: rgba(0,0,0,.6);
+  &:hover{
+    background: rgba(0,0,0,.8);
+  }
+}
+
 .buttons{
   width: 100%;
   height: 2em;
@@ -32,16 +47,7 @@
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
-    text-align: center;
-    font-size: 1em;
-    color: #fefefe;
-    text-shadow: none;
-    font-weight: normal;
-    text-decoration: none;
-    background: rgba(0,0,0,.6);
-    &:hover{
-      background: rgba(0,0,0,.8);
-    }
+    @extend %button_base;
   }
   &.buttons_autosize{
     a{
@@ -61,4 +67,18 @@
       }
     }
   }
+  &.buttons_large{
+    font-family: $display-font;
+    text-transform: uppercase;
+  }
+ }
+
+ .button_alt{
+   @extend %button_base;
+   color: $white-alt;
+   background: $purple;
+   &:hover{
+     color: $white-alt;
+     background: $purple-dark;
+   }
  }

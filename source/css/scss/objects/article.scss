@@ -1,0 +1,16 @@
+.article{
+  @media all and (min-width: $bp-small){
+    div{
+      margin-top: $space;
+      margin-bottom: $space;
+    }
+    p, h1, h2, h3, h4, h5, h6, ul{
+      width: 75%;
+      margin: $space auto 0;
+      & + p, & + ul{
+        margin-top: $space-quarter;
+      }
+    }
+  }
+
+}
