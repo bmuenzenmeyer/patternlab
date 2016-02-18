@@ -58,7 +58,7 @@ h6, .zeta    {
 
 .alt{
   margin: $space auto $space-quarter;
-  color: $green;
-  border-left: $space solid rgba(0, 0, 0, 0.1);
   padding: $space-quarter;
+	text-transform: uppercase;
+	border-bottom: 1px solid $green;
 }

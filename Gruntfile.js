@@ -112,6 +112,19 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		postcss: {
+			options: {
+				map: true, // inline sourcemaps
+				processors: [
+					require('pixrem')(), // add fallbacks for rem units
+					require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+					require('cssnano')() // minify the result
+				]
+			},
+			dist: {
+				src: './source/css/*.css'
+			}
+		},
 		nodeunit: {
 			all: ['test/*_tests.js']
 		},
@@ -143,14 +156,14 @@ module.exports = function(grunt) {
 	grunt.task.loadTasks('./builder/');
 
 	//if you choose to use scss, or any preprocessor, you can add it here
-	grunt.registerTask('default', ['patternlab', 'sass', 'copy:main']);
+	grunt.registerTask('default', ['patternlab', 'sass', 'postcss', 'copy:main']);
 
 	//travis CI task
 	grunt.registerTask('travis', ['nodeunit', 'patternlab']);
 
 	//TODO: this line is more efficient, but you cannot run concurrent watch tasks without another dependency.
 	//grunt.registerTask('serve', ['patternlab', /*'sass',*/ 'copy:main', 'browserSync', 'watch:patterns', 'watch:scss']);
-	grunt.registerTask('serve', ['patternlab', 'sass', 'copy:main', 'browserSync', 'watch:all']);
+	grunt.registerTask('serve', ['patternlab', 'sass', 'postcss',  'copy:main', 'browserSync', 'watch:all']);
 
 	grunt.registerTask('build', ['nodeunit', 'concat']);
 

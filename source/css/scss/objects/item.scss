@@ -1,5 +1,13 @@
 .postNav{
   height: 100%;
+  a{
+    margin: $space-half;
+    flex-basis: 100%;
+    @media only screen and (min-width: $bp-small){
+      flex-basis: 40%;
+      flex-grow: 1;
+    }
+  }
 }
 
 .item-list{
@@ -28,7 +36,6 @@
     text-decoration: none;
     padding: .25em;
     padding-top: .5em;
-    // background-color: $green-light;
     background-color: #111;
     color: $white-alt;
   }

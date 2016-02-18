@@ -8,6 +8,13 @@
   font-weight: normal;
   text-decoration: none;
   background: rgba(0,0,0,.6);
+  border-radius: 3px;
+  border-bottom: 2px solid $gray-dark;
+  &:active{
+    position: relative;
+    top: 1px;
+    border-bottom: 1px solid $gray-dark;
+  }
   &:hover{
     background: rgba(0,0,0,.8);
   }
@@ -15,16 +22,15 @@
 
 .buttons{
   width: 100%;
-  height: 2em;
   line-height: 2em;
-  margin: .5em auto;
+  margin: $space-half auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -39,6 +45,7 @@
   -ms-flex-align: start;
   align-items: flex-start;
   a{
+    @extend %button_base;
     -webkit-box-flex: 0;
     -moz-box-flex: 0;
     -webkit-flex: 0 1 24%;
@@ -47,16 +54,6 @@
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
-    @extend %button_base;
-  }
-  &.buttons_autosize{
-    a{
-      -webkit-box-flex: 0;
-      -moz-box-flex: 0;
-      -webkit-flex: 0 1 100%;
-      -ms-flex: 0 1 100%;
-      flex: 0 1 100%;
-    }
   }
   &.buttons_secondary{
     a{
@@ -73,6 +70,10 @@
   }
  }
 
+ .button{
+   @extend %button_base;
+ }
+
  .button_alt{
    @extend %button_base;
    color: $white-alt;
@@ -80,5 +81,32 @@
    &:hover{
      color: $white-alt;
      background: $purple-dark;
+   }
+ }
+
+ .button_call{
+   @extend %button_base;
+   background: $gray-light;
+   color: $white-alt;
+   font-size: 1.5em;
+   padding: .35em .25em .25em;
+   &:hover{
+     color: $white-alt;
+     background: darken($gray-light, 5%);
+   }
+ }
+
+ .buttons_social{
+   a{
+     min-width: 100%;
+     margin: $space-half auto;
+
+     @media only screen and (min-width: 25em){
+       min-width: 45%;
+     }
+
+     @media only screen and (min-width: 45em){
+       min-width: 24%;
+     }
    }
  }

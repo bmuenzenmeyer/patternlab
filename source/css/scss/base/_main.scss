@@ -10,36 +10,29 @@ body{
   -webkit-text-size-adjust: 100%;
   color: $gray-dark;
   margin: 0 .5em;
-}
-
-section, footer{
-  @media all and (min-width: $bp-small){
-    width: $max-width;
-    margin: 0 auto;
-  }
+  overflow-x: hidden;
 }
 
 section{
   padding-bottom: $space;
+  @media all and (min-width: $bp-small){
+    max-width: $max-width;
+    margin: 0 auto;
+  }
 }
 
 #container{
   margin: 1em auto;
+  overflow: hidden;
   @media only screen and (min-width: 70em){
     max-width: 800px;
   }
 }
 
 footer{
-  .bio{
-    width: 100%;
-    margin: 0 auto $space auto;
-    @media all and (min-width: $bp-small){
-      float: left;
-      height: 175px;
-      width: auto;
-      margin-right: $space;
-    }
+  padding: $space-quarter $space;
+  .buttons{
+    padding: 0 $space-half;
   }
 }
 
@@ -64,6 +57,7 @@ svg:not(:root) {
 }
 
 .crunchy-hero{
+  clear: both;
   width: 300px;
   display: block;
   margin: 1em auto -9px;
