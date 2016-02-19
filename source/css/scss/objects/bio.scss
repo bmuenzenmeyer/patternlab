@@ -1,0 +1,15 @@
+.bio{
+  padding: $space-quarter;
+  background-color: rgba(255,255,255,.7);
+  margin: $space auto;
+  .bio_img{
+    width: 100%;
+    margin: $space-quarter;
+    @media all and (min-width: $bp-small){
+      float: left;
+      height:105px;
+      width: auto;
+      margin-right: $space;
+    }
+  }
+}

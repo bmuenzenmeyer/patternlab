@@ -1,14 +1,10 @@
-p {
-    line-height: 1.5em;
-}
-
 p + p{
     margin-top: .5rem;
 }
 
 blockquote {
   @extend .feature-block;
-  margin: 1rem auto;
+  margin: $space auto;
 }
 
 hr{
@@ -16,4 +12,28 @@ hr{
 }
 
 abbr {
+}
+
+blockquote.contrasted{
+  background-color: rgba(1,1,1,.1);
+  text-align: right;
+  padding-left: 32px;
+  font-size: .75em;
+  color: $white-alt;
+  cite a{
+    color: $green;
+  }
+  &:after{
+    display: inline-block;
+    position: relative;
+    float: left;
+    top: -13px;
+    left: -.5em;
+    height: 32px;
+    width: 32px;
+    font-size: 4em;
+    color: $green;
+    content: '\201C';
+  }
+
 }

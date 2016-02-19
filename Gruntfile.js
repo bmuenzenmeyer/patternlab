@@ -59,10 +59,11 @@ module.exports = function(grunt) {
 				{ expand: true, cwd: './source/js/', src: '*', dest: './public/js/'},
 				{ expand: true, cwd: './source/css/', src: '*.css', dest: './public/css/' },
 				{ expand: true, cwd: './source/images/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/' },
-				{ expand: true, cwd: './source/images/sample/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/sample/'},
 				{ expand: true, cwd: './source/fonts/', src: '*', dest: './public/fonts/'},
 				{ expand: true, cwd: './source/_data/', src: 'annotations.js', dest: './public/data/' },
-				{ expand: true, cwd: './source/css', src: 'style.css', dest: './../css/'}
+				{ expand: true, cwd: './source/css', src: 'style.css', dest: './../css/'},
+				{ expand: true, cwd: './source/fonts/', src: '*', dest: './../fonts/'},
+				{ expand: true, cwd: './source/images/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: '../img/' },
 				]
 			},
 			css: {
@@ -111,6 +112,19 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		postcss: {
+			options: {
+				map: true, // inline sourcemaps
+				processors: [
+					require('pixrem')(), // add fallbacks for rem units
+					require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+					require('cssnano')() // minify the result
+				]
+			},
+			dist: {
+				src: './source/css/*.css'
+			}
+		},
 		nodeunit: {
 			all: ['test/*_tests.js']
 		},
@@ -142,14 +156,14 @@ module.exports = function(grunt) {
 	grunt.task.loadTasks('./builder/');
 
 	//if you choose to use scss, or any preprocessor, you can add it here
-	grunt.registerTask('default', ['patternlab', 'sass', 'copy:main']);
+	grunt.registerTask('default', ['patternlab', 'sass', 'postcss', 'copy:main']);
 
 	//travis CI task
 	grunt.registerTask('travis', ['nodeunit', 'patternlab']);
 
 	//TODO: this line is more efficient, but you cannot run concurrent watch tasks without another dependency.
 	//grunt.registerTask('serve', ['patternlab', /*'sass',*/ 'copy:main', 'browserSync', 'watch:patterns', 'watch:scss']);
-	grunt.registerTask('serve', ['patternlab', 'sass', 'copy:main', 'browserSync', 'watch:all']);
+	grunt.registerTask('serve', ['patternlab', 'sass', 'postcss',  'copy:main', 'browserSync', 'watch:all']);
 
 	grunt.registerTask('build', ['nodeunit', 'concat']);
 

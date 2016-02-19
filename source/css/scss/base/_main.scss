@@ -6,31 +6,36 @@ html{
 
 body{
   background: $white;
-  font: 18px/150% $font;
+  font: 18px/1.7 $font;
   -webkit-text-size-adjust: 100%;
   color: $gray-dark;
   margin: 0 .5em;
+  overflow-x: hidden;
+  @media all and (min-width: $bp-medium){
+    font-size: 22px;
+  }
 }
 
-main, footer{
+section{
+  padding-bottom: $space;
   @media all and (min-width: $bp-small){
-    width: 800px;
+    max-width: $max-width;
     margin: 0 auto;
   }
+  @media all and (min-width: $bp-medium){
+    max-width: $max-width * 1.25;
+  }
+}
+
+#container{
+  margin: 1em auto;
+  overflow: hidden;
 }
 
 footer{
-  .bio{
-    width: 100%;
-    margin: 0 auto $space auto;
-  }
-  @media all and (min-width: $bp-small){
-    .bio{
-      float: left;
-      height: 8em;
-      width: auto;
-      margin-right: $space;
-    }
+  padding: $space-quarter $space;
+  .buttons{
+    padding: 0 $space-half;
   }
 }
 
@@ -55,6 +60,7 @@ svg:not(:root) {
 }
 
 .crunchy-hero{
+  clear: both;
   width: 300px;
   display: block;
   margin: 1em auto -9px;

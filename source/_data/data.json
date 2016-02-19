@@ -1,74 +1,9 @@
 {
-	"img": {
-		"landscape-4x3": {
-			"src": "../../images/fpo_4x3.png",
-			"alt": "4x3 Image"
-		},
-		"landscape-16x9": {
-			"src": "../../images/fpo_16x9.png",
-			"alt": "16x9 Image"
-		},
-		"square": {
-			"src": "../../images/fpo_square.png",
-			"alt": "Square Thumbnail"
-		},
-		"avatar" : {
-			"src" : "../../images/fpo_avatar.png",
-			"alt" : "Person Name"
-		}
-	},
-	"headline" : {
-		"short" : "Lorem ipsum dolor sit (37 characters)",
-		"medium" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. (72 characters)"
-	},
-	"about": "I spend my working days in ux/ui design and my waking nights in even more front end design and development. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. The best way to reach me is on Twitter @bmuenzenmeyer. I moonlight at crunchyowl.com, a dawning of individual design. I help people solve problems and send on-target messages. Interested in the mosaic of web development, design, content strategy, and performance. I have flexible rates if you have flexible hours. When not on the web, I am digging up the yard, wearing an afghan, trying on something grey, or day-dreaming about the ultimate home office.",
-	"site-redesign": "This version of brianmuenzenmeyer.com is an ongoing, open redesign — showcasing design challenges and decisions along the way I hope it's instructive and participatory. Read more about the open redesign here. Find me elsewhere online too, as noted below.",
-	"crunchyowl": {
-		"dev": "I deliver quality code with an eye towards standards compliance and industry best practices. Responsive design principles extend from time-honored standards compliance and progressive enhancement. Sign me up for some of that! In a world of cut and paste snippets, WYSIWYG editors, and tight timelines, some of us still write code by hand, testing diligently and with little regard for sunrise.",
-		"design": "Communicate effective messages to your audience. Crafting a functional product often starts with a deep dive into your needs and the needs of your users. From this input, Crunchy Owl can dial in and iterate quickly on a solution. Let's not forget to make it strikingly beautiful too.",
-		"perf": "Speed matters, but performance is more than that. Performance is content meets execution, and I can help you push your codebase further, directly equating to more engagement. Understanding delivery options is key to an inclusive experience. Push the limits of deployment and send what matters most.",
-		"content": "With a proper content strategy, your message has a broader voice in the community, has more impact, and builds your brand. Creating reusable content to leverage social media is a must in today's environment. I fit right-sized solutions to the right requirements, offering full-stack solutions when necessary, or a handcrafted microsite when the need arises."
-	},
-	"url" : "http://www.brianmuenzenmeyer.com",
-	"name" : {
-		"first": "Lacy",
-		"firsti": "L",
-		"middle": "Tommie",
-		"middlei": "T",
-		"last": "Way",
-		"lasti": "W"
-	},
-	"year" : {
-		"long": "2013",
-		"short": "13"
-	},
-	"month" : {
-		"long": "February",
-		"short": "Feb",
-		"digit": "02"
-	},
-	"dayofweek" : {
-		"long": "Monday",
-		"short": "Mon"
-	},
-	"day" : {
-		"long": "10",
-		"short": "10",
-		"ordinal": "th"
-	},
-	"hour" : {
-		"long": "01",
-		"short": "1",
-		"military": "13",
-		"ampm": "pm"
-	},
-	"minute" : {
-		"long": "20",
-		"short": "20"
-	},
-	"seconds" : "31",
-	"author" : {
-		"first-name": "Author",
-		"last-name": "Name"
+	"heading": "GROUP",
+	"summary": "Coruscant solo skywalker cade c-3p0 mara gamorrean qui-gon sidious. Secura k-3po twi'lek moff luke antilles kamino amidala. Naboo moff palpatine skywalker wedge droid skywalker ackbar darth. Mace mandalorians hutt r2-d2 dagobah fett. Chewbacca thrawn moff leia mustafar thrawn calrissian. Sith obi-wan sidious darth moff. Obi-wan dantooine alderaan mon ackbar ventress. Bespin calrissian maul wicket han. Wedge kamino ben ben antilles darth yavin antilles dagobah. Moff jade owen dantooine dantooine gonk mara.",
+	"post": {
+		"url" : "http://brianmuenzenmeyer.com",
+		"title" : "A Post Title",
+		"summary" : "Dantooine darth vader qui-gonn solo aayla. Jabba hutt dooku yoda palpatine windu lando darth. C-3p0 naboo lobot jinn padmé. Mothma lando moff luke jawa jar mon naboo moff. Tatooine gonk baba yavin padmé organa jawa. Ventress obi-wan darth jabba secura. Palpatine han hoth alderaan mon moff hutt skywalker solo. Qui-gon yoda grievous watto antilles binks. Antilles endor calamari k-3po ackbar lando. Darth chewbacca kessel mandalore anakin. Ackbar utapau mace antilles ackbar. Solo binks bothan solo calrissian thrawn wookiee."
 	}
 }

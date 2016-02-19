@@ -1,20 +1,20 @@
 /* Headings */
 /*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
-h1, .alpha   { 
+h1, .alpha   {
 	line-height: 1.2;
   font-size: 4rem;
   font-weight: 300;
   margin: 1rem auto;
 }
 
-h2, .beta    { 
+h2, .beta    {
 	line-height: 1.2;
   font-size: 3rem;
   font-weight: 300;
   margin: 1rem auto;
 }
 
-h3, .gamma   { 
+h3, .gamma   {
 	line-height: 1.2;
   font-size: 2.25rem;
   font-weight: 300;
@@ -27,26 +27,38 @@ h4, .delta   {
   margin: 1rem auto;
 }
 
-h5, .epsilon { 
+h5, .epsilon {
   font-size: 1.25rem;
   font-weight: 300;
   margin: 1rem auto;
 }
 
-h6, .zeta    { 
+h6, .zeta    {
   font-size: 1rem;
   font-weight: 300;
   margin: 1rem auto;
 }
 
-.subheading{
-  @extend .striped;
+.giga{
+	font-size: 6rem;
+	font-size: 8vw;
+}
+
+.bannerheading{
+	margin-top: 0;
+	margin-bottom: $space;
+	font-family: $display-font;
+	font-weight: bold;
+	text-transform: uppercase;
   padding: .25em;
+	&.fullbleed{
+		@extend .fullbleed;
+	}
 }
 
 .alt{
   margin: $space auto $space-quarter;
-  color: $green;
-  border-left: $space solid rgba(0, 0, 0, 0.1);
   padding: $space-quarter;
+	text-transform: uppercase;
+	border-bottom: 1px solid $green;
 }

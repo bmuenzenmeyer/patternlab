@@ -1,21 +1,28 @@
 .masthead{
+  @extend .fullbleed;
+  color: $black;
   h1{
-    text-align: center;
+    font-family: $display-font;
+    font-size: 13vw;
+    font-weight: bold;
+    margin: 0 auto;
+    padding-left: $space-half;
+    padding-top: $space-double * 2.5;
+    background-color: #111;
+    color: white;
+    letter-spacing: -.1em;
+    line-height: .75;
+    vertical-align: bottom;
+    z-index: 10;
   }
   a{
     text-decoration: none;
-    color: $gray-dark;
     &:visited, &:active{
-      color: $gray-dark;
-    }
-    &:hover{
-      color: $green;
+      color: white;
     }
   }
-  @media all and (min-width: $bp-small){
-    header{
-      width: 800px;
-      margin: 0 auto;
-    }
-  }
+}
+
+.masthead + img{
+  float: right;
 }
