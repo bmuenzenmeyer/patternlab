@@ -17,7 +17,7 @@ $white : #fff;
 $black : #111;
 
 //Typography
-$font : 'Overpass', Arial, Tahoma, sans-serif;
+$font : 'Overpass Light', Arial, Tahoma, sans-serif;
 $display-font: 'Overpass', Arial, Tahoma, sans-serif;
 
 $font-size-base: 18px;
@@ -45,4 +45,5 @@ $border-med: 3px;
 $border-thick: 7px;
 
 //Breakpoints
-$bp-small : 45em;
+$bp-small: 45em;
+$bp-medium: 90em;

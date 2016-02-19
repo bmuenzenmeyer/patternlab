@@ -2,10 +2,10 @@
   text-align: center;
   font-size: 1em;
   line-height: 1.5;
-  padding: .2em 1em .2em 1em;
+  padding: .5em 1em .2em 1em;
   color: #fefefe;
   text-shadow: none;
-  font-weight: normal;
+  font-weight: bold;
   text-decoration: none;
   background: rgba(0,0,0,.6);
   border-radius: 3px;
@@ -90,6 +90,7 @@
    color: $white-alt;
    font-size: 1.5em;
    padding: .35em .25em .25em;
+   margin-bottom: $space-half;
    &:hover{
      color: $white-alt;
      background: darken($gray-light, 5%);
