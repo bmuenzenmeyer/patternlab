@@ -1,26 +1,39 @@
-/* Text-Related Elements */ 
-p {
-	margin-bottom: $space;
+p + p{
+    margin-top: .5rem;
 }
 
-/* Blockquote */
 blockquote {
-    font-style:italic;
-    border-left: 1px solid $gray;
-    color: $gray;
-	padding-left: $pad;
-	margin-bottom: $space;
+  @extend .feature-block;
+  margin: $space auto;
 }
 
-/* Horizontal Rule */ 
-hr {
-	border: 0;
-    height: 2px;
-    background: $gray-light-2;
-    margin: $space-double 0;
+hr{
+  margin: $space-triple auto;
 }
 
 abbr {
-    border-bottom: 1px dotted $gray;
-    cursor: help;
+}
+
+blockquote.contrasted{
+  background-color: rgba(1,1,1,.1);
+  text-align: right;
+  padding-left: 32px;
+  font-size: .75em;
+  color: $white-alt;
+  cite a{
+    color: $green;
+  }
+  &:after{
+    display: inline-block;
+    position: relative;
+    float: left;
+    top: -13px;
+    left: -.5em;
+    height: 32px;
+    width: 32px;
+    font-size: 4em;
+    color: $green;
+    content: '\201C';
+  }
+
 }

@@ -3,42 +3,28 @@
 \*------------------------------------*/
 
 //Colors
-$gray : #808080;
-$gray-light : #f9f9f9;
-$gray-light-2 : #eee;
-$gray-light-3 : #ddd;
-$gray-light-4 : #bbb;
-$gray-med : #666;
-$gray-dark : #333;
-$gray-dark-2 : #131313;
+
+$green: #B2F33C;
+$green-dark: #55731D;
+$green-light: #CEF586;
+$gray-dark : #4c4c4c;
+$gray : #666;
+$gray-light: #b2b2b2;
+$white-alt: #f2f2f2;
+$purple: #C93CF3;
+$purple-dark: #8208A6;
 $white : #fff;
-$black : #000;
-
-$dim : rgba(0,0,0,0.5);
-$dimmer : rgba(0,0,0,0.8);
-
-$error : #f00;
-$valid : #089e00;
-
-$brand-facebook: #03539e;
-$brand-twitter: #35ccff;
-$brand-linkedin: #217bc1;
+$black : #111;
 
 //Typography
-$font : "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-$font-secondary : Georgia, Times, "Times New Roman", serif;
+$font : 'Overpass Light', Arial, Tahoma, sans-serif;
+$display-font: 'Overpass', Arial, Tahoma, sans-serif;
 
-$font-size-norm : 1em;
-$font-size-slightly-larger : 1.0625em;
-$font-size-slightly-smaller : 0.875em;
-$font-size-sm : 0.75em;
-$font-size-large : 1.4375em;
+$font-size-base: 18px;
 
 //Layout
-$max-width: 72rem;
+$max-width: 60rem;
 $offset-left-1: 4.5rem;
-
-$l-sidebar-width: 19.75rem;
 
 //Defaults
 $space : 1rem;
@@ -58,17 +44,6 @@ $pad-quarter :$pad/4;
 $border-med: 3px;
 $border-thick: 7px;
 
-
 //Breakpoints
-$bp-small : 24em;
-$bp-small-2 : 29.75em;
-$bp-small-3 : 39.8em;
-$bp-med : 46.8em;
-$bp-med-2 : 48em;
-$bp-large : 50em;
-$bp-large-2 : 66em;
-$bp-xl : 73em;
-$bp-xxl : 89em;
-$bp-xxxl : 93em;
-
-//
+$bp-small: 45em;
+$bp-medium: 90em;

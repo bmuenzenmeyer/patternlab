@@ -1,0 +1,113 @@
+%button_base{
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.5;
+  padding: .5em 1em .2em 1em;
+  color: #fefefe;
+  text-shadow: none;
+  font-weight: bold;
+  text-decoration: none;
+  background: rgba(0,0,0,.6);
+  border-radius: 3px;
+  border-bottom: 2px solid $gray-dark;
+  &:active{
+    position: relative;
+    top: 1px;
+    border-bottom: 1px solid $gray-dark;
+  }
+  &:hover{
+    background: rgba(0,0,0,.8);
+  }
+}
+
+.buttons{
+  width: 100%;
+  line-height: 2em;
+  margin: $space-half auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  a{
+    @extend %button_base;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 24%;
+    -ms-flex: 0 1 24%;
+    flex: 0 1 24%;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+  }
+  &.buttons_secondary{
+    a{
+      color: $gray-dark;
+      background: $white-alt;
+      &:hover{
+        background: $gray-light;
+      }
+    }
+  }
+  &.buttons_large{
+    font-family: $display-font;
+    text-transform: uppercase;
+  }
+ }
+
+ .button{
+   @extend %button_base;
+ }
+
+ .button_alt{
+   @extend %button_base;
+   color: $white-alt;
+   background: $purple;
+   &:hover{
+     color: $white-alt;
+     background: $purple-dark;
+   }
+ }
+
+ .button_call{
+   @extend %button_base;
+   background: $gray-light;
+   color: $white-alt;
+   font-size: 1.5em;
+   padding: .35em .25em .25em;
+   margin-bottom: $space-half;
+   &:hover{
+     color: $white-alt;
+     background: darken($gray-light, 5%);
+   }
+ }
+
+ .buttons_social{
+   a{
+     min-width: 100%;
+     margin: $space-half auto;
+
+     @media only screen and (min-width: 25em){
+       min-width: 45%;
+     }
+
+     @media only screen and (min-width: 45em){
+       min-width: 24%;
+     }
+   }
+ }

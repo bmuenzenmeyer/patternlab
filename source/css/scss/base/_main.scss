@@ -1,6 +1,74 @@
-body {
-	background: $white;
-	font: 100%/1.5 $font;
-	-webkit-text-size-adjust: 100%;
-	color: $gray-dark;
+* { box-sizing: border-box; }
+
+html{
+  font-size: 100%;
+}
+
+body{
+  background: $white;
+  font: 18px/1.7 $font;
+  -webkit-text-size-adjust: 100%;
+  color: $gray-dark;
+  margin: 0 .5em;
+  overflow-x: hidden;
+  @media all and (min-width: $bp-medium){
+    font-size: 22px;
+  }
+}
+
+section{
+  padding-bottom: $space;
+  @media all and (min-width: $bp-small){
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+  @media all and (min-width: $bp-medium){
+    max-width: $max-width * 1.25;
+  }
+}
+
+#container{
+  margin: 1em auto;
+  overflow: hidden;
+}
+
+footer{
+  padding: $space-quarter $space;
+  .buttons{
+    padding: 0 $space-half;
+  }
+}
+
+svg.chevron3 {
+  background-color: #FFF;
+  margin: 0 auto;
+}
+
+svg.chevron3 path {
+  fill: $green;
+  stroke: $green;
+  stroke-width: 0;
+}
+
+svg.separator {
+  display: block;
+  padding-bottom: 1rem;
+  pointer-events: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.crunchy-hero{
+  clear: both;
+  width: 300px;
+  display: block;
+  margin: 1em auto -9px;
+}
+
+.notfound span{
+  line-height: 48px;
+  height: 48px;
+  vertical-align: top;
+  display: inline-block;
 }

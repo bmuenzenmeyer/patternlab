@@ -1,7 +1,6 @@
 ol, ul {
 	margin: 0;
-	padding: 0;
-	list-style: none;
+	padding: 0 0 0 2rem;
 }
 
 /* Definition Lists */
@@ -16,4 +15,11 @@ dt {
 
 dd {
 	margin-left: 0;
+}
+
+ul.list{
+  clear: both;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

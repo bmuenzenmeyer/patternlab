@@ -1,0 +1,20 @@
+.half{
+  @extend .lone;
+  @media all and (min-width: $bp-small){
+    width: 50%;
+    display: inline-block;
+    float: left;
+  }
+  &.padded{
+    padding-left: $space-quarter;
+    padding-right: $space-quarter;
+  }
+}
+.third{
+  @extend .lone;
+  @media all and (min-width: $bp-small){
+    width: 33%;
+    display: inline-block;
+    float: left;
+  }
+}

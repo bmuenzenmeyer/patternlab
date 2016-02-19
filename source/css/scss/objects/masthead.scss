@@ -1,0 +1,28 @@
+.masthead{
+  @extend .fullbleed;
+  color: $black;
+  h1{
+    font-family: $display-font;
+    font-size: 13vw;
+    font-weight: bold;
+    margin: 0 auto;
+    padding-left: $space-half;
+    padding-top: $space-double * 2.5;
+    background-color: #111;
+    color: white;
+    letter-spacing: -.1em;
+    line-height: .75;
+    vertical-align: bottom;
+    z-index: 10;
+  }
+  a{
+    text-decoration: none;
+    &:visited, &:active{
+      color: white;
+    }
+  }
+}
+
+.masthead + img{
+  float: right;
+}
