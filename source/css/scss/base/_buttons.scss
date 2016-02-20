@@ -55,7 +55,7 @@
     -ms-flex-item-align: auto;
     align-self: auto;
   }
-  &.buttons_secondary{
+  &.buttons-secondary{
     a{
       color: $gray-dark;
       background: $white-alt;
@@ -64,7 +64,7 @@
       }
     }
   }
-  &.buttons_large{
+  &.buttons-capped{
     font-family: $display-font;
     text-transform: uppercase;
   }
@@ -74,7 +74,7 @@
    @extend %button_base;
  }
 
- .button_alt{
+ .button-alt{
    @extend %button_base;
    color: $white-alt;
    background: $purple;
@@ -84,7 +84,7 @@
    }
  }
 
- .button_call{
+ .button-call{
    @extend %button_base;
    background: $gray-light;
    color: $white-alt;
@@ -97,7 +97,7 @@
    }
  }
 
- .buttons_social{
+ .buttons-social{
    a{
      min-width: 100%;
      margin: $space-half auto;

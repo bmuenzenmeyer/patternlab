@@ -26,6 +26,14 @@
     text-rendering: optimizeLegibility;
 }
 
+.font-body{
+  font-family: $font;
+}
+
+.font-display{
+  font-family: $display-font;
+}
+
 /* Clearfix */
 .cf {
     *zoom: 1;
