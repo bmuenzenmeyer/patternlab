@@ -1,16 +1,41 @@
 .article{
+
+  .emphasis{
+    font-size: 4vw;
+    line-height: 1;
+  }
+
+  iframe{
+    margin: $space-half auto;
+  }
+
+  p, ul{
+    & + p, & + ul{
+      margin-top: $space;
+    }
+  }
+
   @media all and (min-width: $bp-small){
     div{
       margin-top: $space;
       margin-bottom: $space;
     }
-    p, h1, h2, h3, h4, h5, h6, ul{
+
+    p, ul, h1, h2, h3, h4, h5, h6{
+      width: 75%;
+    }
+    p, ul{
+      line-height: 1.7;
+      margin: 0 auto;
+    }
+    h1, h2, h3, h4, h5, h6{
       width: 75%;
       margin: $space auto 0;
+    }
+    p, ul{
       & + p, & + ul{
-        margin-top: $space-quarter;
+        margin-top: $space-triple;
       }
     }
   }
-
 }

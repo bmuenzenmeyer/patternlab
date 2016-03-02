@@ -33,12 +33,25 @@
 </head>
 <body class="sg-single-pattern">	
 	<!-- Start of Pattern --><p class="caption">A caption can be applied to an image, quote, form field, etc.</p>	<!-- End of Pattern -->
-	
+
 	<!--
 		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
 		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
 	-->
-	
+
+	<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Alegreya:400italic:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+
 	<!-- DO NOT MODIFY -->
 	<script>
 		// handle injection of items from PHP
@@ -49,11 +62,11 @@
 		var baseurl = "";
 		var cssEnabled = false; //TODO
 	</script>
-	
+
 	<script type="text/html" id="sg-pattern-html">
 
 	</script>
-	
+
 	<script type="text/html" id="sg-pattern-css">
 
 	</script>
@@ -63,6 +76,6 @@
 	<script src="../../styleguide/js/annotations-pattern.js"></script>
 	<script src="../../styleguide/js/code-pattern.js"></script>
 	<!-- /DO NOT MODIFY -->
-	
+
 </body>
 </html>
