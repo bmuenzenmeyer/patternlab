@@ -41,6 +41,7 @@ blockquote.contrasted{
 pre{
   outline: 1px solid $gray-light;
   padding: $space;
+  overflow-x: auto;
 }
 
 em{
