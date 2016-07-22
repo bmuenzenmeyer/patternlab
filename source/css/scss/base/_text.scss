@@ -38,6 +38,11 @@ blockquote.contrasted{
 
 }
 
+pre{
+  outline: 1px solid $gray-light;
+  padding: $space;
+}
+
 em{
   font-family: Alegreya;
   font-size: 1.15em;
