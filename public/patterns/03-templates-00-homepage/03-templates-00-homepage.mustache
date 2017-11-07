@@ -1,20 +1,14 @@
-{{&gt; organisms-header }}
+{{> organisms-header }} {{> molecules-social-buttons }}
 
-{{&gt; molecules-social-buttons }}
+<main id="container">
+  {{> organisms-items:item_list-left }} {{> organisms-items:item_list-right }}
 
-&lt;main id=&quot;container&quot;&gt;
-  {{&gt; organisms-items:item_list-left }}
+  <section>
 
-  {{&gt; organisms-items:item_list-right }}
+    {{> organisms-crunchyowl-teaser }} {{> organisms-crunchyowl-services }}
 
-  &lt;section&gt;
-  
-    {{&gt; organisms-crunchyowl-teaser }}
+  </section>
 
-    {{&gt; organisms-crunchyowl-services }}
+</main>
 
-  &lt;/section&gt;
-
-&lt;/main&gt;
-
-{{&gt; organisms-footer }}
+{{> organisms-footer }}

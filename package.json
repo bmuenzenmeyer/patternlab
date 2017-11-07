@@ -1,46 +1,27 @@
 {
-  "name": "patternlab-node",
-  "description": "Pattern Lab is a collection of tools to help you create atomic design systems. This is the node command line interface (CLI).",
+  "name": "patternlab-node-3.0-demo-integration",
   "version": "1.0.0",
-  "devDependencies": {
-    "autoprefixer": "^6.3.3",
-    "bs-html-injector": "^3.0.0",
-    "cssnano": "^3.5.2",
-    "diveSync": "^0.3.0",
-    "fs-extra": "^0.26.2",
-    "glob": "^6.0.1",
-    "grunt": "~0.4.5",
-    "grunt-browser-sync": "^2.2.0",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-copy": "^0.8.2",
-    "grunt-contrib-nodeunit": "^0.4.1",
-    "grunt-contrib-sass": "^0.9.2",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-postcss": "^0.7.2",
-    "html-entities": "^1.2.0",
-    "matchdep": "^1.0.0",
-    "mustache": "^2.2.0",
-    "pixrem": "^3.0.0"
+  "description": "Example of what you can do with Pattern Lab 3.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "serve": "node ./scripts/serve.js"
   },
-  "keywords": [
-    "Pattern Lab",
-    "Atomic Web Design",
-    "Node",
-    "Grunt",
-    "Gulp",
-    "Javascript"
-  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/pattern-lab/patternlab-node.git"
+    "url": "git+https://github.com/bmuenzenmeyer/patternlab-node-3.0-demo-integration.git"
   },
-  "bugs": "https://github.com/pattern-lab/patternlab-node/issues",
-  "author": "Brian Muenzenmeyer",
-  "license": "MIT",
-  "scripts": {
-    "test": "grunt travis --verbose"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmuenzenmeyer/patternlab-node-3.0-demo-integration/issues"
   },
-  "engines": {
-    "node": ">=0.1"
+  "homepage": "https://github.com/bmuenzenmeyer/patternlab-node-3.0-demo-integration#readme",
+  "dependencies": {
+    "@pattern-lab/patternengine-node-mustache": "^2.0.0-alpha.1",
+    "@pattern-lab/patternlab-node": "^3.0.0-alpha.4",
+    "@pattern-lab/styleguidekit-assets-default": "^4.0.0-alpha.2",
+    "@pattern-lab/styleguidekit-mustache-default": "^4.0.0-alpha.1",
+    "node-sass": "^4.6.0"
   }
 }
